@@ -4,7 +4,8 @@ import { Navbar } from './Components/Navbar/Navbar';
 function App() {
   return (
     <div className="App">
-      <Navbar/>
+      <Navbar />
+      <h1>REST OF THE FUCKING SITE</h1>
     </div>
   );
 }
