@@ -2,7 +2,7 @@
 body{
     
     background-color: antiquewhite;
-    height: 1200px;
+    height: 3200px;
 }
 .d-block{
     padding: 0;
@@ -41,9 +41,9 @@ ul{
 }
 .logo{
     position:absolute;
-    top: 12px;
+    top: -13px;
     z-index: 10;
-    left: 640px;
+    left: 320px;
     height: 110px;
 }
 .icons{
@@ -63,4 +63,9 @@ a{
 }
 a:hover{
     color: #778da9;
+}
+.nav{
+    position: fixed;
+    bottom: 0;
+    z-index: 20;
 }
