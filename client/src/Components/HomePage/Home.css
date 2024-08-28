@@ -1,15 +1,16 @@
+body {
 
-body{
-    
     background-color: antiquewhite;
     height: 3200px;
 }
-.d-block{
+
+.d-block {
     padding: 0;
     margin: 0;
     height: 780px;
 }
-.nav{
+
+.nav {
     height: 75px;
     width: 820px;
     align-items: center;
@@ -23,9 +24,10 @@ body{
     border-radius: 50px;
     opacity: 0.82;
     box-shadow: 2px 2px 6px black;
-    
+
 }
-.list{
+
+.list {
     top: 8px;
     list-style: none;
     display: flex;
@@ -36,17 +38,20 @@ body{
     color: #e0e1dc;
     margin-left: 10px;
 }
-ul{
+
+ul {
     gap: 38px;
 }
-.logo{
-    position:absolute;
+
+.logo {
+    position: absolute;
     top: -13px;
     z-index: 10;
     left: 320px;
     height: 110px;
 }
-.icons{
+
+.icons {
     top: 9px;
     position: relative;
     display: flex;
@@ -56,15 +61,18 @@ ul{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: #e0e1dc;
 }
-a{
+
+a {
     color: #e0e1dc;
     cursor: pointer;
     text-decoration: none;
 }
-a:hover{
+
+a:hover {
     color: #778da9;
 }
-.nav{
+
+.nav {
     position: fixed;
     bottom: 0;
     z-index: 20;
