@@ -16,7 +16,6 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route path="/nav" element={<Navbar />} />
         </Routes>
-        <h1>REST OF THE FUCKING SITE</h1>
       </Router>
     </div>
   );
