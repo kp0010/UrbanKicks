@@ -1,13 +1,34 @@
 import express from "express"
-// import readFile from np
+import pg from "pg"
 
 const app = express();
+const { Pool } = pg;
 
 const PORT = 8080;
 
+const dbConfig = {
+    user: 'postgres',
+    host: 'localhost',
+    database: 'wonderwalks',
+    // password: '0010',
+    port: 5432,
+}
+
+const db = new Pool(dbConfig)
+
+db.connect(function(err) {
+    if (err) throw err;
+    console.log("Connected!");
+});
+
+
 app.get("/", (request, response) => {
-    console.log("lmao")
-    return response.status(234).send("Ecommerce Backend");
+    db.query("SELECT * FROM cart", (error, results) => {
+        if (error) {
+            throw error
+        }
+        return response.status(200).json(results.rows)
+    })
 });
 
 app.listen(PORT, () => {
