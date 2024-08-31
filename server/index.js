@@ -1,4 +1,4 @@
-import express from "express"
+import express, { response } from "express"
 import pg from "pg"
 
 const app = express();
@@ -30,6 +30,27 @@ app.get("/", (request, response) => {
         return response.status(200).json(results.rows)
     })
 });
+
+
+app.get("/user/:userId", (request, response) => {
+    db.query("SELECT * FROM users where username = $1", [request.params.userId], (error, res) => {
+        if (error) {
+            throw error
+        }
+        return response.json(res.rows)
+    })
+});
+
+
+app.get("/cart/:userId", (request, response) => {
+    db.query("SELECT * FROM cart where username = $1", [request.params.userId], (error, res) => {
+        if (error) {
+            throw error
+        }
+        return response.json(res.rows)
+    })
+});
+
 
 app.listen(PORT, () => {
     console.log(`App is listening to port: ${PORT}`);
