@@ -1,6 +1,8 @@
 body {
 
     background-color: antiquewhite;
+    margin: 0;
+    padding: 0;
 
 }
 
@@ -84,13 +86,14 @@ a:hover {
 .New-Arrivals {
     background-color: #25232e;
     height: 700px;
-    /* background-image: url(new-arrival.png);
+    
     background-size: cover;
-    opacity: 0.9; */
+    opacity: 0.9; 
 }
 
 .new {
     position: absolute;
+   
     margin-top: 20px;
     top: 780px;
     height: 700px;
