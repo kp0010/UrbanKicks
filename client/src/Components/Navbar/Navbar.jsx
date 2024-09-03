@@ -1,27 +1,26 @@
 import React from 'react'
 import './Navbar.css'
+import logo from "../Assests/logo.png"
+
+import { NavLink } from 'react-router-dom'
 
 export const Navbar = () => {
   return (
     <div className="navbar">
-        <div className="nav-logo">
-            {/* Need to add link on logo to direct to Home Page*/}
-            <h3>WonderWalks</h3>
-        </div>
-        <ul className="nav-menu">
-            <li>MEN</li>
-            <li>WOMEN</li>
-            <li>KIDS</li>
+        <div class="nav">
+        <a href="#"><img src={logo} class="logo"></img></a>
+        <ul class="list">
+          <a> <li><NavLink to="/nav">Mens</NavLink></li> </a>
+          <a> <li>Womens</li> </a>
+          <a> <li>Kids</li> </a>
         </ul>
-        <div className="search-login-cart">
-            <div className="search">
-                <input type="text" placeholder="Search..." className="searchInput"/>
-                {/* Add img tag search icon of width and height 20px */}
-            </div>
-
-            <button>LOGIN</button>
-            {/* Add img tag for cart icon */}
-        </div>
+        <ul class="icons">
+          <a><li><i class="bi bi-search"></i></li></a>
+          <a><li><i class="bi bi-bag"></i></li></a>
+          <a><li><i class="bi bi-person"></i></li></a>
+          <a><li><i class="bi bi-heart"></i></li></a>
+        </ul>
+      </div>
     </div>
   )
 }

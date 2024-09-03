@@ -5,7 +5,7 @@ import './Home.css'
 import hero1 from "./HomeAssets/hero1.png"
 import hero2 from "./HomeAssets/hero2.png"
 import hero3 from "./HomeAssets/hero3.png"
-import logo from "./HomeAssets/logo.png"
+import logo from "../Assests/logo.png"
 
 import { NavLink } from 'react-router-dom'
 

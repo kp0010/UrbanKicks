@@ -1,63 +1,74 @@
-.navbar{
-    display: flex;
-    justify-content: space-around;
-    padding: 12px;
-    box-shadow: 0 1px 3px -2px black;
-}
-.nav-logo{
-    display: flex;
-    font-size: 24px;
-    cursor: pointer;
-}
-.nav-menu{
-    display: flex;
-    align-items: center;
-    list-style: none;
-    gap: 50px;
+body {
+
+    background-color: antiquewhite;
 
 }
-.nav-menu li{
-    display: flex;
-    flex-direction: column;
+
+.nav {
+    height: 75px;
+    width: 820px;
     align-items: center;
-    justify-content: center;
-    gap: 3px;
+    text-align: center;
+    position: absolute;
+    z-index: 6;
+    background-color: #2f3d3b;
+    top: 25px;
+    left: 320px;
+    border-radius: 50px;
+    opacity: 0.82;
+    box-shadow: 2px 2px 6px black;
+
+}
+
+.list {
+    top: 8px;
+    list-style: none;
+    display: flex;
+    position: relative;
+    font-size: x-large;
+    font-weight: 510;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #e0e1dc;
+    margin-left: 10px;
+}
+
+ul {
+    gap: 38px;
+}
+
+.logo {
+    position: absolute;
+    top: -13px;
+    z-index: 10;
+    left: 320px;
+    height: 110px;
+}
+
+.icons {
+    top: 9px;
+    position: relative;
+    display: flex;
+    list-style: none;
+    margin-left: 240px;
+    font-size: 1.5rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #e0e1dc;
+}
+
+a {
+    color: #e0e1dc;
     cursor: pointer;
+    text-decoration: none;
 }
-.search-login-cart{
-    display: flex;
-    align-items: center;
-    gap: 45px;
+
+a:hover {
+    color: #778da9;
+    transition: 0.2s ease-in-out;
 }
-.search{
-    display: flex;
-    align-items: center;
-    background-color: rgb(90, 142, 238);
-    padding: 10px 20px;
-    border-radius: 10px;
-}
-.searchInput{
-    border: none;
-    outline: none;
-    font-size: 16px;
-    padding: 0;
-    background-color: transparent;
-}
-.searchInput::placeholder{
-    color: lightgray;
-}
-.search-login-cart button{
-    width:120px;
-    height:40px;
-    outline: none;
-    border: 1px solid #7a7a7a;
-    border-radius: 75px;
-    color: #515151;
-    font-size: 20px;
-    font-weight: 500;
-    background-color: white;
-    cursor: pointer;
-}
-.search-login-cart button:active{
-    background: #d9dbf1;
+
+.nav {
+    position: fixed;
+    /* Navbar Fixed */
+    bottom: 0;
+    z-index: 20;
 }
