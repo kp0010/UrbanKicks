@@ -8,6 +8,7 @@ body {
     padding: 0;
     margin: 0;
     height: 780px;
+    margin-bottom: 20px;
 }
 
 /* NAVBAR */
@@ -90,6 +91,7 @@ a:hover {
 
 .new {
     position: absolute;
+    margin-top: 20px;
     top: 780px;
     height: 700px;
     opacity: 0.5;

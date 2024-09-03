@@ -5,6 +5,7 @@ import './Home.css'
 import hero1 from "./HomeAssets/hero1.png"
 import hero2 from "./HomeAssets/hero2.png"
 import hero3 from "./HomeAssets/hero3.png"
+import new_arrival from "./HomeAssets/new-arrival.png"
 import logo from "../Assests/logo.png"
 
 import { NavLink } from 'react-router-dom'
@@ -49,6 +50,11 @@ export const Home = () => {
           <a><li><i class="bi bi-person"></i></li></a>
           <a><li><i class="bi bi-heart"></i></li></a>
         </ul>
+      </div>
+
+      <div class="New-Arrivals">
+        <h2 class="head1">New Arrivals</h2>
+        <img src={new_arrival} class="new" alt='...'></img>
       </div>
     </div >
   )
