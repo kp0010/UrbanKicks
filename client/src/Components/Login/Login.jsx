@@ -18,7 +18,7 @@ export const Login = () => {
           </ul>
           <div class="nav-logo">
             <a href="#">
-              <img src={background} alt="Wonder Walks"></img>
+              <img src={logo} alt="Wonder Walks"></img>
             </a>
           </div>
           <div class="nav-icons">
