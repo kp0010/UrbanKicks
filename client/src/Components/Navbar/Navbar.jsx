@@ -1,13 +1,13 @@
 import React from 'react'
 import './Navbar.css'
-import logo from "../Assests/logo.png"
+import logo from "../Assets/logo_1.png"
 
 import { NavLink } from 'react-router-dom'
 
 export const Navbar = () => {
   return (
     <div className="navbar">
-        <div class="nav">
+      <div class="nav">
         <a href="#"><img src={logo} class="logo"></img></a>
         <ul class="list">
           <a> <li><NavLink to="/nav">Mens</NavLink></li> </a>

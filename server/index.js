@@ -33,7 +33,7 @@ app.get("/", (request, response) => {
 
 
 app.get("/user/:userId", (request, response) => {
-    db.query("SELECT * FROM users where username = $1", [request.params.userId], (error, res) => {
+    db.query("SELECT * FROM users where userid = $1", [request.params.userId], (error, res) => {
         if (error) {
             throw error
         }
@@ -43,7 +43,7 @@ app.get("/user/:userId", (request, response) => {
 
 
 app.get("/cart/:userId", (request, response) => {
-    db.query("SELECT * FROM cart where username = $1", [request.params.userId], (error, res) => {
+    db.query("SELECT * FROM cart where userid = $1", [request.params.userId], (error, res) => {
         if (error) {
             throw error
         }

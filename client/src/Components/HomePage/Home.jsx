@@ -6,7 +6,7 @@ import hero1 from "./HomeAssets/hero1.png"
 import hero2 from "./HomeAssets/hero2.png"
 import hero3 from "./HomeAssets/hero3.png"
 import new_arrival from "./HomeAssets/new-arrival.png"
-import logo from "../Assests/logo.png"
+import logo from "../Assets/logo_1.png"
 
 import { NavLink } from 'react-router-dom'
 
