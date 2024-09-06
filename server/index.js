@@ -1,7 +1,10 @@
 import express, { response } from "express"
 import pg from "pg"
+import cors from "cors"
 
 const app = express();
+app.use(cors())
+app.use(express.json())
 const { Pool } = pg;
 
 const PORT = 8080;
@@ -32,12 +35,21 @@ app.get("/", (request, response) => {
 });
 
 
-app.get("/user/:userId", (request, response) => {
-    db.query("SELECT * FROM users where userid = $1", [request.params.userId], (error, res) => {
+app.post("/Login/", (request, response) => {
+    const { username, password } = request.body
+    console.log(username, password)
+
+    db.query("SELECT * FROM users where userid = $1", [username], (error, res) => {
         if (error) {
             throw error
         }
-        return response.json(res.rows)
+        console.log(res.rows[0].userid)
+        response.status(200).json({
+            status: password == res.rows[0].password ?
+                "Login Successfull" : "Login Unsuccessfull",
+            login: password == res.rows[0].password,
+            userExists: res.rows.length != 0
+        })
     })
 });
 
