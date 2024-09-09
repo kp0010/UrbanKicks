@@ -9,6 +9,8 @@ body {
 
 .Login {
 	background-image: url('./LoginAssets/login_bg.png');
+	background-repeat: no-repeat;
+	background-size: cover;
 	width: 100vw;
 	height: 100vh
 }
@@ -44,6 +46,7 @@ main {
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	width: 280px;
 	margin-right: 100px;
+	margin-top: 10%;
 }
 
 .login-form h2 {
