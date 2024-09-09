@@ -3,8 +3,10 @@ import { React } from 'react'
 
 import './Login.css'
 
-import logo_1 from "./../Assets/logo_1.png"
+// import logo_1 from "./../Assets/logo_1.png"
 import logo_2 from "./../Assets/logo_2.png"
+
+import { Navbar } from "../Navbar/Navbar"
 
 const serverUrl = "http://localhost"
 const serverPort = 8080
@@ -34,24 +36,7 @@ export const Login = () => {
   return (
     <div class="Login">
       <header>
-        <nav class="navbar">
-          <ul class="nav-links">
-            <li><a href="#">Mens</a></li>
-            <li><a href="#">Womens</a></li>
-            <li><a href="#">Kids</a></li>
-          </ul>
-          <div class="nav-logo">
-            <a href="#">
-              <img src={logo_1} alt="Wonder Walks"></img>
-            </a>
-          </div>
-          <div class="nav-icons">
-            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/954/954591.png" alt="Search"></img></a>
-            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/3225/3225209.png" alt="Cart"></img></a>
-            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/5087/5087579.png" alt="Login"></img></a>
-            <a href="#"><img src="https://purepng.com/public/uploads/large/heart-icon-y1k.png" alt="Favorites"></img></a>
-          </div>
-        </nav>
+        <Navbar />
       </header>
 
       <main>

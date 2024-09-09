@@ -9,7 +9,7 @@ body {
     width: 820px;
     align-items: center;
     text-align: center;
-    position: absolute;
+    position: center;
     z-index: 6;
     background-color: #2f3d3b;
     top: 25px;

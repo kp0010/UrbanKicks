@@ -40,7 +40,7 @@ export const Home = () => {
       <div class="nav">
         <a href="#"><img src={logo} class="logo"></img></a>
         <ul class="list">
-          <a> <li><NavLink to="/nav">Mens</NavLink></li> </a>
+          <a> <li>Mens</li> </a>
           <a> <li>Womens</li> </a>
           <a> <li>Kids</li> </a>
         </ul>
