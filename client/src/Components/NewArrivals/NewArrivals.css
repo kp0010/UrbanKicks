@@ -1,18 +1,19 @@
 .New-Arrivals {
     background-color: #25232e;
-    height: 700px;
+    height: 100vh;
     background-size: cover;
+    margin-top: 30px;
     opacity: 0.9;
 }
 
 .new {
     position: absolute;
-    margin-top: 20px;
+    margin-top: 50px;
     top: 780px;
-    height: 700px;
+    height: 100vh;
     opacity: 0.5;
     align-items: center;
-    left: 94px;
+    left: 130px;
 }
 
 .head1 {
