@@ -1,0 +1,14 @@
+body {
+
+    background-color: antiquewhite;
+    margin: 0;
+    padding: 0;
+
+}
+
+.d-block {
+    padding: 0;
+    margin: 0;
+    height: 780px;
+    margin-bottom: 20px;
+}

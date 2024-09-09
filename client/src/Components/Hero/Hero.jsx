@@ -1,17 +1,11 @@
-{/*import React from 'react'
+import React from 'react'
+import "./Hero.css"
 
-import './Home.css'
+import hero1 from "../Assets/HomeAssets/hero1.png"
+import hero2 from "../Assets/HomeAssets/hero2.png"
+import hero3 from "../Assets/HomeAssets/hero3.png"
 
-import hero1 from "./HomeAssets/hero1.png"
-import hero2 from "./HomeAssets/hero2.png"
-import hero3 from "./HomeAssets/hero3.png"
-import new_arrival from "./HomeAssets/new-arrival.png"
-import logo from "../Assets/logo_1.png"
-
-import { NavLink } from 'react-router-dom'
-
-
-export const Home = () => {
+export const Hero = () => {
   return (
     <div>
       <div id="carouselExampleFade" class="carousel slide carousel-fade">
@@ -35,28 +29,6 @@ export const Home = () => {
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-
-
-      <div class="nav">
-        <a href="#"><img src={logo} class="logo"></img></a>
-        <ul class="list">
-          <a> <li><NavLink to="/nav">Mens</NavLink></li> </a>
-          <a> <li>Womens</li> </a>
-          <a> <li>Kids</li> </a>
-        </ul>
-        <ul class="icons">
-          <a><li><i class="bi bi-search"></i></li></a>
-          <a><li><i class="bi bi-bag"></i></li></a>
-          <a><li><i class="bi bi-person"></i></li></a>
-          <a><li><i class="bi bi-heart"></i></li></a>
-        </ul>
-      </div>
-
-      <div class="New-Arrivals">
-        <h2 class="head1">New Arrivals</h2>
-        <img src={new_arrival} class="new" alt='...'></img>
-      </div>
-    </div >
+    </div>
   )
 }
-*/}

@@ -17,7 +17,7 @@ export const Navbar = () => {
         <ul class="icons">
           <a><li><i class="bi bi-search"></i></li></a>
           <a><li><i class="bi bi-bag"></i></li></a>
-          <a><li><i class="bi bi-person"></i></li></a>
+          <a><li><NavLink to="/Login"><i class="bi bi-person"></i></NavLink></li></a>
           <a><li><i class="bi bi-heart"></i></li></a>
         </ul>
       </div>
