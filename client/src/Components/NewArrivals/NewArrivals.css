@@ -26,8 +26,11 @@
 }
 .New-Arrivals-item {
     display: flex;
-    flex-direction: column;
-    margin-top: 100px;
+    position: absolute;
+    margin-top: 50px;
+    padding-left: 10vh;
+    height: 70vh;
     color: white;
     align-items: center;
+    gap: 10px;
 }

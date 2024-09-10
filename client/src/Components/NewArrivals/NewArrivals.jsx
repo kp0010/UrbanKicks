@@ -12,7 +12,7 @@ export const NewArrivals = () => {
           <img src={new_arrival} class="new" alt='...'></img>
           <div className="New-Arrivals-item">
             {data_product.map((item,i)=>{
-              return <Item key={i} id={item.id} name={item.name} />
+              return <Item key={i} id={item.id} name={item.name} image={item.image}/>
             })}
           </div>
         </div>
