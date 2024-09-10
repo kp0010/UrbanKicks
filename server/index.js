@@ -43,12 +43,11 @@ app.post("/Login/", (request, response) => {
         if (error) {
             throw error
         }
-        console.log(res.rows[0].userid)
         response.status(200).json({
-            status: password == res.rows[0].password ?
+            status: res.rows.length && (password == res.rows[0].password) ?
                 "Login Successfull" : "Login Unsuccessfull",
-            login: password == res.rows[0].password,
-            userExists: res.rows.length != 0
+            login: res.rows.length && password == res.rows[0].password,
+            userExists: res.rows.length && (res.rows.length != 0)
         })
     })
 });

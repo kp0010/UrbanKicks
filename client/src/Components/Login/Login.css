@@ -36,6 +36,7 @@ main {
 	max-width: 110%;
 	max-height: 110%;
 	object-fit: contain;
+	margin-top: 20%;
 }
 
 .login-container {

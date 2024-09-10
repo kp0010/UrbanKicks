@@ -54,11 +54,14 @@ ul {
     color: #e0e1dc;
 }
 
-a {
+a,
+a:link,
+a:visited {
     color: #e0e1dc;
     cursor: pointer;
     text-decoration: none;
 }
+
 
 a:hover {
     color: #778da9;
