@@ -32,5 +32,15 @@
     height: 70vh;
     color: white;
     align-items: center;
-    gap: 10px;
+    text-align: center;
+    gap: 20px;
+}
+.view-product {
+    width: 500px;
+    text-align: center;
+    color: white;
+    position: relative;
+    top: 78vh;
+    border: 1px solid white;
+    
 }
