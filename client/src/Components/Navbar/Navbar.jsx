@@ -7,11 +7,11 @@ import { NavLink } from 'react-router-dom'
 export const Navbar = () => {
   return (
     <div class="nav">
-      <a href="#"><img src={logo} class="logo"></img></a>
+      <NavLink to="/"><img src={logo} class="logo"></img></NavLink>
       <ul class="list">
-        <a> <li><NavLink to="/nav">Mens</NavLink></li> </a>
-        <a> <li>Womens</li> </a>
-        <a> <li>Kids</li> </a>
+        <li><NavLink to="/mens">Mens</NavLink></li>
+        <li><NavLink to="/womens">Womens</NavLink></li>
+        <li><NavLink to="/kids">Kids</NavLink></li>
       </ul>
       <ul class="icons">
         <a><li><i class="bi bi-search"></i></li></a>
