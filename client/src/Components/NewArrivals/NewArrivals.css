@@ -36,7 +36,9 @@
     gap: 20px;
 }
 .view-product {
-    width: 500px;
+    margin-left: 99vh;
+    padding: 10px;
+    width:fit-content;
     text-align: center;
     color: white;
     position: relative;
