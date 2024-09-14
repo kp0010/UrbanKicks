@@ -16,7 +16,12 @@ export const BestSellers = () => {
               })}
             </div>
             <div className="view-product">
-              <a href="">VIEW PRODUCTS</a>
+              {/*Add link to product page pending*/}
+              <a href="">VIEW PRODUCTS
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M 9 2.5 L 16.5 10 L 9 17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              </a>
             </div>
         </div>
     </div>
