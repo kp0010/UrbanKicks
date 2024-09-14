@@ -14,6 +14,20 @@ let data_product = [
         image: p1_img,
         new_price: 900,
         old_price: 1000,
+    },
+    {
+        id:3,
+        name:"The minimals",
+        image:p1_img,
+        new_price:500,
+        old_price:700,
+    },
+    {
+        id:4,
+        name:"Bata",
+        image:p1_img,
+        new_price:900,
+        old_price:1000,
     }
 
 ]

@@ -1,20 +1,27 @@
 .item {
-    width: 350px;
+    width: 330px;
+    cursor: pointer;
 }
 .item p {
-    margin: 6px 0px;
+    margin: 0px;
+    border: 1px solid white;
+    border-bottom: transparent;
 }
+
 .item-prices {
     display: flex;
+    border: 1px solid white;
+    border-top: transparent;
+    justify-content: center;
     gap: 20px;
 }
-.item-prices-new {
-    color: aqua;
+.item-price-new {
+    color: white;
     font-size: 18x;
     font-weight: 600;
 }
-.item-prices-old {
-    color: bisque;
+.item-price-old {
+    color: red;
     font-size: 18x;
     font-weight: 500;
     text-decoration: line-through;
@@ -22,4 +29,5 @@
 .item:hover {
     transform: scale(1.05);
     transition: 0.6s;
+    border: 1px solid white;
 }

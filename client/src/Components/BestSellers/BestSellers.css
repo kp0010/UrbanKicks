@@ -1,0 +1,23 @@
+.Best-Sellers{
+    background-color: #25232e;
+    height: 100vh;
+    background-size: cover;
+    margin-top: 0px;
+    opacity: 0.9;
+}
+.new1 {
+    position: absolute;
+    margin-top: 0px;
+    height: 100vh;
+    opacity: 0.5;
+    align-items: center;
+    left: 130px;
+}
+.head2{
+    color: white;
+    text-align: center;
+    font-family: 'Poppins','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 3.8rem;
+    position: relative;
+    top: 26px;
+}

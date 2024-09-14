@@ -15,8 +15,11 @@ export const NewArrivals = () => {
         <img src={new_arrival} class="new" alt='...'></img>
         <div className="New-Arrivals-item">
           {data_product.map((item, i) => {
-            return <Item key={i} id={item.id} name={item.name} image={item.image} />
+            return <Item key={i} id={item.id} name={item.name} image={item.image} new_price={item.new_price} old_price={item.old_price}/>
           })}
+        </div>
+        <div className="view-product">
+          <a href="">VIEW PRODUCTS</a>
         </div>
       </div>
     </div>
