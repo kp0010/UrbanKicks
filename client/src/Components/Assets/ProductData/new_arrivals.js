@@ -1,5 +1,5 @@
 import p1_img from "../HomeAssets/product1.png"
-
+import p2_img from "../HomeAssets/product3.png"
 let data_product = [
     {
         id: 1,
@@ -13,7 +13,7 @@ let data_product = [
         id: 2,
         name: "Bata",
         category: "men",
-        image: p1_img,
+        image: p2_img,
         new_price: 900,
         old_price: 1000,
     },
@@ -29,7 +29,7 @@ let data_product = [
         id:4,
         name:"Bata",
         category: "kids",
-        image:p1_img,
+        image:p2_img,
         new_price:900,
         old_price:1000,
     }
