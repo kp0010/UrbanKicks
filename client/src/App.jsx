@@ -18,17 +18,23 @@ function App() {
     <div className="App">
       <Router>
         <Navbar />
-        <Routes>
-          <Route exact path="/" element={<Homepage />} />
-          <Route path="/nav" element={<Navbar />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/mens" element={<Mens />} />
-          <Route path="/womens" element={<Womens />} />
-          <Route path="/kids" element={<Kids />} />
-        </Routes>
+        <RoutesList />
       </Router>
     </div>
   );
+}
+
+const RoutesList = () => {
+  return (
+    <Routes>
+      <Route exact path="/" element={<Homepage />} />
+      <Route path="/nav" element={<Navbar />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/mens" element={<Mens />} />
+      <Route path="/womens" element={<Womens />} />
+      <Route path="/kids" element={<Kids />} />
+    </Routes>
+  )
 }
 
 export default App;

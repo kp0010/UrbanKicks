@@ -14,10 +14,10 @@ export const Navbar = () => {
         <li><NavLink to="/kids">Kids</NavLink></li>
       </ul>
       <ul class="icons">
-        <a><li><i class="bi bi-search"></i></li></a>
-        <a><li><i class="bi bi-bag"></i></li></a>
-        <a><li><NavLink to="/Login"><i class="bi bi-person"></i></NavLink></li></a>
-        <a><li><i class="bi bi-heart"></i></li></a>
+        <li><i class="bi bi-search"></i></li>
+        <li><i class="bi bi-bag"></i></li>
+        <li><NavLink to="/Login"><i class="bi bi-person"></i></NavLink></li>
+        <li><i class="bi bi-heart"></i></li>
       </ul>
     </div>
   )

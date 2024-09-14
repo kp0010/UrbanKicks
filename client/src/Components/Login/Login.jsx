@@ -1,6 +1,6 @@
-import React, { useState, Redirect } from 'react'
+import React, { useState } from "react"
 
-import './Login.css'
+import "./Login.css"
 
 import logo_2 from "./../Assets/logo_2.png"
 
@@ -19,15 +19,18 @@ export const Login = () => {
   function loginUser(e) {
     e.preventDefault();
 
-    fetch(serverUrl + ":" + serverPort + "/Login", {
+    fetch(serverUrl + ":" + serverPort + "/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, password })
+      body: JSON.stringify({ username, password }),
+      credentials: "include"
     })
       .then(response => response.json())
       .then(data => {
         // data = {status: str, login: bool, userExists: bool}
         if (data.login) {
+          setUsername("")
+          setPassword("")
           setResp(0)
           window.location.replace("/")
         } else if (!data.userExists) {
@@ -39,33 +42,33 @@ export const Login = () => {
   }
 
   return (
-    <div class="Login">
+    <div className="Login">
       <header>
         <Navbar />
       </header>
 
       <main>
-        <div class="logo-placeholder">
+        <div className="logo-placeholder">
           <img src={logo_2} alt="Logo Placeholder"></img>
         </div>
-        <div class="login-container">
-          <form class="login-form" onSubmit={loginUser}>
+        <div className="login-container">
+          <form className="login-form" onSubmit={loginUser}>
             <h2>Log-In</h2>
-            <div class="input-group">
-              <label for="username">Username</label>
+            <div className="input-group">
+              <label htmlFor="username">Username</label>
               <input value={username} type="text" id="username" name="username" onChange={(e) => setUsername(e.target.value)} required>
               </input>
             </div>
-            <div class="input-group">
-              <label for="password">Password</label>
+            <div className="input-group">
+              <label htmlFor="password">Password</label>
               <input value={password} type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)} required>
               </input>
             </div>
             {resp === 1 && <p>Username does not exist, please try again.</p>}
             {resp === 2 && <p>Invalid Password, please try again.</p>}
-            <button type="submit" class="login-button">Login</button>
-            <p class="links"><a href="#">Forgot Password?</a></p>
-            <p class="links">Don't have an account? <a href="#">Sign Up</a></p>
+            <button type="submit" className="login-button">Login</button>
+            <p className="links"><a href="#">Forgot Password?</a></p>
+            <p className="links">Don't have an account? <a href="#">Sign Up</a></p>
           </form>
         </div>
       </main>
