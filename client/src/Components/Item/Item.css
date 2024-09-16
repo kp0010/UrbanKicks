@@ -2,6 +2,10 @@
     width: 330px;
     cursor: pointer;
 }
+.item img {
+    width: 330px;
+    height: auto;
+}
 .item p {
     margin: 0px;
     color: white;

@@ -4,13 +4,13 @@ import { ShopContext } from '../Context/ShopContext'
 import { Item } from '../Components/Item/Item';
 
 export const ShopCategory = (props) => {
-    const {new_arrivals} = useContext(ShopContext);
+    const {men_sandals} = useContext(ShopContext);
   return (
     <div className="shop-category">
         <div className="shop-category-products">
-          {new_arrivals.map((item, i) => {
-            if (props.category===item.category){
-              return <Item key={i} id={item.id} name={item.name} image={item.image} new_price={item.new_price} old_price={item.old_price}/>
+          {men_sandals.map((item, i) => {
+            if (props.category===item.gender){
+              return <Item key={i} id={item.id} name={item.title} image={item.img} new_price={item.price}/>
             }
             else{
               return null;
