@@ -3,10 +3,26 @@
     height: 100%;
     opacity: 0.9;
 }
+.shop-category img {
+    width: 100%;
+}
+.shop-category-sort {
+    color:white;
+    text-align: right;
+}
+.shop-category-main {
+    display: flex;
+}
+.shop-category-filters {
+    color: white;
+    width: 40vh;
+    border-right: 1px solid white;
+    
+}
 .shop-category-products {
-    margin: 20px 170px;
+    margin: 20px 60px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    row-gap: 80px;
-    gap: 20px;
+    row-gap: 20vh;
+    gap: 40px;
 }
