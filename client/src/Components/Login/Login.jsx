@@ -3,14 +3,17 @@ import React, { useState } from "react"
 import "./Login.css"
 
 import logo_2 from "./../Assets/logo_2.png"
-
 import { Navbar } from "../Navbar/Navbar"
+import { useAuth } from "../AuthContext/AuthContext"
+
 
 const serverUrl = "http://localhost"
 const serverPort = 8080
 
 
 export const Login = () => {
+  const { setAuth } = useAuth()
+
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
@@ -29,6 +32,10 @@ export const Login = () => {
       .then(data => {
         // data = {status: str, login: bool, userExists: bool}
         if (data.login) {
+          // const { auth, setAuth } = useAuth()
+          console.log("AUTHSET TRUE")
+          setAuth(true)
+          // console.log(auth)
           setUsername("")
           setPassword("")
           setResp(0)

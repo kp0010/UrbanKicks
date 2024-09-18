@@ -27,8 +27,7 @@ function App() {
 const RoutesList = () => {
   return (
     <Routes>
-      <Route exact path="/" element={<Homepage />} />
-      <Route path="/nav" element={<Navbar />} />
+      <Route path="/" element={<Homepage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/men" element={<ShopCategory category="men"/>}/>
       <Route path="/women" element={<ShopCategory category="women"/>}/>

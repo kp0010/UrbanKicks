@@ -4,15 +4,3 @@ body {
     background-color: antiquewhite;
     font-family: 'Poppins', sans-serif;
 }
-
-/* Disables Scrollbar */
-/* Does not work find fix  */
-{/*.App::-webkit-scrollbar {
-    display: none;
-}
-
-.App {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-*/}

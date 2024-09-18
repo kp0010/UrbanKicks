@@ -35,10 +35,6 @@ export const Homepage = () => {
 
   return (
     <div>
-      {authenticated ? (<h1>Hello,  {user.username.charAt(0).toUpperCase() + user.username.slice(1)}</h1>) : (<h1>notauth</h1>)}
-      <button onClick={handleLogout}>
-        Logout
-      </button>
       <Hero />
       <NewArrivals />
       <ShopByCollection />
