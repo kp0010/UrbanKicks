@@ -21,3 +21,26 @@
     position: relative;
     top: 26px;
 }
+.Best-Sellers-item {
+    display: flex;
+    position: absolute;
+    margin-top: 50px;
+    padding-left: 10vh;
+    height: 70vh;
+    color: white;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+.view-product {
+    margin-left: 98vh;
+    padding: 10px;
+    padding-right: 5px;
+    width:fit-content;
+    text-align: center;
+    color: white;
+    position: relative;
+    top: 78vh;
+    border: 1px solid white;
+    letter-spacing: 0.32px;
+}

@@ -9,9 +9,9 @@ import {
 import { Navbar } from './Components/Navbar/Navbar';
 import { LoginPage } from './Pages/Login';
 import { Homepage } from './Pages/Homepage';
-import { Mens } from './Pages/Mens'
-import { Womens } from './Pages/Womens'
-import { Kids } from './Pages/Kids'
+import { ShopCategory } from './Pages/ShopCategory';
+import { Product } from './Pages/Product';
+import { Cart } from './Pages/Cart';
 
 function App() {
   return (
@@ -30,9 +30,11 @@ const RoutesList = () => {
       <Route exact path="/" element={<Homepage />} />
       <Route path="/nav" element={<Navbar />} />
       <Route path="/login" element={<LoginPage />} />
-      <Route path="/mens" element={<Mens />} />
-      <Route path="/womens" element={<Womens />} />
-      <Route path="/kids" element={<Kids />} />
+      <Route path="/men" element={<ShopCategory category="men"/>}/>
+      <Route path="/women" element={<ShopCategory category="women"/>}/>
+      <Route path="/kids" element={<ShopCategory category="kids"/>}/>
+      <Route path="/product" element={<Product />}/>
+      <Route path="/cart" element={<Cart />}/>
     </Routes>
   )
 }
