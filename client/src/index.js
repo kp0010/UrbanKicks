@@ -12,14 +12,11 @@ import AuthProvider from './Components/AuthContext/AuthContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-<<<<<<< Updated upstream
-    <ShopContextProvider>
-      <App/>
-    </ShopContextProvider>
-=======
     <AuthProvider>
-      <App />
+      <ShopContextProvider>
+        <App />
+      </ShopContextProvider>
     </AuthProvider>
->>>>>>> Stashed changes
+
   </React.StrictMode>
 );
