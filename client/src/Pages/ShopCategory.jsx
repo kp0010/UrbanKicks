@@ -3,13 +3,32 @@ import "./CSS/ShopCategory.css"
 import { ShopContext } from '../Context/ShopContext';
 import { CategoryItem } from '../Components/CategoryItem/CategoryItem';
 import banner_1 from "../Components/Assets/HomeAssets/banner1.png"
+import { useLocation } from 'react-router-dom';
 
 export const ShopCategory = (props) => {
     const {men_sandals} = useContext(ShopContext);
+
+
+    const Banner = () => {
+      const location = useLocation();
+
+      let bannerImage;
+
+      if (location.pathname === "/men") {
+        bannerImage = <img src={banner_1} alt="Men's Banner" />;
+      } else if (location.pathname === "/women") {
+        bannerImage = <img src="" alt="Women's Banner" />;
+      } else if (location.pathname === "/kids") {
+        bannerImage = <img src="" alt="Kids' Banner" />;
+      }
+      return <div> {bannerImage}</div>;
+    }
+
+
   return (
     <div className="shop-category">
       <div className="shop-category-banner">
-        <img src={banner_1} alt="." />
+        <Banner/>
       </div>
       <div className="shop-category-sort">
         <h4>Sorting Remaining</h4>
