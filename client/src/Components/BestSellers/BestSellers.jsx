@@ -1,6 +1,6 @@
 import React from 'react'
 import "./BestSellers.css"
-import new_arrival from "../Assets/HomeAssets/new-arrival1.png"
+import new_arrival from "../Assets/HomeAssets/bestsellers1.png"
 import data_product from '../Assets/ProductData/new_arrivals.js'
 import { Item } from '../Item/Item'
 
