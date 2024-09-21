@@ -1,18 +1,21 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import "./BestSellers.css"
+import { ShopContext } from '../../Context/ShopContext.jsx'
 import new_arrival from "../Assets/HomeAssets/bestsellers1.png"
 import data_product from '../Assets/ProductData/new_arrivals.js'
 import { Item } from '../Item/Item'
 
-export const BestSellers = () => {
+export const BestSellers = (props) => {
+  const {new_arrivals} = useContext(ShopContext);
   return (
     <div>
         <div className="Best-Sellers">
             <img src={new_arrival} class="new1" alt='...'></img>
             <h2 className="head2">BestSellers</h2>
+
             <div className="Best-Sellers-item">
-              {data_product.map((item, i) => {
-                return <Item key={i} id={item.id} name={item.name} image={item.image} new_price={item.new_price} old_price={item.old_price}/>
+              {new_arrivals.map((item, i) => {
+                return <Item key={i} id={item.id} name={item.title} subtitle={item.subtitle}  image={item.img} new_price={item.price} />
               })}
             </div>
             <div className="view-product">
