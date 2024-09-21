@@ -6,9 +6,10 @@ body{
     height: 90vh;
 }
 .heading{
+    color:  #25232e;
     text-align: center;
     font-family: 'Poppins','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 3.8rem;
     position: relative;
-    top: 26px;
+    top: 32px;
 }
