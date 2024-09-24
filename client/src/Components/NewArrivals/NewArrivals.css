@@ -30,23 +30,23 @@
 .New-Arrivals-item {
     display: flex;
     position: absolute;
-    margin-top: 50px;
-    padding-left: 6vw;
-    height: 70vh;
+    margin-top: 70px;
+    padding-left: 7vw;
+    height: 60vh;
     color: white;
     align-items: center;
     text-align: center;
     gap: 30px;
 }
 .view-product {
-    margin-left: 98vw;
+    margin-left: 96vw;
     padding: 10px;
     padding-right: 5px;
     width:fit-content;
     text-align: center;
     color: white; 
-    position: relative;
-    top: 78vh;
+    position:relative;
+    top: 75vh;
     border: 1px solid white;
     letter-spacing: 0.32px;
     
