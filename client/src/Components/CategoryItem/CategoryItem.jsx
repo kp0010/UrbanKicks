@@ -1,10 +1,11 @@
 import React from 'react'
 import "./CategoryItem.css"
+import { NavLink } from 'react-router-dom'
 
 export const CategoryItem = (props) => {
   return (
     <div className='category-item'>
-        <a href="/product">
+        <NavLink to={`/product/${props.id}`}>
           <div>
             <img src={props.image} alt="." />
           </div>
@@ -22,7 +23,7 @@ export const CategoryItem = (props) => {
               Rs {props.old_price}
             </div>
           </div>
-        </a>
+        </NavLink>
         {/*<img src={props.image} alt="." />
         <p>{props.name}</p>
         <div className="category-item-price">

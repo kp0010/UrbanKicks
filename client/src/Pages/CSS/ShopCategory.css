@@ -9,6 +9,19 @@
 .shop-category-sort {
     color:white;
     text-align: right;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.shop-category-sort div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 500;
+    padding-left: 50px;
+    
 }
 .shop-category-main {
     display: flex;

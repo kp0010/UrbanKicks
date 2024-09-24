@@ -1,5 +1,6 @@
 let men_sandals = [
     {
+      id:1,
       img: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/9f6870b3-ae99-4e2c-8cb5-1b5c941a91a4/NIKE+CALM+SANDAL.png',
       title: 'Nike Calm',
       price: 7095,
@@ -10,6 +11,7 @@ let men_sandals = [
       brand: 'nike'
     },
     {
+      id:2,
       img: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/0c5b6be1-c799-414f-81f7-be02ecbbe208/NIKE+OFFCOURT+SLIDE.png',
       title: 'Nike Offcourt',
       price: 2495,

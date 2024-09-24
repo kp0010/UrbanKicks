@@ -8,7 +8,7 @@ const ShopContextProvider = (props) => {
 
     const contextValue = {
         men_sandals: men_sandals,
-        new_arrivals:new_arrivals
+        new_arrivals: new_arrivals
     };
 
     return (

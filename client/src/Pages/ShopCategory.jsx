@@ -31,6 +31,7 @@ export const ShopCategory = (props) => {
         <Banner/>
       </div>
       <div className="shop-category-sort">
+        <div> HOME / ALL PRODUCTS / {props.category}</div>
         <h4>Sorting Remaining</h4>
       </div>
       <div className="shop-category-main">
