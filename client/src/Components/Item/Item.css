@@ -1,18 +1,23 @@
 .item {
-    width: 300px;
-    cursor: pointer;
+    width: 302px;
+    /* cursor: pointer; */
+    border: 1px solid rgb(194, 164, 164);
+    border-radius: 10px;
 }
 .item img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     position: relative;
     width: 300px;
     height: 300px;
+    cursor: pointer;
 }
 .item-addtocart {
     position: absolute;
     background-color: none;
-    top: 75%;
-    transform: translate(-50%, -50%);
-    left: 50%;
+    top: 4%;
+    /* transform: translate(-50%, -50%); */
+    left: 57%;
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
@@ -22,17 +27,21 @@
 .item p {
     margin: 0px;
     color: white;
-    padding-left: 5px;
-    padding-top: 3px;
-    border: 1px solid #25232e;
+    padding-left: 10px;
+    padding-top: 6px;
+    /* border: 1px solid #25232e; */
     border-bottom: transparent;
 }
 
 .item-prices {
     display: flex;
-    border: 1px solid #25232e;
+    /* border: 1px solid #25232e; */
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
     border-top: transparent;
     justify-content: center;
+    padding-top: 2px;
+    padding-bottom: 6px;
     gap: 20px;
 }
 .item-price-new {
@@ -47,10 +56,10 @@
     text-decoration: line-through;
 }
 .item:hover {
-    transform: scale(1.05);
-    transition: 0.6s;
-    border: 1px solid white;
-    box-shadow: 0 2px 5px white;
+    transform: scale(1);
+    transition: 0.4s;
+    /* border: 1px solid white; */
+    box-shadow: 1px 1px 20px black;
 }
 .item:hover .item-addtocart {
     opacity: 1;

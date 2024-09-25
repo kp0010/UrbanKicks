@@ -12,8 +12,8 @@ export const CategoryItem = (props) => {
           <button className="category-item-addtocart">
             ADD TO CART
           </button>
-          <div >
-            <p>{props.name} : {props.subtitle}</p>
+          <div>
+            <p class='product-name'>{props.name} : {props.subtitle}</p>
           </div>
           <div className="category-item-prices">
             <div className="category-item-price-new">
