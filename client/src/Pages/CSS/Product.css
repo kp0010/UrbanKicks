@@ -1,3 +1,7 @@
+.product {
+    background-color: rgb(95, 96, 135);
+    height: 100%;
+}
 .product-banner {
     width: 100%;
     height: 150px;

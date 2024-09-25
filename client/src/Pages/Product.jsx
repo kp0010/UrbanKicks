@@ -3,6 +3,7 @@ import "./CSS/Product.css"
 import { ShopContext } from '../Context/ShopContext'
 import { useParams } from 'react-router-dom';
 import { Breadcrums } from '../Components/Breadcrums/Breadcrums';
+import { ProductDisplay } from '../Components/ProductDisplay/ProductDisplay';
 
 export const Product = () => {
   const {men_sandals} = useContext(ShopContext);
@@ -12,6 +13,7 @@ export const Product = () => {
     <div className="product">
       <div className="product-banner"></div>
       <Breadcrums product={product}/>
+      <ProductDisplay product={product}/>
     </div>
   )
 }
