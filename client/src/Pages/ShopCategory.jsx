@@ -6,7 +6,7 @@ import banner_1 from "../Components/Assets/HomeAssets/banner1.png"
 import { useLocation } from 'react-router-dom';
 
 export const ShopCategory = (props) => {
-    const {men_sandals} = useContext(ShopContext);
+    const {men_sandals} = useContext(ShopContext);    
 
 
     const Banner = () => {

@@ -1,8 +1,8 @@
 import React from 'react'
 import "./ShopByCollection.css"
-import ShopByCollectionWomen from "../Assets/HomeAssets/ShopbyCollection-Women.png"
-import ShopByCollectionMen from "../Assets/HomeAssets/ShopbyCollection-Men.png"
-import ShopByCollectionKid from "../Assets/HomeAssets/ShopbyCollection-Kid.png"
+import ShopByCollectionWomen from "../Assets/HomeAssets/ForWomen.png"
+import ShopByCollectionMen from "../Assets/HomeAssets/ForMen.png"
+import ShopByCollectionKid from "../Assets/HomeAssets/ForKid.png"
 
 export const ShopByCollection = () => {
   return (
@@ -10,9 +10,9 @@ export const ShopByCollection = () => {
       <div className="collection">
       <h2 className= "heading">Shop By Collection</h2>
       <div className='banners'>
-      <img src={ShopByCollectionWomen} alt="." />
-      <img src={ShopByCollectionMen} alt="." />
-      <img src={ShopByCollectionKid} alt="." />
+      <div><img src={ShopByCollectionWomen} alt="." /></div>
+      <div><img src={ShopByCollectionMen} alt="." /></div>
+      <div><img src={ShopByCollectionKid} alt="." /></div>
       </div>
       </div>
     </div>

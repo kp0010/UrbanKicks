@@ -12,11 +12,11 @@ body {
     position: center;
     z-index: 6;
     background-color: #2f3d3b;
-    top: 25px;
+    top: 20px;
     left: 340px;
     border-radius: 50px;
     opacity: 0.96;
-    box-shadow: 2px 2px 6px black;
+    box-shadow: 1px 1px 8px black;
 }
 
 
