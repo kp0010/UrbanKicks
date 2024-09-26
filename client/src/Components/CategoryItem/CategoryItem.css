@@ -73,7 +73,7 @@ p{
 }
 .category-item:hover {
     transform: scale(1);
-    transition: 1s ease-in;
+    transition: 0.4s ease-in;
     /* border: 1px solid white; */
     box-shadow: 1px 1px 20px black;
 
