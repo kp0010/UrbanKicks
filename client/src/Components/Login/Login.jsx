@@ -3,16 +3,14 @@ import React, { useState } from "react"
 import "./Login.css"
 
 import logo_2 from "./../Assets/logo_2.png"
-import { Navbar } from "../Navbar/Navbar"
 import { useAuth } from "../AuthContext/AuthContext"
-
 
 const serverUrl = "http://localhost"
 const serverPort = 8080
 
 
 export const Login = () => {
-  const { setAuth } = useAuth()
+  const { auth, setAuth, user, } = useAuth()
 
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
@@ -20,6 +18,10 @@ export const Login = () => {
   const [resp, setResp] = useState(0)
 
   function loginUser(e) {
+    console.log("Log In Clicked")
+    console.log("Auth Values at start: ", auth, user)
+    setAuth(true)
+    console.log("Auth Values post Test: ", auth, user)
     e.preventDefault();
 
     fetch(serverUrl + ":" + serverPort + "/login", {
@@ -32,28 +34,20 @@ export const Login = () => {
       .then(data => {
         // data = {status: str, login: bool, userExists: bool}
         if (data.login) {
-          // const { auth, setAuth } = useAuth()
-          console.log("AUTHSET TRUE")
           setAuth(true)
-          // console.log(auth)
-          setUsername("")
-          setPassword("")
           setResp(0)
           window.location.replace("/")
         } else if (!data.userExists) {
           setResp(1)
         } else {
           setResp(2)
-        }
+        };
+        console.log("Auth post login: ", auth)
       });
   }
 
   return (
     <div className="Login">
-      <header>
-        <Navbar />
-      </header>
-
       <main>
         <div className="logo-placeholder">
           <img src={logo_2} alt="Logo Placeholder"></img>

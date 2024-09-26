@@ -1,23 +1,26 @@
-body{
+body {
     background-color: #e0e1dc;
 }
-.collection{
+
+.collection {
     background-color: #e0e1dc;
-    background-image: image('E:\UrbanKicks\UrbanKicks\client\src\Components\Assets\HomeAssets\ShopbyCollection-bg.png');
-    background-image: url(E:\UrbanKicks\UrbanKicks\client\src\Components\Assets\HomeAssets\ShopbyCollection-bg.png);
+    background-image: image('..\Assets\HomeAssets\ShopbyCollection-bg.png');
+    /* background-image: url(..\Assets\HomeAssets\ShopbyCollection-bg.png); */
     background-size: cover;
     /* height: 90vh; */
     height: 700px;
 }
-.heading{
-    color:  #25232e;
+
+.heading {
+    color: #25232e;
     text-align: center;
-    font-family: 'Poppins','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Poppins', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 3.5rem;
     position: relative;
     top: 25px;
 }
-.banners{
+
+.banners {
     display: flex;
     height: 68vh;
     gap: 40px;
@@ -27,13 +30,15 @@ body{
     margin-top: 65px;
 
 }
-.banners img{
+
+.banners img {
     cursor: pointer;
     border-radius: 10px;
     height: 70vh;
     /* border: 1px solid #25232e; */
 }
-.banners img:hover{
+
+.banners img:hover {
     box-shadow: 1px 1px 15px #25232e;
     transition: 0.3s ease-in;
     border: 1px solid #25232e;

@@ -6,23 +6,16 @@ import { NavLink, useNavigate, Link } from 'react-router-dom'
 import { useAuth } from '../AuthContext/AuthContext'
 
 export const Navbar = () => {
-  // const [user, setUser] = useState(null);
-  // const [authenticated, setAuthenticated] = useState(false);
-  // const [loggedOut, setLoggedOut] = useState(false)
-
   const navigate = useNavigate()
 
-  const { auth, user, setAuth } = useAuth()
-
-  console.log("loggest", auth, user)
+  const { auth, setAuth, user, setUser } = useAuth()
 
   const handleLogout = () => {
-    console.log("logging out fuck yall")
     fetch("http://localhost:8080/logout", {
       method: "POST",
       credentials: "include"
     })
-      .then(() => { setAuth(false) })
+      .then(() => { setAuth(false); setUser(null) })
   }
 
   const menuItemsData = [
@@ -45,17 +38,22 @@ export const Navbar = () => {
   }
 
   const Dropdown = () => {
+    console.log("Dropdown: ", auth, user, (!auth))
     return (
       <div class="dropdown">
-        <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-          <strong class="dropdown-item">Wassup</strong>
-          {auth && <li><strong class="dropdown-item">Hello {user.username.charAt(0).toUpperCase() + user.username.slice(1)}</strong></li>}
-          {auth && <li><a class="dropdown-item" href="#">Settings</a></li>}
-          {auth && <li><a class="dropdown-item" href="#">Profile</a></li>}
-          {auth && <li><hr class="dropdown-divider" /></li>}
-          {auth && <li><a class="dropdown-item" onClick={handleLogout}>Sign out</a></li>}
-          {(!auth) && <Link class="dropdown-item" onClick={gotoLogin}><li>Log In</li></Link>}
-        </ul>
+        {(auth) && (user !== null) ?
+          (<ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+            <li><strong class="dropdown-item">Hello, {user.username.charAt(0).toUpperCase() + user.username.slice(1)}</strong></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" onClick={handleLogout}>Sign out</a></li>
+          </ul>)
+          :
+          (<ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+            <Link class="dropdown-item" onClick={gotoLogin}><li>Log In</li></Link>
+          </ul>)
+        }
       </div >
     )
   }

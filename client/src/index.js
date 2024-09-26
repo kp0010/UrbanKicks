@@ -17,6 +17,5 @@ root.render(
         <App />
       </ShopContextProvider>
     </AuthProvider>
-
   </React.StrictMode>
 );
