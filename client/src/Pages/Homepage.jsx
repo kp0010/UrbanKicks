@@ -5,7 +5,7 @@ import { NewArrivals } from '../Components/NewArrivals/NewArrivals'
 import { ShopByCollection } from '../Components/ShopByCollection/ShopByCollection'
 import { BestSellers } from '../Components/BestSellers/BestSellers'
 
-import { useAuth } from '../Components/AuthContext/AuthContext'
+import { useAuth } from '../Context/AuthContext'
 
 export const Homepage = () => {
   const { auth, user } = useAuth()

@@ -3,7 +3,7 @@ import './Navbar.css'
 import logo1 from "../Assets/logo_1.png"
 
 import { NavLink, useNavigate, Link } from 'react-router-dom'
-import { useAuth } from '../AuthContext/AuthContext'
+import { useAuth } from '../../Context/AuthContext'
 
 export const Navbar = () => {
   const navigate = useNavigate()

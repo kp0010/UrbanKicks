@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import "./Login.css"
 
 import logo_2 from "./../Assets/logo_2.png"
-import { useAuth } from "../AuthContext/AuthContext"
+import { useAuth } from "../../Context/AuthContext"
 
 const serverUrl = "http://localhost"
 const serverPort = 8080

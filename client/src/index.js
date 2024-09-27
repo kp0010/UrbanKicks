@@ -7,7 +7,7 @@ import 'bootstrap/dist/js/bootstrap.js'
 import "bootstrap-icons/font/bootstrap-icons.css";
 import ShopContextProvider from './Context/ShopContext';
 
-import AuthProvider from './Components/AuthContext/AuthContext';
+import AuthProvider from './Context/AuthContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
