@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import './Navbar.css'
 import logo1 from "../Assets/logo_1.png"
 
@@ -38,24 +38,25 @@ export const Navbar = () => {
   }
 
   const Dropdown = () => {
-    console.log("Dropdown: ", auth, user, (!auth))
-    return (
-      <div class="dropdown">
-        {(auth) && (user !== null) ?
-          (<ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+    const element =
+      (auth) && (user !== null) ?
+        (<div class="dropdown">
+          <ul class="dropdown-menu dropdown-menu-dark text-small shadow" >
             <li><strong class="dropdown-item">Hello, {user.username.charAt(0).toUpperCase() + user.username.slice(1)}</strong></li>
             <li><a class="dropdown-item" href="#">Settings</a></li>
             <li><a class="dropdown-item" href="#">Profile</a></li>
             <li><hr class="dropdown-divider" /></li>
             <li><a class="dropdown-item" onClick={handleLogout}>Sign out</a></li>
-          </ul>)
-          :
-          (<ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+          </ul>
+        </div >)
+        :
+        (<div class="dropdown">
+          <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
             <Link class="dropdown-item" onClick={gotoLogin}><li>Log In</li></Link>
-          </ul>)
-        }
-      </div >
-    )
+          </ul>
+        </div >)
+
+    return (element)
   }
 
   return (
@@ -74,7 +75,7 @@ export const Navbar = () => {
             );
           })}
           <li className="menu-items"><a href="#" class="nav-item d-flex align-items-center text-decoration-none dropdown-toggle active" data-bs-toggle="dropdown" e>
-            <i class="bi bi-person"><Dropdown /></i>
+            <i class="bi bi-person"></i><Dropdown />
           </a></li>
         </ul>
       </div>
