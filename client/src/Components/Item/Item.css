@@ -50,7 +50,7 @@
     font-weight: 600;
 }
 .item-price-old {
-    color: red;
+    color: #FF4141;
     font-size: 18x;
     font-weight: 500;
     text-decoration: line-through;

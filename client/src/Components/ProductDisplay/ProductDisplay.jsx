@@ -21,8 +21,8 @@ export const ProductDisplay = (props) => {
             <h2>{product.subtitle}</h2>
             {/*can display star ratings and no. of reviews*/}
             <div className="productdisplay-right-prices">
-                <div className="productdisplay-right-oldprice">Rs {product.price}</div>
                 <div className="productdisplay-right-newprice">Rs {product.price}</div>
+                <div className="productdisplay-right-oldprice">Rs {product.price}</div>
             </div>
             <div className="productdisplay-right-description">{product.description}</div>
             <div className="productdisplay-right-size">
