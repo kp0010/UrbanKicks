@@ -18,10 +18,6 @@ export const Login = () => {
   const [resp, setResp] = useState(0)
 
   function loginUser(e) {
-    console.log("Log In Clicked")
-    console.log("Auth Values at start: ", auth, user)
-    setAuth(true)
-    console.log("Auth Values post Test: ", auth, user)
     e.preventDefault();
 
     fetch(serverUrl + ":" + serverPort + "/login", {
@@ -42,7 +38,6 @@ export const Login = () => {
         } else {
           setResp(2)
         };
-        console.log("Auth post login: ", auth)
       });
   }
 

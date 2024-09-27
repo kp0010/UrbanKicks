@@ -4,6 +4,9 @@ import cors from "cors"
 import passport from "passport"
 import LocalStratergy from "passport-local"
 import session from "express-session"
+import bcrypt from "bcrypt"
+
+const saltRounds = 10;
 
 import SQLiteStoreFactory from "connect-sqlite3"
 const SQLiteStore = SQLiteStoreFactory(session)
@@ -53,20 +56,29 @@ db.connect(function(err) {
 });
 
 passport.use(new LocalStratergy(function verify(username, password, cb) {
-    db.query("SELECT * FROM users WHERE username=$1", [username], (error, res) => {
+    db.query("SELECT * FROM users WHERE username=$1", [username.toLowerCase()], (error, res) => {
         if (error) { throw error }
 
         if (!res.rows) { console.log("Invalid Username"); return cb(null, false, { message: "Username Invalid" }) }
 
-        // console.log(username, password, res.rows[0], "info")
+        // password hashedPassword = null
 
-        if (res.rows[0].password === password) {
-            console.log("Password Verified")
-            return cb(null, res.rows[0])
-        } else {
-            console.log("Invalid Password")
-            return cb(null, false, { message: "Incorect Password" })
-        }
+        bcrypt
+            .genSalt(saltRounds)
+            .then(salt => {
+                return bcrypt.hash(password, salt)
+            })
+            .then((hashedPassword) => {
+                // console.log(username, password, hashedPassword, res.rows[0].password)
+
+                if (bcrypt.compare(hashedPassword, res.rows[0].password) | res.rows[0].password !== password) {
+                    console.log("Password Verified")
+                    return cb(null, res.rows[0])
+                } else {
+                    console.log("Invalid Password")
+                    return cb(null, false, { message: "Incorect Password" })
+                }
+            })
     })
 }))
 
@@ -93,6 +105,31 @@ app.post("/login", (req, res, next) => {
             return res.status(200).json({ login: true, message: "Login Successful", user })
         });
     })(req, res, next)
+})
+
+app.post("/signup", (req, res) => {
+    const username = req.body.username.toLowerCase()
+    const password = req.body.password
+    const fullname = req.body.fullname
+    const mail = req.body.mail
+    const number = req.body.number
+
+    bcrypt
+        .genSalt(saltRounds)
+        .then(salt => {
+            return bcrypt.hash(password, salt)
+        })
+        .then((hashedPassword) => {
+            db.query("INSERT INTO users (username, password, name, number, email) VALUES ($1, $2, $3, $4, $5) RETURNING username",
+                [username, hashedPassword, fullname, number, mail], (error, result) => {
+                    return res.status(200).json(
+                        {
+                            success: !Boolean(error),
+                            username: (!error) ? result.rows[0].username : null,
+                            error: error
+                        })
+                })
+        })
 })
 
 app.get("/user", (req, res) => {
