@@ -10,7 +10,7 @@ const serverPort = 8080
 
 
 export const Login = () => {
-  const { auth, setAuth, user, } = useAuth()
+  const { setAuth, } = useAuth()
 
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
@@ -64,7 +64,7 @@ export const Login = () => {
             {resp === 2 && <p>Invalid Password, please try again.</p>}
             <button type="submit" className="login-button">Login</button>
             <p className="links"><a href="#">Forgot Password?</a></p>
-            <p className="links">Don't have an account? <a href="#">Sign Up</a></p>
+            <p className="links">Don't have an account? <a href="/signup">Sign Up</a></p>
           </form>
         </div>
       </main>

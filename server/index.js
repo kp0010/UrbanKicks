@@ -59,9 +59,7 @@ passport.use(new LocalStratergy(function verify(username, password, cb) {
     db.query("SELECT * FROM users WHERE username=$1", [username.toLowerCase()], (error, res) => {
         if (error) { throw error }
 
-        if (!res.rows) { console.log("Invalid Username"); return cb(null, false, { message: "Username Invalid" }) }
-
-        // password hashedPassword = null
+        if (!res.rows[0]) { console.log("Invalid Username"); return cb(null, false, { message: "Username Invalid" }) }
 
         bcrypt
             .genSalt(saltRounds)
@@ -70,7 +68,6 @@ passport.use(new LocalStratergy(function verify(username, password, cb) {
             })
             .then((hashedPassword) => {
                 // console.log(username, password, hashedPassword, res.rows[0].password)
-
                 if (bcrypt.compare(hashedPassword, res.rows[0].password) | res.rows[0].password !== password) {
                     console.log("Password Verified")
                     return cb(null, res.rows[0])

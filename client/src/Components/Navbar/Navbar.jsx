@@ -50,13 +50,14 @@ export const Navbar = () => {
             <li><a class="dropdown-item" href="#">Settings</a></li>
             <li><a class="dropdown-item" href="#">Profile</a></li>
             <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" onClick={handleLogout}>Sign out</a></li>
+            <li><a class="dropdown-item" onClick={handleLogout}>Log out</a></li>
           </ul>
         </div >)
         :
         (<div class="dropdown">
           <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
             <Link class="dropdown-item" onClick={gotoLogin}><li>Log In</li></Link>
+            <li><hr class="dropdown-divider" /></li>
             <Link class="dropdown-item" onClick={gotoSignup}><li>Sign Up</li></Link>
           </ul>
         </div >)
