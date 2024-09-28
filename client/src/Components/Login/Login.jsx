@@ -19,7 +19,6 @@ export const Login = () => {
 
   function loginUser(e) {
     e.preventDefault();
-    console.log(id, password)
 
     fetch(serverUrl + ":" + serverPort + "/login", {
       method: "POST",
@@ -29,7 +28,6 @@ export const Login = () => {
     })
       .then(response => response.json())
       .then(data => {
-        console.log(data)
         // data = {status: str, login: bool, userExists: bool}
         if (data.login) {
           setAuth(true)
@@ -53,7 +51,7 @@ export const Login = () => {
           <form className="login-form" onSubmit={loginUser}>
             <h2>Log-In</h2>
             <div className="input-group">
-              <label htmlFor="username">Username</label>
+              <label htmlFor="id">Email or Phone Number</label>
               <input value={id} type="text" id="id" name="id" onChange={(e) => setId(e.target.value)} required>
               </input>
             </div>
@@ -62,7 +60,7 @@ export const Login = () => {
               <input value={password} type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)} required>
               </input>
             </div>
-            {resp === 1 && <p>Username does not exist, please try again.</p>}
+            {resp === 1 && <p>Mail or Phone Number does not exist, please try again.</p>}
             {resp === 2 && <p>Invalid Password, please try again.</p>}
             <button type="submit" className="login-button">Login</button>
             <p className="links"><a href="#">Forgot Password?</a></p>

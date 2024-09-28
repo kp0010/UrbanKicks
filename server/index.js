@@ -56,29 +56,22 @@ db.connect(function(err) {
 });
 
 passport.use(new LocalStratergy(function verify(username, password, cb) {
-    console.log("hello", username, password)
     const query = `SELECT * FROM users WHERE mail='${username}' OR phoneNo='${username}';`
-    console.log(query)
 
     db.query(query, (error, res) => {
         if (error) { throw error }
 
         if (!res.rows[0]) { console.log("Invalid Username"); return cb(null, false, { message: "Email or Number Invalid" }) }
 
-        bcrypt
-            .genSalt(saltRounds)
-            .then(salt => {
-                return bcrypt.hash(password, salt)
-            })
-            .then((hashedPassword) => {
-                if (bcrypt.compare(hashedPassword, res.rows[0].password) | res.rows[0].password !== password) {
-                    console.log("Password Verified")
-                    return cb(null, res.rows[0])
-                } else {
-                    console.log("Invalid Password")
-                    return cb(null, false, { message: "Incorect Password" })
-                }
-            })
+        const temp = bcrypt.compare(password, res.rows[0].password)
+        console.log(res.rows[0].password, password, temp)
+        if (bcrypt.compare(password, res.rows[0].password)) {
+            console.log("Password Verified")
+            return cb(null, res.rows[0])
+        } else {
+            console.log("Invalid Password")
+            return cb(null, false, { message: "Incorect Password" })
+        }
     })
 }))
 
@@ -98,11 +91,11 @@ passport.deserializeUser(function(id, cb) {
 app.post("/login", (req, res, next) => {
     passport.authenticate('local', (err, user, info) => {
         if (err) return next(err);
-        if (!user) return res.status(401).json({ message: info.message });
+        if (!user) return res.status(401).json({ login: false, userExists: true, message: info.message });
 
         req.logIn(user, (err) => {
             if (err) return next(err);
-            return res.status(200).json({ login: true, message: "Login Successful", user })
+            return res.status(200).json({ login: true, userExists: true, message: "Login Successful", user })
         });
     })(req, res, next)
 })
@@ -113,11 +106,7 @@ app.post("/signup", (req, res) => {
     const password = req.body.password
     const fullname = req.body.fullname
 
-    bcrypt
-        .genSalt(saltRounds)
-        .then(salt => {
-            return bcrypt.hash(password, salt)
-        })
+    bcrypt.hash(password, saltRounds)
         .then((hashedPassword) => {
             db.query("INSERT INTO users (mail, phoneNo, password, fullname) VALUES ($1, $2, $3, $4) RETURNING mail",
                 [mail, number, hashedPassword, fullname], (error, result) => {
@@ -148,5 +137,5 @@ app.post("/logout", (req, res) => {
 
 
 app.listen(PORT, () => {
-    console.log(``);
+    console.log(`App is listening on port ${PORT}`)
 });

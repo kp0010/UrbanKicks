@@ -65,7 +65,7 @@ export const Signup = () => {
                 <input type="password" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
               </div>
               <button type="submit" class="signup-button">Sign Up</button>
-              {resp === 1 && <p>Username already exists.</p>}
+              {resp === 1 && <p>Email or Phone Number already exists. Please Log In.</p>}
               <p class="links">Already have an account? <a href="/login">Login</a></p>
             </form>
           </div>

@@ -16,16 +16,13 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const isAuth = () => {
       try {
-        console.log("Fetching User")
         fetch("http://localhost:8080/user", {
           method: "GET",
           credentials: 'include'
         })
           .then(resp => resp.json())
           .then(data => {
-            console.log("In Auth", data.authenticated, data, user)
             if (data.authenticated) {
-              console.log("True Authenticated")
               setAuth(true)
               setUser(data.user)
             } else {
