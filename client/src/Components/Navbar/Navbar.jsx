@@ -41,12 +41,19 @@ export const Navbar = () => {
     navigate("/signup")
   }
 
+  function toTitleCase(str) {
+    return str.replace(
+      /\w\S*/g,
+      text => text.charAt(0).toUpperCase() + text.substring(1).toLowerCase()
+    );
+  }
+
   const Dropdown = () => {
     const element =
       (auth) && (user !== null) ?
         (<div class="dropdown">
           <ul class="dropdown-menu dropdown-menu-dark text-small shadow" >
-            <li><strong class="dropdown-item">Hello, {user.username.toUpperCase()}</strong></li>
+            <li><strong class="dropdown-item">Hello, {toTitleCase(user.fullname)}</strong></li>
             <li><a class="dropdown-item" href="#">Settings</a></li>
             <li><a class="dropdown-item" href="#">Profile</a></li>
             <li><hr class="dropdown-divider" /></li>

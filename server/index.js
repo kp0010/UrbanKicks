@@ -56,10 +56,14 @@ db.connect(function(err) {
 });
 
 passport.use(new LocalStratergy(function verify(username, password, cb) {
-    db.query("SELECT * FROM users WHERE username=$1", [username.toLowerCase()], (error, res) => {
+    console.log("hello", username, password)
+    const query = `SELECT * FROM users WHERE mail='${username}' OR phoneNo='${username}';`
+    console.log(query)
+
+    db.query(query, (error, res) => {
         if (error) { throw error }
 
-        if (!res.rows[0]) { console.log("Invalid Username"); return cb(null, false, { message: "Username Invalid" }) }
+        if (!res.rows[0]) { console.log("Invalid Username"); return cb(null, false, { message: "Email or Number Invalid" }) }
 
         bcrypt
             .genSalt(saltRounds)
@@ -67,7 +71,6 @@ passport.use(new LocalStratergy(function verify(username, password, cb) {
                 return bcrypt.hash(password, salt)
             })
             .then((hashedPassword) => {
-                // console.log(username, password, hashedPassword, res.rows[0].password)
                 if (bcrypt.compare(hashedPassword, res.rows[0].password) | res.rows[0].password !== password) {
                     console.log("Password Verified")
                     return cb(null, res.rows[0])
@@ -80,12 +83,12 @@ passport.use(new LocalStratergy(function verify(username, password, cb) {
 }))
 
 passport.serializeUser(function(user, cb) {
-    cb(null, user.username)
+    cb(null, user.mail)
 })
 
 
-passport.deserializeUser(function(username, cb) {
-    db.query("SELECT * FROM users where username = $1", [username], (error, res) => {
+passport.deserializeUser(function(id, cb) {
+    db.query("SELECT * FROM users where mail=$1 OR phoneNo=$1", [id], (error, res) => {
         if (error) { throw error }
         return cb(null, res.rows[0])
     })
@@ -105,11 +108,10 @@ app.post("/login", (req, res, next) => {
 })
 
 app.post("/signup", (req, res) => {
-    const username = req.body.username.toLowerCase()
-    const password = req.body.password
-    const fullname = req.body.fullname
     const mail = req.body.mail
     const number = req.body.number
+    const password = req.body.password
+    const fullname = req.body.fullname
 
     bcrypt
         .genSalt(saltRounds)
@@ -117,12 +119,12 @@ app.post("/signup", (req, res) => {
             return bcrypt.hash(password, salt)
         })
         .then((hashedPassword) => {
-            db.query("INSERT INTO users (username, password, name, number, email) VALUES ($1, $2, $3, $4, $5) RETURNING username",
-                [username, hashedPassword, fullname, number, mail], (error, result) => {
+            db.query("INSERT INTO users (mail, phoneNo, password, fullname) VALUES ($1, $2, $3, $4) RETURNING mail",
+                [mail, number, hashedPassword, fullname], (error, result) => {
                     return res.status(200).json(
                         {
                             success: !Boolean(error),
-                            username: (!error) ? result.rows[0].username : null,
+                            mail: (!error) ? result.rows[0].mail : null,
                             error: error
                         })
                 })
@@ -146,5 +148,5 @@ app.post("/logout", (req, res) => {
 
 
 app.listen(PORT, () => {
-    console.log(`App is listening to port: ${PORT}`);
+    console.log(``);
 });

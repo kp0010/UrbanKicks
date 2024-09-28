@@ -12,22 +12,24 @@ const serverPort = 8080
 export const Login = () => {
   const { setAuth, } = useAuth()
 
-  const [username, setUsername] = useState('')
+  const [id, setId] = useState('')
   const [password, setPassword] = useState('')
 
   const [resp, setResp] = useState(0)
 
   function loginUser(e) {
     e.preventDefault();
+    console.log(id, password)
 
     fetch(serverUrl + ":" + serverPort + "/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ username: id, password: password }),
       credentials: "include"
     })
       .then(response => response.json())
       .then(data => {
+        console.log(data)
         // data = {status: str, login: bool, userExists: bool}
         if (data.login) {
           setAuth(true)
@@ -52,7 +54,7 @@ export const Login = () => {
             <h2>Log-In</h2>
             <div className="input-group">
               <label htmlFor="username">Username</label>
-              <input value={username} type="text" id="username" name="username" onChange={(e) => setUsername(e.target.value)} required>
+              <input value={id} type="text" id="id" name="id" onChange={(e) => setId(e.target.value)} required>
               </input>
             </div>
             <div className="input-group">

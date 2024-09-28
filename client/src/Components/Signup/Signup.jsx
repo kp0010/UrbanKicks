@@ -9,11 +9,10 @@ const serverPort = 8080
 
 
 export const Signup = () => {
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
   const [mail, setMail] = useState('')
   const [number, setNumber] = useState('')
-  const [fullname, setFullname] = useState('John Doe')
+  const [password, setPassword] = useState('')
+  const [fullname, setFullname] = useState('')
 
   const [resp, setResp] = useState(0)
 
@@ -23,12 +22,12 @@ export const Signup = () => {
     fetch(serverUrl + ":" + serverPort + "/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, password, mail, fullname, number }),
+      body: JSON.stringify({ mail, number, password, fullname }),
       credentials: "include"
     })
       .then(response => response.json())
       .then(data => {
-        // data = {sucesss: bool, username: str}
+        // data = {sucesss: bool, mail: str}
         if (data.success) {
           window.location.replace("/login")
         } else {
@@ -50,8 +49,8 @@ export const Signup = () => {
             <form class="signup-form" onSubmit={signupUser}>
               <h2>Create an Account</h2>
               <div class="input-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" value={username} onChange={(e) => setUsername(e.target.value)} required />
+                <label for="fullname">Name</label>
+                <input type="text" id="fullname" name="fullname" value={fullname} onChange={(e) => setFullname(e.target.value)} required />
               </div>
               <div class="input-group">
                 <label for="email">Email</label>
