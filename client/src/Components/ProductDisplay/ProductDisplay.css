@@ -102,6 +102,9 @@
     outline: none;
     cursor: pointer;
 }
+.productdisplay-right button:hover {
+    background: blue;
+}
 .productdisplay-right-category {
     text-transform: capitalize;
     margin-bottom: 5px;
