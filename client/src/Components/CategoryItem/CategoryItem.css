@@ -59,6 +59,7 @@ p{
     padding-bottom: 5px;
     gap: 20px;
     cursor: auto;
+    letter-spacing: 1px;
 }
 .category-item-price-new {
     color: white;

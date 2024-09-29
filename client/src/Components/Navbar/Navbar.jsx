@@ -25,7 +25,7 @@ export const Navbar = () => {
     },
     {
       icon: 'bi bi-bag',
-      url: '/',
+      url: '/cart',
     },
     {
       icon: 'bi bi-heart',

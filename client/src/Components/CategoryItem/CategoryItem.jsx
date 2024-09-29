@@ -4,15 +4,15 @@ import { NavLink } from 'react-router-dom'
 
 export const CategoryItem = (props) => {
 
-  const handleClick = (event) => {
+  {/*const handleClick = (event) => {
     event.preventDefault();
     window.scrollTo(0,0);
     window.location.href = event.currentTarget.href;
-  };
+  };*/}
 
   return (
     <div className='category-item'>
-        <NavLink to={`/product/${props.id}`} onClick={handleClick}>
+        <NavLink to={`/product/${props.id}`} /*onClick={handleClick}*/ >
           <div>
             <img src={props.image} alt="." />
           </div>
@@ -24,10 +24,10 @@ export const CategoryItem = (props) => {
           </div>
           <div className="category-item-prices">
             <div className="category-item-price-new">
-              Rs {props.new_price}
+              ₹{props.new_price}
             </div>
             <div className="category-item-price-old">
-              Rs {props.old_price}
+              ₹{props.old_price}
             </div>
           </div>
         </NavLink>

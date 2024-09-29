@@ -45,9 +45,11 @@
 .productdisplay-right-oldprice {
     color: #FF4141;
     text-decoration: line-through;
+    letter-spacing: 1px;
 }
 .productdisplay-right-newprice {
     color: white;
+    letter-spacing: 1px;
 }
 .productdisplay-right-description {
     font-size: 15px;
