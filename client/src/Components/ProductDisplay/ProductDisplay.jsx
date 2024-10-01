@@ -1,9 +1,10 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import "./ProductDisplay.css"
 import { ShopContext } from '../../Context/ShopContext';
 
 export const ProductDisplay = (props) => {
     const {product} = props;
+    const [size, setSize] = useState('');
     const {addToCart} = useContext(ShopContext);
   return (
     <div className = "productdisplay">
@@ -30,11 +31,14 @@ export const ProductDisplay = (props) => {
             <div className="productdisplay-right-size">
                 <h1>Select Size</h1>
                 <div className="productdisplay-right-size-variety">
-                    <div>6</div>
+                    {/*<div>6</div>
                     <div>7</div>
                     <div>8</div>
                     <div>9</div>
-                    <div>10</div>
+                    <div>10</div>*/}
+                    {product.sizes.map((item, index) => (
+                        <button onClick={() => setSize(item)} className={item === size ? 'border-red' : ''} key={index}>{item}</button>
+                    ))}
                 </div>
             </div>
             <div className="productdisplay-right-quantity">
@@ -58,7 +62,7 @@ export const ProductDisplay = (props) => {
                     </a>
                 </div>
             </div>
-            <button onClick={()=>{addToCart(product.id)}}>ADD TO CART</button>
+            <button onClick={()=>{addToCart(product.id,size)}} className="productdisplay-right-addToCart">ADD TO CART</button>
             {/*Add to wishlist or favorites*/}
             <p className="productdisplay-right-category"><span>Category : </span>{product.category}</p>
             <p className="productdisplay-right-brand"><span>Brand : </span>{product.brand}</p>

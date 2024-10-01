@@ -63,13 +63,16 @@
     display: flex;
     margin: 30px 0px;
     gap: 20px;
+    border: none;
 }
-.productdisplay-right-size-variety div {
+.productdisplay-right-size-variety button {
     padding: 15px 21px;
     background: #fbfbfb;
-    border: 1px solid #ebebeb;
     border-radius: 3px;
     cursor: pointer;
+}
+.border-red {
+    border: 2px solid red;
 }
 .productdisplay-right-quantity-value {
     display: flex;
@@ -92,7 +95,7 @@
     border: 1px solid #dddedd;
     outline: none;
 }
-.productdisplay-right button {
+.productdisplay-right-addToCart {
     padding: 12px 40px;
     width: 300px;
     font-size: 16px;
@@ -104,7 +107,7 @@
     outline: none;
     cursor: pointer;
 }
-.productdisplay-right button:hover {
+.productdisplay-right-addToCart:hover {
     background: blue;
 }
 .productdisplay-right-category {

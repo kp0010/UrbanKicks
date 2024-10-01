@@ -7,6 +7,7 @@ let men_sandals = [
       subtitle: "Men's Sandals",
       description: "Enjoy a calm, comfortable experience—wherever your day off takes you. Made from soft-yet-responsive foam, these versatile sandals feature an oversized design that's easy to wear. And the top strap is adjustable to give you that perfect fit. Whether you're lounging on the sofa, hanging in the city or holidaying on the coast, do it in effortless style.",
       gender: 'men',
+      sizes: ['6','7','8','9','10'],
       category: 'sandals and slides',
       brand: 'nike'
     },
@@ -18,6 +19,7 @@ let men_sandals = [
       subtitle: "Men's Slides",
       description: 'These slides are designed to help you relax and recharge. Innovative dual-layered foam underfoot pairs with a plush strap to bring the comfort, while the iconic AF-1 pivot circle pattern on the outsole and block-letter branding casually nod to heritage hoops. What are you waiting for? Get lounging.',
       gender: 'men',
+      sizes: ['5','6','7'],
       category: 'sandals and slides',
       brand: 'nike'
     },

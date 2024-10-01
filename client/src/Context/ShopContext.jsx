@@ -28,6 +28,7 @@ const ShopContextProvider = (props) => {
             toast.error("Select Product Size");
             return
         }
+
         let cartData = structuredClone(cartItems);
 
         if (cartData[itemId]) {
@@ -38,7 +39,28 @@ const ShopContextProvider = (props) => {
                 cartData[itemId][size] = 1;
             }
         }
+        else {
+            cartData[itemId] = {};
+            cartData[itemId][size] = 1;
+        }
+        console.log(cartItems);
         setCartItems(cartData);
+    }
+
+    const getCartCount = () => {
+        let totalCount = 0;
+        for (const items in cartItems) {
+            for (const item in cartItems[items]) {
+                try {
+                    if (cartItems[items][item] > 0) {
+                        totalCount += cartItems[items][item]
+                    }
+                } catch (error) {
+
+                }
+            }
+        }
+        return totalCount;
     }
 
     const updateQuantity = async (itemId, size, quantity) => {
@@ -55,7 +77,7 @@ const ShopContextProvider = (props) => {
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
     }
 
-    const contextValue = {men_sandals,new_arrivals,cartItems,addToCart,updateQuantity,removefromCart};
+    const contextValue = { men_sandals, new_arrivals, cartItems, addToCart, getCartCount, updateQuantity, removefromCart };
     
     return (
         <ShopContext.Provider value={contextValue}>

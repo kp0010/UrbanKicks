@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Navbar.css'
 import logo1 from "../Assets/logo_1.png"
 
 import { NavLink, useNavigate, Link } from 'react-router-dom'
 import { useAuth } from '../../Context/AuthContext'
+import { ShopContext } from '../../Context/ShopContext'
 
 export const Navbar = () => {
   const navigate = useNavigate()
 
   const { auth, setAuth, user, setUser } = useAuth()
+
+  const {getCartCount} = useContext(ShopContext);
 
   const handleLogout = () => {
     fetch("http://localhost:8080/logout", {
@@ -90,7 +93,14 @@ export const Navbar = () => {
         <ul class="icons menus">
           {menuItemsData.map((menu, index) => {
             return (
-              <li className="menu-items"><a href={menu.url}><i class={menu.icon} /></a></li>
+              <li className="menu-items">
+                <a href={menu.url}>
+                  <i class={menu.icon} />
+                  {menu.icon === 'bi bi-bag' && getCartCount() > 0 && (
+                    <span className="cart-count">{getCartCount()}</span>
+                  )}
+                </a>
+              </li>
             );
           })}
           <li className="menu-items"><a href="#" class="nav-item d-flex align-items-center text-decoration-none dropdown-toggle active" data-bs-toggle="dropdown" e>
