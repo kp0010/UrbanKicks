@@ -156,7 +156,7 @@ app.post("/updateCart", (req, res) => {
 app.post("/getCart/", (req, res) => {
     const mail = req.body.mail
 
-    db.query("SELECT * FROM cart WHERE mail=$1",
+    db.query("SELECT * FROM cart WHERE mail=$1 ORDER BY productId",
         [mail], (error, result) => {
             return res.status(200).json(
                 {
@@ -171,7 +171,6 @@ app.post("/getCart/", (req, res) => {
 
 app.put("/updateCart/", (req, res) => {
     const { productId, mail, quantity, size } = req.body
-    console.log(productId, mail, size, quantity)
 
     db.query("UPDATE cart SET quantity=$1 WHERE mail=$2 AND size=$3 AND productId=$4 RETURNING *",
         [quantity, mail, size, productId], (error, result) => {
@@ -195,7 +194,6 @@ app.put("/updateCart/", (req, res) => {
 
 app.delete("/updateCart/", (req, res) => {
     const { productId, mail, size } = req.body
-    console.log(productId, mail, size)
 
     db.query("DELETE from cart WHERE productId=$3 AND mail=$1 AND size=$2 RETURNING *",
         [mail, size, productId], (error, result) => {

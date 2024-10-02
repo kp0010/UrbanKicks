@@ -90,42 +90,69 @@ export const CartItems = () => {
         <div className="cartItems">
             <div className="head">Shopping Cart</div>
             <h1>{loading ? "Loading" : null}</h1>
-            {
-                cartData.map((item, index) => {
-                    const productData = all_products.find((product) => product.id === item.productid);
-                    return <div>
-                        <div key={index} className="cartItems-main">
-                            <div className="cartItems-products">
-                                <div className="cartItems-products-left">
-                                    <img src={productData.img} alt="." />
-                                </div>
-                                <div className="cartItems-products-right">
-                                    <div className="cartItems-products-right-title">
-                                        <h4>{productData.title}</h4>  {/*add link to product page*/}
-                                        <h5>{productData.subtitle}</h5>
-                                        <img src="delete icon pending" alt="" />
-                                    </div>      {/*put only border bottom*/}
-                                    <div className="cartItems-products-right-size">
-                                        <p><span>Size: </span>{item.size}</p>
-                                        <p>In Stock</p>
-                                    </div>
-                                    <div className="cartItems-products-right-quantity-price">
-                                        <input onChange={(e) => {
-                                            updateCart(item.productid, item.size, e.target.value)
-                                        }}
-                                            className='' type="number" min={1} max={5} defaultValue={item.quantity} />
-                                        <img onClick={() => deleteCart(item.productid, item.size)} className='' src={bin_icon} alt="" />
-                                        <div className="cartItems-products-right-price">
-                                            ₹ {productData.price}
+            <div className="cartItems-main">
+                <div className="cartItems-data">
+                    {
+                        cartData.map((item, index) => {
+                            const productData = all_products.find((product) => product.id === item.productid);
+                            return <div className="cartItems-key">
+                                <div key={index} >
+                                    <div className="cartItems-products">
+                                        <div className="cartItems-products-left">
+                                            <img src={productData.img} alt="." />
+                                        </div>
+                                        <div className="cartItems-products-right">
+                                            <div className="cartItems-products-right-top">
+                                                <div className="cartItems-products-right-title">
+                                                    <h4>{productData.title}</h4>  {/*add link to product page*/}
+                                                    <h5>{productData.subtitle}</h5>
+                                                </div>
+                                                <button onClick={() => deleteCart(item.productid, item.size)}>
+                                                    <img className='' src={bin_icon} alt="" />
+                                                </button>
+                                            </div>
+                                            <hr />      {/*put only border bottom*/}
+                                            <div className="cartItems-products-right-size">
+                                                <p><span>Size: </span>{item.size}</p>
+                                                <p className="cartItems-products-right-instock">In Stock</p>
+                                            </div>
+                                            <div className="cartItems-products-right-quantity-price">
+                                                <input onChange={(e) => {
+                                                    updateCart(item.productid, item.size, e.target.value)
+                                                }}
+                                                    className='' type="number" min={1} max={5} defaultValue={item.quantity} />
+                                                <div className="cartItems-products-right-price">
+                                                    Rs {productData.price}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
+                                    <hr />
                                 </div>
                             </div>
-                            <div className="cartItems-bill"></div>
+                        })
+                    }
+                </div>
+
+                <div className="cartItems-bill">
+                    <h4>Price Details</h4>
+                    <hr />
+                    <div className="cartItems-subtotal">
+                        <div className="cartItems-subtotal-left">
+                            <p>Subtotal</p>
+                            <p>Shipping</p>
+                            <p>Total</p>
+                        </div>
+                        <div className="cartItems-subtotal-right">
+                            <p>Amount</p>       {/*subtotal amount*/}
+                            <p>FREE</p>
+                            <p>Amount</p>       {/*Total amount*/}
                         </div>
                     </div>
-                })
-            }
+                    <hr />
+                    <p className="tax-tag">All prices are including tax*</p>
+                </div>
+            </div>
         </div>
     )
 }
