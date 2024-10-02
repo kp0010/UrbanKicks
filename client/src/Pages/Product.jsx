@@ -6,9 +6,9 @@ import { Breadcrums } from '../Components/Breadcrums/Breadcrums';
 import { ProductDisplay } from '../Components/ProductDisplay/ProductDisplay';
 
 export const Product = () => {
-  const {men_sandals} = useContext(ShopContext);
+  const {all_products} = useContext(ShopContext);
   const {productId} = useParams();
-  const product = men_sandals.find((e) => e.id === Number(productId))
+  const product = all_products.find((e) => e.id === Number(productId))
   return (
     <div className="product">
       <div className="product-banner"></div>

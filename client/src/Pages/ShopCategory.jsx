@@ -6,7 +6,7 @@ import banner_1 from "../Components/Assets/HomeAssets/banner1.png"
 import { useLocation } from 'react-router-dom';
 
 export const ShopCategory = (props) => {
-    const {men_sandals} = useContext(ShopContext);    
+    const {all_products} = useContext(ShopContext);    
 
 
     const Banner = () => {
@@ -39,7 +39,7 @@ export const ShopCategory = (props) => {
           <h3>Filters Remaining</h3>
         </div>
         <div className="shop-category-products">
-          {men_sandals.map((item, i) => {
+          {all_products.map((item, i) => {
             if (props.category===item.gender){
               return <CategoryItem key={i} id={item.id} name={item.title} subtitle={item.subtitle} image={item.img} new_price={item.price}/>
             }

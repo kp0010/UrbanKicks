@@ -6,7 +6,7 @@ import { ShopContext } from '../../Context/ShopContext'
 import { useAuth } from '../../Context/AuthContext'
 
 export const CartItems = () => {
-    const { men_sandals } = useContext(ShopContext);
+    const { all_products } = useContext(ShopContext);
     const [cartData, setCartData] = useState([]);
 
     const { auth, user } = useAuth()
@@ -38,7 +38,7 @@ export const CartItems = () => {
             <div className="head">Shopping Cart</div>
             {
                 cartData.map((item, index) => {
-                    const productData = men_sandals.find((product) => product._id === item.id);
+                    const productData = all_products.find((product) => product._id === item.id);
                     console.log(productData);
 
                     return <div>

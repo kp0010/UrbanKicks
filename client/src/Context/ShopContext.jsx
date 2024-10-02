@@ -1,13 +1,13 @@
 import React, { createContext, useState } from "react";
 import {toast} from "react-toastify";
-import men_sandals from "../Components/Assets/ProductData/mensandals.js"
+import all_products from "../Components/Assets/ProductData/allproducts.js"
 import new_arrivals from "../Components/Assets/ProductData/new_arrivals.js";
 
 export const ShopContext = createContext(null);
 
 {/*const getDefaultCart = ()=>{
     let cart = {};
-    for (let index = 0; index < men_sandals.length+1; index++) {
+    for (let index = 0; index < all_products.length+1; index++) {
         cart[index] = 0;
     }
     return cart;
@@ -77,7 +77,7 @@ const ShopContextProvider = (props) => {
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
     }
 
-    const contextValue = { men_sandals, new_arrivals, cartItems, addToCart, getCartCount, updateQuantity, removefromCart };
+    const contextValue = { all_products, new_arrivals, cartItems, addToCart, getCartCount, updateQuantity, removefromCart };
     
     return (
         <ShopContext.Provider value={contextValue}>
