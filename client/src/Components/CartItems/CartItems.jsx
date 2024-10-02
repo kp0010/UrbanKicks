@@ -130,7 +130,7 @@ export const CartItems = () => {
             <div className="head">Shopping Cart</div>
             <h1>{loading ? "Loading" : null}</h1>
             <div className="cartItems-main">
-                <div className="cartItems-data">
+                <div className="cartItems-left">
                     {
                         cartData.map((item, index) => {
                             const productData = all_products.find((product) => product.id === item.productid);
@@ -170,25 +170,34 @@ export const CartItems = () => {
                         })
                     }
                 </div>
-
-                <div className="cartItems-bill">
-                    <h4>Price Details</h4>
-                    <hr />
-                    <div className="cartItems-subtotal">
-                        <div className="cartItems-subtotal-left">
-                            <p>Subtotal</p>
-                            <p>Shipping</p>
-                            <p>Total</p>
+                
+                <div className="cartItems-right">
+                    <div className="cartItems-bill">
+                        <h4>Price Details</h4>
+                        <hr />
+                        <div className="cartItems-subtotal">
+                            <div className="cartItems-subtotal-left">
+                                <p>Subtotal</p>
+                                <p>Shipping</p>
+                                <p>Total</p>
+                            </div>
+                            <div className="cartItems-subtotal-right">
+                                <p>₹{price}</p>
+                                <p>₹300</p>
+                                <p>₹{price + 300}</p>
+                            </div>
                         </div>
-                        <div className="cartItems-subtotal-right">
-                            <p>₹{price}</p>
-                            <p>₹300</p>
-                            <p>₹{price + 300}</p>
-                        </div>
+                        <hr />
+                        <p className="tax-tag">All prices are including tax*</p>
                     </div>
-                    <hr />
-                    <p className="tax-tag">All prices are including tax*</p>
+                    <div className="cartItems-order">
+                        <p><span>Payment Method :- Cash on Delivery Only</span></p>
+                        <p><span>Address :- </span><input className="cartItems-address" type="text" /></p>
+                        <p><button>Change Address</button></p>
+                        <button>Place an Order</button>
+                    </div>
                 </div>
+                
             </div>
         </div>
     )
