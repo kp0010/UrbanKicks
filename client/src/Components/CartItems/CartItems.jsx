@@ -39,7 +39,7 @@ export const CartItems = () => {
             {
                 cartData.map((item, index) => {
                     const productData = all_products.find((product) => product._id === item.id);
-                    console.log(productData);
+                    
 
                     return <div>
                         <div key={index} className="cartItems-main">
