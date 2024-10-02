@@ -128,6 +128,38 @@ app.get("/user", (req, res) => {
     }
 })
 
+app.post("/cart", (req, res) => {
+    const productId = req.body.productId
+    const mail = req.body.mail
+    const quantity = req.body.quantity
+    const size = req.body.size
+
+    db.query("INSERT INTO cart (mail, productId, quantity, size) VALUES ($1, $2, $3, $4,) RETURNING mail",
+        [mail, productId, quantity, size], (error, result) => {
+            return res.status(200).json(
+                { success: !Boolean(error) }
+            )
+        })
+
+})
+
+
+app.post("/getCart/", (req, res) => {
+    const mail = req.body.mail
+
+    db.query("SELECT * FROM cart WHERE mail=$1",
+        [mail], (error, result) => {
+            console.log(result.rows)
+            return res.status(200).json(
+                {
+                    success: !Boolean(error),
+                    result: result.rows
+                }
+            )
+        })
+
+})
+
 app.post("/logout", (req, res) => {
     req.logout(err => {
         if (err) return res.status(500).json({ message: 'Logout error' });
