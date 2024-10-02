@@ -45,6 +45,7 @@ const dbConfig = {
     host: 'localhost',
     database: 'wonderwalks',
     // password: '0010',
+    //password: 'sahil@135',
     port: 5432,
 }
 
