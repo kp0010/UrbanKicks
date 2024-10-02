@@ -146,6 +146,8 @@ app.post("/cart", (req, res) => {
 
 app.post("/getCart/", (req, res) => {
     const mail = req.body.mail
+    console.log("getting")
+    console.log(mail)
 
     db.query("SELECT * FROM cart WHERE mail=$1",
         [mail], (error, result) => {
@@ -153,7 +155,8 @@ app.post("/getCart/", (req, res) => {
             return res.status(200).json(
                 {
                     success: !Boolean(error),
-                    result: result.rows
+                    result: result.rows,
+                    length: result.rows.length
                 }
             )
         })

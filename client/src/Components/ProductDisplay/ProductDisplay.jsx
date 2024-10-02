@@ -3,10 +3,13 @@ import { useNavigate } from 'react-router-dom'
 import "./ProductDisplay.css"
 
 import { useAuth } from '../../Context/AuthContext'
+import { ShopContext } from '../../Context/ShopContext'
 
 export const ProductDisplay = (props) => {
     const navigate = useNavigate()
     const { product } = props;
+
+    // const {}
 
     const [size, setSize] = useState('');
     const [quantity, setQuantity] = useState(1);
