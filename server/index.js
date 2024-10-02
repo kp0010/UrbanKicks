@@ -134,7 +134,7 @@ app.post("/cart", (req, res) => {
     const quantity = req.body.quantity
     const size = req.body.size
 
-    db.query("INSERT INTO cart (mail, productId, quantity, size) VALUES ($1, $2, $3, $4,) RETURNING mail",
+    db.query("INSERT INTO cart (mail, productId, quantity, size) VALUES ($1, $2, $3, $4) RETURNING mail",
         [mail, productId, quantity, size], (error, result) => {
             return res.status(200).json(
                 { success: !Boolean(error) }
