@@ -31,16 +31,6 @@ export const CategoryItem = (props) => {
             </div>
           </div>
         </NavLink>
-        {/*<img src={props.image} alt="." />
-        <p>{props.name}</p>
-        <div className="category-item-price">
-          <div className="category-item-price-new">
-            ${props.new_price}
-          </div>
-          <div className="category-item-price-old">
-            ${props.old_price}
-          </div>
-        </div>*/}
 
     </div>
   )
