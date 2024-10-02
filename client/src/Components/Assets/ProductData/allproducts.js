@@ -6620,7 +6620,7 @@ let all_products = [
         subtitle: 'PUMA Black-Pelé Yellow ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'boys casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -6632,7 +6632,7 @@ let all_products = [
         subtitle: 'Feather Gray-Club Navy-For All Time Red ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'boys casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -6644,7 +6644,7 @@ let all_products = [
         subtitle: 'PUMA Black-For All Time Red-PUMA White ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'boys casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -6656,7 +6656,7 @@ let all_products = [
         subtitle: 'PUMA White-PUMA Team Royal-PUMA Black ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'boys casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -6668,7 +6668,7 @@ let all_products = [
         subtitle: 'Puma White-Puma White ',
         description: "Elevate your kid's shoe game with the Punch Comfort Sneakers from PUMA.The mesh upper provides breathability, while the velcro closure ensures a secure fit. The cushioned collar adds extra comfort, making these sneakers perfect for your kid's delicate feet.Mesh upperRubber outsoleHeel type: FlatShoe width: Regular fitShoe pronation: NeutralHeel-to-toe-drop: 0 mmHook-and-loop closurePUMA Wordmark and Cat logo on tonguePUMA Cat logo on heelPUMA Formstrip on lateral side",
         gender: 'kids',
-        category: 'boys casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -6680,7 +6680,7 @@ let all_products = [
         subtitle: 'Puma Black-Puma Black ',
         description: "Elevate your kid's shoe game with the Punch Comfort Sneakers from PUMA.The mesh upper provides breathability, while the velcro closure ensures a secure fit. The cushioned collar adds extra comfort, making these sneakers perfect for your kid's delicate feet.Mesh upperRubber outsoleHeel type: FlatShoe width: Regular fitShoe pronation: NeutralHeel-to-toe-drop: 0 mmHook-and-loop closurePUMA Wordmark and Cat logo on tonguePUMA Cat logo on heelPUMA Formstrip on lateral side",
         gender: 'kids',
-        category: 'boys casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -6692,7 +6692,7 @@ let all_products = [
         subtitle: 'Warm White-Pelé Yellow-Blue Skies ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'boys casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -6704,7 +6704,7 @@ let all_products = [
         subtitle: 'PUMA Black-Zinnia-Electric Peppermint ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'boys casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -6716,7 +6716,7 @@ let all_products = [
         subtitle: 'Vapor Gray-Blue Skies-Rickie Orange ',
         description: "PUMA's SOFTRIDE technology represents an advancement in footwear comfort. It incorporates our softest foam, designed to deliver extreme cushioning that promotes sustained comfort throughout the day. The SOFTRIDE midsole, softer and lighter than traditional EVA, extends through the full length of the shoe. This innovative construction enhances the wearer's experience, providing lightweight support during daily activities.   Perfect for active kids who love a touch of style, these shoes are built to support during any outdoor activity. Equipped with a SoftFoam sockliner for plush steps and a breathable textile upper, these shoes promise all-day wearability. The secure lacing system ensures a snug fit, while the contrast accents add a playful, sporty style.SoftFoam+: PUMA’s comfort sockliner for instant step-in and long-lasting comfort that provides soft cushioning every step of your dayHeel type: FlatShoe width: Regular fitShoe pronation: NeutralHeel-to-toe-drop: 12 mmTextile upperZoned rubber outsoleLow bootLace closure PUMA Cat logo branding ",
         gender: 'kids',
-        category: 'boys casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -6728,7 +6728,7 @@ let all_products = [
         subtitle: 'Club Navy-Hyperlink Blue-Yellow Burst ',
         description: "PUMA's SOFTRIDE technology represents an advancement in footwear comfort. It incorporates our softest foam, designed to deliver extreme cushioning that promotes sustained comfort throughout the day. The SOFTRIDE midsole, softer and lighter than traditional EVA, extends through the full length of the shoe. This innovative construction enhances the wearer's experience, providing lightweight support during daily activities.   Perfect for active kids who love a touch of style, these shoes are built to support during any outdoor activity. Equipped with a SoftFoam sockliner for plush steps and a breathable textile upper, these shoes promise all-day wearability. The secure lacing system ensures a snug fit, while the contrast accents add a playful, sporty style.SoftFoam+: PUMA’s comfort sockliner for instant step-in and long-lasting comfort that provides soft cushioning every step of your dayHeel type: FlatShoe width: Regular fitShoe pronation: NeutralHeel-to-toe-drop: 12 mmTextile upperZoned rubber outsoleLow bootLace closure PUMA Cat logo branding ",
         gender: 'kids',
-        category: 'boys casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -6740,7 +6740,7 @@ let all_products = [
         subtitle: 'PUMA Black-Active Red-Pelé Yellow ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'boys casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -6752,7 +6752,7 @@ let all_products = [
         subtitle: 'Clyde Royal-Yellow Burst-PUMA White ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'boys casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -6764,7 +6764,7 @@ let all_products = [
         subtitle: 'Grape Mist-Passionfruit-Intense Lavender ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'boys casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -6776,7 +6776,7 @@ let all_products = [
         subtitle: 'PUMA Black-Vivid Violet-Passionfruit ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'boys casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -6788,7 +6788,7 @@ let all_products = [
         subtitle: 'PUMA Black-PUMA White ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'boys casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -6800,7 +6800,7 @@ let all_products = [
         subtitle: 'PUMA White-PUMA Black ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'boys casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -6812,7 +6812,7 @@ let all_products = [
         subtitle: 'Hibiscus Flower-Rose Dust-Orange Peach ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'boys casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -6824,7 +6824,7 @@ let all_products = [
         subtitle: 'Dusty Green-Spring Fern-Pristine ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'boys casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -6836,7 +6836,7 @@ let all_products = [
         subtitle: 'PUMA Black-PUMA White-Passionfruit ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'boys casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -6848,7 +6848,7 @@ let all_products = [
         subtitle: 'Vapor Gray-Rickie Orange-PUMA White ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'boys casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -6860,7 +6860,7 @@ let all_products = [
         subtitle: 'PUMA Team Royal-Dandelion-Vibrant Orange ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'boys casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -6872,7 +6872,7 @@ let all_products = [
         subtitle: 'PUMA Black-High Risk Red-Fizzy Light ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'boys casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -6884,7 +6884,7 @@ let all_products = [
         subtitle: 'Eucalyptus-Rickie Orange-Yellow Sizzle ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'boys casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -6896,7 +6896,7 @@ let all_products = [
         subtitle: 'PUMA Black-PUMA White ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'boys casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -6908,7 +6908,7 @@ let all_products = [
         subtitle: 'Puma Black-Puma Black ',
         description: "Elevate your kid's shoe game with the Punch Comfort Sneakers from PUMA.The mesh upper provides breathability, while the velcro closure ensures a secure fit. The cushioned collar adds extra comfort, making these sneakers perfect for your kid's delicate feet.Mesh upperRubber outsoleHeel type: FlatShoe width: Regular fitShoe pronation: NeutralHeel-to-toe-drop: 0 mmHook-and-loop closurePUMA Wordmark and Cat logo on tonguePUMA Cat logo on heelPUMA Formstrip on lateral side",
         gender: 'kids',
-        category: 'boys school',
+        category: 'lifestyle',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -6920,7 +6920,7 @@ let all_products = [
         subtitle: 'Puma White-Puma White ',
         description: "Elevate your kid's shoe game with the Punch Comfort Sneakers from PUMA.The mesh upper provides breathability, while the velcro closure ensures a secure fit. The cushioned collar adds extra comfort, making these sneakers perfect for your kid's delicate feet.Mesh upperRubber outsoleHeel type: FlatShoe width: Regular fitShoe pronation: NeutralHeel-to-toe-drop: 0 mmHook-and-loop closurePUMA Wordmark and Cat logo on tonguePUMA Cat logo on heelPUMA Formstrip on lateral side",
         gender: 'kids',
-        category: 'boys school',
+        category: 'lifestyle',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -6932,7 +6932,7 @@ let all_products = [
         subtitle: 'PUMA Black-Puma Black ',
         description: "Elevate your kid's shoe game with the Punch Comfort Sneakers from PUMA.The mesh upper provides breathability, while the velcro closure ensures a secure fit. The cushioned collar adds extra comfort, making these sneakers perfect for your kid's delicate feet.Mesh upperRubber outsoleHeel type: FlatShoe width: Regular fitShoe pronation: NeutralHeel-to-toe-drop: 0 mmHook-and-loop closurePUMA Wordmark and Cat logo on tonguePUMA Cat logo on heelPUMA Formstrip on lateral side",
         gender: 'kids',
-        category: 'boys school',
+        category: 'lifestyle',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -6944,7 +6944,7 @@ let all_products = [
         subtitle: 'Puma White-Puma White ',
         description: "Elevate your kid's shoe game with the Punch Comfort Sneakers from PUMA.The mesh upper provides breathability, while the velcro closure ensures a secure fit. The cushioned collar adds extra comfort, making these sneakers perfect for your kid's delicate feet.Mesh upperRubber outsoleHeel type: FlatShoe width: Regular fitShoe pronation: NeutralHeel-to-toe-drop: 0 mmHook-and-loop closurePUMA Wordmark and Cat logo on tonguePUMA Cat logo on heelPUMA Formstrip on lateral side",
         gender: 'kids',
-        category: 'boys school',
+        category: 'lifestyle',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -6956,7 +6956,7 @@ let all_products = [
         subtitle: 'Puma White-Puma White ',
         description: "Elevate your baby's shoe game with the Punch Comfort Sneakers from PUMA.The mesh upper provides breathability, while the velcro closure ensures a secure fit. The cushioned collar adds extra comfort, making these sneakers perfect for your kid's delicate feet.Mesh upperRubber outsoleHeel type: FlatShoe width: Regular fitShoe pronation: NeutralHeel-to-toe-drop: 0 mmHook-and-loop closurePUMA Wordmark and Cat logo on tonguePUMA Cat logo on heelPUMA Formstrip on lateral side",
         gender: 'kids',
-        category: 'boys school',
+        category: 'lifestyle',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -6968,7 +6968,7 @@ let all_products = [
         subtitle: 'PUMA Black-PUMA Black ',
         description: "Elevate your baby's shoe game with the Punch Comfort Sneakers from PUMA.The mesh upper provides breathability, while the velcro closure ensures a secure fit. The cushioned collar adds extra comfort, making these sneakers perfect for your kid's delicate feet.Mesh upperRubber outsoleHeel type: FlatShoe width: Regular fitShoe pronation: NeutralHeel-to-toe-drop: 0 mmHook-and-loop closurePUMA Wordmark and Cat logo on tonguePUMA Cat logo on heelPUMA Formstrip on lateral side",
         gender: 'kids',
-        category: 'boys school',
+        category: 'lifestyle',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -6980,7 +6980,7 @@ let all_products = [
         subtitle: 'PUMA White-Passionfruit ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girl casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -6992,7 +6992,7 @@ let all_products = [
         subtitle: 'PUMA Black-PUMA White ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girl casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7004,7 +7004,7 @@ let all_products = [
         subtitle: 'Electric Blush-Frosty Pink ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girl casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7016,7 +7016,7 @@ let all_products = [
         subtitle: 'PUMA White-Green Illusion ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girl casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7028,7 +7028,7 @@ let all_products = [
         subtitle: 'PUMA Black-Team Aqua-PUMA White ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girl casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7040,7 +7040,7 @@ let all_products = [
         subtitle: 'PUMA Black-Gold-PUMA White ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girl casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7052,7 +7052,7 @@ let all_products = [
         subtitle: 'PUMA Black-PUMA Red ',
         description: "This one's for our tweens and fans of the hit show Miraculous - Tales of Ladybug and Cat Noir. PUMA created a collection with Miraculous that's inspired by Parisian nights and manga graphics. Check this out: these Mayze Stack sneakers have a colourway that's reminiscent of the Parisian nights and Manga stories.Synthetic upperMesh liningSynthetic tonguePolka-dot print formstripRubber midsoleRubber outsolePlatform sneakerPUMA x Miraculous brandingPUMA Kids: Recommended for younger children between 4 and 8 years old",
         gender: 'kids',
-        category: 'girl casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7064,7 +7064,7 @@ let all_products = [
         subtitle: 'PUMA White-Fast Pink-Vine ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girl casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7076,7 +7076,7 @@ let all_products = [
         subtitle: 'Feather Gray-Glowing Pink-PUMA White ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girl casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7088,7 +7088,7 @@ let all_products = [
         subtitle: 'Feather Gray-Club Navy-For All Time Red ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girl casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7100,7 +7100,7 @@ let all_products = [
         subtitle: 'PUMA Black-Pelé Yellow ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girl casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7112,7 +7112,7 @@ let all_products = [
         subtitle: 'PUMA Black-For All Time Red-PUMA White ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girl casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7124,7 +7124,7 @@ let all_products = [
         subtitle: 'PUMA White-PUMA Team Royal-PUMA Black ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girl casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7136,7 +7136,7 @@ let all_products = [
         subtitle: 'Puma White-Puma White ',
         description: "Elevate your kid's shoe game with the Punch Comfort Sneakers from PUMA.The mesh upper provides breathability, while the velcro closure ensures a secure fit. The cushioned collar adds extra comfort, making these sneakers perfect for your kid's delicate feet.Mesh upperRubber outsoleHeel type: FlatShoe width: Regular fitShoe pronation: NeutralHeel-to-toe-drop: 0 mmHook-and-loop closurePUMA Wordmark and Cat logo on tonguePUMA Cat logo on heelPUMA Formstrip on lateral side",
         gender: 'kids',
-        category: 'girl casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7148,7 +7148,7 @@ let all_products = [
         subtitle: 'Warm White-Pelé Yellow-Blue Skies ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girl casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7160,7 +7160,7 @@ let all_products = [
         subtitle: 'PUMA Black-Zinnia-Electric Peppermint ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girl casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7172,7 +7172,7 @@ let all_products = [
         subtitle: 'Puma Black-Puma Black ',
         description: "Elevate your kid's shoe game with the Punch Comfort Sneakers from PUMA.The mesh upper provides breathability, while the velcro closure ensures a secure fit. The cushioned collar adds extra comfort, making these sneakers perfect for your kid's delicate feet.Mesh upperRubber outsoleHeel type: FlatShoe width: Regular fitShoe pronation: NeutralHeel-to-toe-drop: 0 mmHook-and-loop closurePUMA Wordmark and Cat logo on tonguePUMA Cat logo on heelPUMA Formstrip on lateral side",
         gender: 'kids',
-        category: 'girl casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7184,7 +7184,7 @@ let all_products = [
         subtitle: 'Vapor Gray-Blue Skies-Rickie Orange ',
         description: "PUMA's SOFTRIDE technology represents an advancement in footwear comfort. It incorporates our softest foam, designed to deliver extreme cushioning that promotes sustained comfort throughout the day. The SOFTRIDE midsole, softer and lighter than traditional EVA, extends through the full length of the shoe. This innovative construction enhances the wearer's experience, providing lightweight support during daily activities.   Perfect for active kids who love a touch of style, these shoes are built to support during any outdoor activity. Equipped with a SoftFoam sockliner for plush steps and a breathable textile upper, these shoes promise all-day wearability. The secure lacing system ensures a snug fit, while the contrast accents add a playful, sporty style.SoftFoam+: PUMA’s comfort sockliner for instant step-in and long-lasting comfort that provides soft cushioning every step of your dayHeel type: FlatShoe width: Regular fitShoe pronation: NeutralHeel-to-toe-drop: 12 mmTextile upperZoned rubber outsoleLow bootLace closure PUMA Cat logo branding ",
         gender: 'kids',
-        category: 'girl casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7196,7 +7196,7 @@ let all_products = [
         subtitle: 'Club Navy-Hyperlink Blue-Yellow Burst ',
         description: "PUMA's SOFTRIDE technology represents an advancement in footwear comfort. It incorporates our softest foam, designed to deliver extreme cushioning that promotes sustained comfort throughout the day. The SOFTRIDE midsole, softer and lighter than traditional EVA, extends through the full length of the shoe. This innovative construction enhances the wearer's experience, providing lightweight support during daily activities.   Perfect for active kids who love a touch of style, these shoes are built to support during any outdoor activity. Equipped with a SoftFoam sockliner for plush steps and a breathable textile upper, these shoes promise all-day wearability. The secure lacing system ensures a snug fit, while the contrast accents add a playful, sporty style.SoftFoam+: PUMA’s comfort sockliner for instant step-in and long-lasting comfort that provides soft cushioning every step of your dayHeel type: FlatShoe width: Regular fitShoe pronation: NeutralHeel-to-toe-drop: 12 mmTextile upperZoned rubber outsoleLow bootLace closure PUMA Cat logo branding ",
         gender: 'kids',
-        category: 'girl casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7208,7 +7208,7 @@ let all_products = [
         subtitle: 'PUMA Black-Active Red-Pelé Yellow ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girl casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7220,7 +7220,7 @@ let all_products = [
         subtitle: 'Clyde Royal-Yellow Burst-PUMA White ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girl casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7232,7 +7232,7 @@ let all_products = [
         subtitle: 'Grape Mist-Passionfruit-Intense Lavender ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girl casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7244,7 +7244,7 @@ let all_products = [
         subtitle: 'PUMA Black-Vivid Violet-Passionfruit ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girl casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7256,7 +7256,7 @@ let all_products = [
         subtitle: 'PUMA Black-PUMA White ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girl casual',
+        category: 'sneaker',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7268,7 +7268,7 @@ let all_products = [
         subtitle: 'PUMA Black-Team Aqua-PUMA White ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girls sports',
+        category: 'running',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7280,7 +7280,7 @@ let all_products = [
         subtitle: 'PUMA Black-Pelé Yellow ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girls sports',
+        category: 'running',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7292,7 +7292,7 @@ let all_products = [
         subtitle: 'Persian Blue-Racing Blue ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girls sports',
+        category: 'running',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7304,7 +7304,7 @@ let all_products = [
         subtitle: 'New Navy-Blue Atoll-Vibrant Orange ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girls sports',
+        category: 'running',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7316,7 +7316,7 @@ let all_products = [
         subtitle: 'Puma Black-Puma White ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girls sports',
+        category: 'running',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7328,7 +7328,7 @@ let all_products = [
         subtitle: 'New Navy-Blue Atoll-Vibrant Orange ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girls sports',
+        category: 'running',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7340,7 +7340,7 @@ let all_products = [
         subtitle: 'Peacoat-Silver-Sharp Green ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girls sports',
+        category: 'running',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7352,7 +7352,7 @@ let all_products = [
         subtitle: 'PUMA Black-Pelé Yellow ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girls sports',
+        category: 'running',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7364,7 +7364,7 @@ let all_products = [
         subtitle: 'Dewdrop-PUMA White-Fast Pink ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girls sports',
+        category: 'running',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7376,7 +7376,7 @@ let all_products = [
         subtitle: 'Pristine-Sunset Pink ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girls sports',
+        category: 'running',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7388,7 +7388,7 @@ let all_products = [
         subtitle: 'Puma Black-Puma White ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girls sports',
+        category: 'running',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7400,7 +7400,7 @@ let all_products = [
         subtitle: 'High Risk Red-Puma Black ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girls sports',
+        category: 'running',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7412,7 +7412,7 @@ let all_products = [
         subtitle: 'Electric Peppermint-PUMA Black ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girls sports',
+        category: 'running',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7424,7 +7424,7 @@ let all_products = [
         subtitle: 'PUMA Black-Bluemazing ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girls sports',
+        category: 'running',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7436,7 +7436,7 @@ let all_products = [
         subtitle: 'Bluemazing-PUMA White ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girls sports',
+        category: 'running',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7448,7 +7448,7 @@ let all_products = [
         subtitle: 'Poison Pink-PUMA White-PUMA Black ',
         description: 'Just when they think you couldn’t get any faster – you do. The ULTRA PLAY Jr features a lightweight yet durable synthetic upper enhanced with deboss and print details. ULTRA is Too Fast for Them.Lightweight yet durable PU upper enhanced with deboss and print detailsRegular tongue construction fits various foot shapesLow-profile multi-studded rubber outsoleSuitable for use on hard natural surfaces and artificial grass (2G)Regular to narrow fitTT: Turf Training outsolePUMA Youth: Recommended for older kids between 8 and 16 years',
         gender: 'kids',
-        category: 'girls sports',
+        category: 'running',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7460,7 +7460,7 @@ let all_products = [
         subtitle: 'Bluemazing-PUMA White ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girls sports',
+        category: 'running',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7472,7 +7472,7 @@ let all_products = [
         subtitle: 'Electric Peppermint-PUMA Black ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girls sports',
+        category: 'running',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7484,7 +7484,7 @@ let all_products = [
         subtitle: 'PUMA Black-Copper Rose ',
         description: 'Just when they think you couldn’t get any faster – you do. The ULTRA PLAY Jr features a lightweight yet durable synthetic upper enhanced with deboss and print details. ULTRA is Too Fast for Them.Lightweight yet durable PU upper enhanced with deboss and print detailsRegular tongue construction fits various foot shapesLow-profile multi-studded rubber outsoleSuitable for use on hard natural surfaces and artificial grass (2G)Regular to narrow fitTT: Turf Training outsolePUMA Youth: Recommended for older kids between 8 and 16 years',
         gender: 'kids',
-        category: 'girls sports',
+        category: 'running',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7496,7 +7496,7 @@ let all_products = [
         subtitle: 'PUMA Black-Copper Rose ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girls sports',
+        category: 'running',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7508,7 +7508,7 @@ let all_products = [
         subtitle: 'PUMA Black-Copper Rose ',
         description: 'Just when they think you couldn’t get any faster – you do. The ULTRA PLAY Jr features a lightweight yet durable synthetic upper enhanced with deboss and print details fused to a TPU SPEEDPLATE outsole that ensures optimal traction and propulsion. ULTRA is Too Fast for Them.Lightweight yet durable PU upper enhanced with deboss and print detailsRegular tongue construction fits various foot shapesTPU SPEEDPLATE outsole for traction and propulsionRegular to narrow fitFG/AG: Firm ground/Artificial ground outsolePUMA Youth: Recommended for older kids between 8 and 16 years',
         gender: 'kids',
-        category: 'girls sports',
+        category: 'running',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7520,7 +7520,7 @@ let all_products = [
         subtitle: 'Fiery Coral-Fizzy Light-Puma Black ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girls sports',
+        category: 'running',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7532,7 +7532,7 @@ let all_products = [
         subtitle: 'Poison Pink-PUMA White-PUMA Black ',
         description: 'Just when they think you couldn’t get any faster – you do. The ULTRA PLAY Jr features a lightweight yet durable synthetic upper enhanced with deboss and print details fused to a TPU SPEEDPLATE outsole that ensures optimal traction and propulsion. ULTRA is Too Fast for Them.Lightweight yet durable PU upper enhanced with deboss and print detailsRegular tongue construction fits various foot shapesTPU SPEEDPLATE outsole for traction and propulsionRegular to narrow fitFG/AG: Firm ground/Artificial ground outsolePUMA Youth: Recommended for older kids between 8 and 16 years',
         gender: 'kids',
-        category: 'girls sports',
+        category: 'running',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     },
@@ -7544,7 +7544,7 @@ let all_products = [
         subtitle: 'PUMA Black-PUMA White ',
         description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
         gender: 'kids',
-        category: 'girls sports',
+        category: 'running',
         brand: 'puma',
         sizes: ['1', '2', '3', '4', '5']
     }

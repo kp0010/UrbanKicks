@@ -6,7 +6,7 @@ let boys_school_shoes = [
     subtitle: 'Puma Black-Puma Black ',
     description: "Elevate your kid's shoe game with the Punch Comfort Sneakers from PUMA.The mesh upper provides breathability, while the velcro closure ensures a secure fit. The cushioned collar adds extra comfort, making these sneakers perfect for your kid's delicate feet.Mesh upperRubber outsoleHeel type: FlatShoe width: Regular fitShoe pronation: NeutralHeel-to-toe-drop: 0 mmHook-and-loop closurePUMA Wordmark and Cat logo on tonguePUMA Cat logo on heelPUMA Formstrip on lateral side",
     gender: 'kids',
-    category: 'boys school',
+    category: 'lifestyle',
     brand: 'puma',
     sizes: [ '1', '2', '3', '4', '5' ]
   },
@@ -17,7 +17,7 @@ let boys_school_shoes = [
     subtitle: 'Puma White-Puma White ',
     description: "Elevate your kid's shoe game with the Punch Comfort Sneakers from PUMA.The mesh upper provides breathability, while the velcro closure ensures a secure fit. The cushioned collar adds extra comfort, making these sneakers perfect for your kid's delicate feet.Mesh upperRubber outsoleHeel type: FlatShoe width: Regular fitShoe pronation: NeutralHeel-to-toe-drop: 0 mmHook-and-loop closurePUMA Wordmark and Cat logo on tonguePUMA Cat logo on heelPUMA Formstrip on lateral side",
     gender: 'kids',
-    category: 'boys school',
+    category: 'lifestyle',
     brand: 'puma',
     sizes: [ '1', '2', '3', '4', '5' ]
   },
@@ -28,7 +28,7 @@ let boys_school_shoes = [
     subtitle: 'PUMA Black-Puma Black ',
     description: "Elevate your kid's shoe game with the Punch Comfort Sneakers from PUMA.The mesh upper provides breathability, while the velcro closure ensures a secure fit. The cushioned collar adds extra comfort, making these sneakers perfect for your kid's delicate feet.Mesh upperRubber outsoleHeel type: FlatShoe width: Regular fitShoe pronation: NeutralHeel-to-toe-drop: 0 mmHook-and-loop closurePUMA Wordmark and Cat logo on tonguePUMA Cat logo on heelPUMA Formstrip on lateral side",
     gender: 'kids',
-    category: 'boys school',
+    category: 'lifestyle',
     brand: 'puma',
     sizes: [ '1', '2', '3', '4', '5' ]
   },
@@ -39,7 +39,7 @@ let boys_school_shoes = [
     subtitle: 'Puma White-Puma White ',
     description: "Elevate your kid's shoe game with the Punch Comfort Sneakers from PUMA.The mesh upper provides breathability, while the velcro closure ensures a secure fit. The cushioned collar adds extra comfort, making these sneakers perfect for your kid's delicate feet.Mesh upperRubber outsoleHeel type: FlatShoe width: Regular fitShoe pronation: NeutralHeel-to-toe-drop: 0 mmHook-and-loop closurePUMA Wordmark and Cat logo on tonguePUMA Cat logo on heelPUMA Formstrip on lateral side",
     gender: 'kids',
-    category: 'boys school',
+    category: 'lifestyle',
     brand: 'puma',
     sizes: [ '1', '2', '3', '4', '5' ]
   },
@@ -50,7 +50,7 @@ let boys_school_shoes = [
     subtitle: 'Puma White-Puma White ',
     description: "Elevate your baby's shoe game with the Punch Comfort Sneakers from PUMA.The mesh upper provides breathability, while the velcro closure ensures a secure fit. The cushioned collar adds extra comfort, making these sneakers perfect for your kid's delicate feet.Mesh upperRubber outsoleHeel type: FlatShoe width: Regular fitShoe pronation: NeutralHeel-to-toe-drop: 0 mmHook-and-loop closurePUMA Wordmark and Cat logo on tonguePUMA Cat logo on heelPUMA Formstrip on lateral side",
     gender: 'kids',
-    category: 'boys school',
+    category: 'lifestyle',
     brand: 'puma',
     sizes: [ '1', '2', '3', '4', '5' ]
   },
@@ -61,7 +61,7 @@ let boys_school_shoes = [
     subtitle: 'PUMA Black-PUMA Black ',
     description: "Elevate your baby's shoe game with the Punch Comfort Sneakers from PUMA.The mesh upper provides breathability, while the velcro closure ensures a secure fit. The cushioned collar adds extra comfort, making these sneakers perfect for your kid's delicate feet.Mesh upperRubber outsoleHeel type: FlatShoe width: Regular fitShoe pronation: NeutralHeel-to-toe-drop: 0 mmHook-and-loop closurePUMA Wordmark and Cat logo on tonguePUMA Cat logo on heelPUMA Formstrip on lateral side",
     gender: 'kids',
-    category: 'boys school',
+    category: 'lifestyle',
     brand: 'puma',
     sizes: [ '1', '2', '3', '4', '5' ]
   }

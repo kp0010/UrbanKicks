@@ -6,7 +6,7 @@ let girls_casual_shoes = [
     subtitle: 'PUMA White-Passionfruit ',
     description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
     gender: 'kids',
-    category: 'girl casual',
+    category: 'sneaker',
     brand: 'puma',
     sizes: [ '1', '2', '3', '4', '5' ]
   },
@@ -17,7 +17,7 @@ let girls_casual_shoes = [
     subtitle: 'PUMA Black-PUMA White ',
     description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
     gender: 'kids',
-    category: 'girl casual',
+    category: 'sneaker',
     brand: 'puma',
     sizes: [ '1', '2', '3', '4', '5' ]
   },
@@ -28,7 +28,7 @@ let girls_casual_shoes = [
     subtitle: 'Electric Blush-Frosty Pink ',
     description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
     gender: 'kids',
-    category: 'girl casual',
+    category: 'sneaker',
     brand: 'puma',
     sizes: [ '1', '2', '3', '4', '5' ]
   },
@@ -39,7 +39,7 @@ let girls_casual_shoes = [
     subtitle: 'PUMA White-Green Illusion ',
     description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
     gender: 'kids',
-    category: 'girl casual',
+    category: 'sneaker',
     brand: 'puma',
     sizes: [ '1', '2', '3', '4', '5' ]
   },
@@ -50,7 +50,7 @@ let girls_casual_shoes = [
     subtitle: 'PUMA Black-Team Aqua-PUMA White ',
     description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
     gender: 'kids',
-    category: 'girl casual',
+    category: 'sneaker',
     brand: 'puma',
     sizes: [ '1', '2', '3', '4', '5' ]
   },
@@ -61,7 +61,7 @@ let girls_casual_shoes = [
     subtitle: 'PUMA Black-Gold-PUMA White ',
     description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
     gender: 'kids',
-    category: 'girl casual',
+    category: 'sneaker',
     brand: 'puma',
     sizes: [ '1', '2', '3', '4', '5' ]
   },
@@ -72,7 +72,7 @@ let girls_casual_shoes = [
     subtitle: 'PUMA Black-PUMA Red ',
     description: "This one's for our tweens and fans of the hit show Miraculous - Tales of Ladybug and Cat Noir. PUMA created a collection with Miraculous that's inspired by Parisian nights and manga graphics. Check this out: these Mayze Stack sneakers have a colourway that's reminiscent of the Parisian nights and Manga stories.Synthetic upperMesh liningSynthetic tonguePolka-dot print formstripRubber midsoleRubber outsolePlatform sneakerPUMA x Miraculous brandingPUMA Kids: Recommended for younger children between 4 and 8 years old",
     gender: 'kids',
-    category: 'girl casual',
+    category: 'sneaker',
     brand: 'puma',
     sizes: [ '1', '2', '3', '4', '5' ]
   },
@@ -83,7 +83,7 @@ let girls_casual_shoes = [
     subtitle: 'PUMA White-Fast Pink-Vine ',
     description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
     gender: 'kids',
-    category: 'girl casual',
+    category: 'sneaker',
     brand: 'puma',
     sizes: [ '1', '2', '3', '4', '5' ]
   },
@@ -94,7 +94,7 @@ let girls_casual_shoes = [
     subtitle: 'Feather Gray-Glowing Pink-PUMA White ',
     description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
     gender: 'kids',
-    category: 'girl casual',
+    category: 'sneaker',
     brand: 'puma',
     sizes: [ '1', '2', '3', '4', '5' ]
   },
@@ -105,7 +105,7 @@ let girls_casual_shoes = [
     subtitle: 'Feather Gray-Club Navy-For All Time Red ',
     description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
     gender: 'kids',
-    category: 'girl casual',
+    category: 'sneaker',
     brand: 'puma',
     sizes: [ '1', '2', '3', '4', '5' ]
   },
@@ -116,7 +116,7 @@ let girls_casual_shoes = [
     subtitle: 'PUMA Black-Pelé Yellow ',
     description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
     gender: 'kids',
-    category: 'girl casual',
+    category: 'sneaker',
     brand: 'puma',
     sizes: [ '1', '2', '3', '4', '5' ]
   },
@@ -127,7 +127,7 @@ let girls_casual_shoes = [
     subtitle: 'PUMA Black-For All Time Red-PUMA White ',
     description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
     gender: 'kids',
-    category: 'girl casual',
+    category: 'sneaker',
     brand: 'puma',
     sizes: [ '1', '2', '3', '4', '5' ]
   },
@@ -138,7 +138,7 @@ let girls_casual_shoes = [
     subtitle: 'PUMA White-PUMA Team Royal-PUMA Black ',
     description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
     gender: 'kids',
-    category: 'girl casual',
+    category: 'sneaker',
     brand: 'puma',
     sizes: [ '1', '2', '3', '4', '5' ]
   },
@@ -149,7 +149,7 @@ let girls_casual_shoes = [
     subtitle: 'Puma White-Puma White ',
     description: "Elevate your kid's shoe game with the Punch Comfort Sneakers from PUMA.The mesh upper provides breathability, while the velcro closure ensures a secure fit. The cushioned collar adds extra comfort, making these sneakers perfect for your kid's delicate feet.Mesh upperRubber outsoleHeel type: FlatShoe width: Regular fitShoe pronation: NeutralHeel-to-toe-drop: 0 mmHook-and-loop closurePUMA Wordmark and Cat logo on tonguePUMA Cat logo on heelPUMA Formstrip on lateral side",
     gender: 'kids',
-    category: 'girl casual',
+    category: 'sneaker',
     brand: 'puma',
     sizes: [ '1', '2', '3', '4', '5' ]
   },
@@ -160,7 +160,7 @@ let girls_casual_shoes = [
     subtitle: 'Warm White-Pelé Yellow-Blue Skies ',
     description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
     gender: 'kids',
-    category: 'girl casual',
+    category: 'sneaker',
     brand: 'puma',
     sizes: [ '1', '2', '3', '4', '5' ]
   },
@@ -171,7 +171,7 @@ let girls_casual_shoes = [
     subtitle: 'PUMA Black-Zinnia-Electric Peppermint ',
     description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
     gender: 'kids',
-    category: 'girl casual',
+    category: 'sneaker',
     brand: 'puma',
     sizes: [ '1', '2', '3', '4', '5' ]
   },
@@ -182,7 +182,7 @@ let girls_casual_shoes = [
     subtitle: 'Puma Black-Puma Black ',
     description: "Elevate your kid's shoe game with the Punch Comfort Sneakers from PUMA.The mesh upper provides breathability, while the velcro closure ensures a secure fit. The cushioned collar adds extra comfort, making these sneakers perfect for your kid's delicate feet.Mesh upperRubber outsoleHeel type: FlatShoe width: Regular fitShoe pronation: NeutralHeel-to-toe-drop: 0 mmHook-and-loop closurePUMA Wordmark and Cat logo on tonguePUMA Cat logo on heelPUMA Formstrip on lateral side",
     gender: 'kids',
-    category: 'girl casual',
+    category: 'sneaker',
     brand: 'puma',
     sizes: [ '1', '2', '3', '4', '5' ]
   },
@@ -193,7 +193,7 @@ let girls_casual_shoes = [
     subtitle: 'Vapor Gray-Blue Skies-Rickie Orange ',
     description: "PUMA's SOFTRIDE technology represents an advancement in footwear comfort. It incorporates our softest foam, designed to deliver extreme cushioning that promotes sustained comfort throughout the day. The SOFTRIDE midsole, softer and lighter than traditional EVA, extends through the full length of the shoe. This innovative construction enhances the wearer's experience, providing lightweight support during daily activities.   Perfect for active kids who love a touch of style, these shoes are built to support during any outdoor activity. Equipped with a SoftFoam sockliner for plush steps and a breathable textile upper, these shoes promise all-day wearability. The secure lacing system ensures a snug fit, while the contrast accents add a playful, sporty style.SoftFoam+: PUMA’s comfort sockliner for instant step-in and long-lasting comfort that provides soft cushioning every step of your dayHeel type: FlatShoe width: Regular fitShoe pronation: NeutralHeel-to-toe-drop: 12 mmTextile upperZoned rubber outsoleLow bootLace closure PUMA Cat logo branding ",
     gender: 'kids',
-    category: 'girl casual',
+    category: 'sneaker',
     brand: 'puma',
     sizes: [ '1', '2', '3', '4', '5' ]
   },
@@ -204,7 +204,7 @@ let girls_casual_shoes = [
     subtitle: 'Club Navy-Hyperlink Blue-Yellow Burst ',
     description: "PUMA's SOFTRIDE technology represents an advancement in footwear comfort. It incorporates our softest foam, designed to deliver extreme cushioning that promotes sustained comfort throughout the day. The SOFTRIDE midsole, softer and lighter than traditional EVA, extends through the full length of the shoe. This innovative construction enhances the wearer's experience, providing lightweight support during daily activities.   Perfect for active kids who love a touch of style, these shoes are built to support during any outdoor activity. Equipped with a SoftFoam sockliner for plush steps and a breathable textile upper, these shoes promise all-day wearability. The secure lacing system ensures a snug fit, while the contrast accents add a playful, sporty style.SoftFoam+: PUMA’s comfort sockliner for instant step-in and long-lasting comfort that provides soft cushioning every step of your dayHeel type: FlatShoe width: Regular fitShoe pronation: NeutralHeel-to-toe-drop: 12 mmTextile upperZoned rubber outsoleLow bootLace closure PUMA Cat logo branding ",
     gender: 'kids',
-    category: 'girl casual',
+    category: 'sneaker',
     brand: 'puma',
     sizes: [ '1', '2', '3', '4', '5' ]
   },
@@ -215,7 +215,7 @@ let girls_casual_shoes = [
     subtitle: 'PUMA Black-Active Red-Pelé Yellow ',
     description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
     gender: 'kids',
-    category: 'girl casual',
+    category: 'sneaker',
     brand: 'puma',
     sizes: [ '1', '2', '3', '4', '5' ]
   },
@@ -226,7 +226,7 @@ let girls_casual_shoes = [
     subtitle: 'Clyde Royal-Yellow Burst-PUMA White ',
     description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
     gender: 'kids',
-    category: 'girl casual',
+    category: 'sneaker',
     brand: 'puma',
     sizes: [ '1', '2', '3', '4', '5' ]
   },
@@ -237,7 +237,7 @@ let girls_casual_shoes = [
     subtitle: 'Grape Mist-Passionfruit-Intense Lavender ',
     description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
     gender: 'kids',
-    category: 'girl casual',
+    category: 'sneaker',
     brand: 'puma',
     sizes: [ '1', '2', '3', '4', '5' ]
   },
@@ -248,7 +248,7 @@ let girls_casual_shoes = [
     subtitle: 'PUMA Black-Vivid Violet-Passionfruit ',
     description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
     gender: 'kids',
-    category: 'girl casual',
+    category: 'sneaker',
     brand: 'puma',
     sizes: [ '1', '2', '3', '4', '5' ]
   },
@@ -259,7 +259,7 @@ let girls_casual_shoes = [
     subtitle: 'PUMA Black-PUMA White ',
     description: 'Free return on all qualifying orders within 14 days of your order delivery date. Visit our Return Policy for more information.For any queries, please contact Customer Service at 080-35353535 or via customercareindia@puma.com.',
     gender: 'kids',
-    category: 'girl casual',
+    category: 'sneaker',
     brand: 'puma',
     sizes: [ '1', '2', '3', '4', '5' ]
   }

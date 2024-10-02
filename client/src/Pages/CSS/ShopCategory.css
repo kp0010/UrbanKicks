@@ -14,6 +14,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 .shop-category-sort div {
     display: flex;
@@ -23,15 +24,26 @@
     font-size: 16px;
     font-weight: 500;
     padding-left: 50px;
-    
+}
+.shop-category-sort-type {
+    margin-right: 80px;
+    outline: none;
+    background-color: #25232e;
+    color: white;
+    padding: 5px;
 }
 .shop-category-main {
     display: flex;
 }
 .shop-category-filters {
     color: white;
-    width: 40vh;
+    width: 20vw;
     border-right: 1px solid white;
+    padding-left: 50px;
+}
+.shop-category-filters-font {
+    font-size: 30px;
+    letter-spacing: 1.5px;
 }
 .shop-category-products {
     margin: 20px 60px;
