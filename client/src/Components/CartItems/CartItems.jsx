@@ -7,9 +7,13 @@ import { useAuth } from '../../Context/AuthContext'
 
 export const CartItems = () => {
     const { all_products } = useContext(ShopContext);
-    const [cartData, setCartData] = useState([]);
+
+    const [cartData, setCartData] = useState([])
+    const [cartChanged, setCartChanged] = useState(false)
+    const [loading, setLoading] = useState(true)
 
     const { auth, user } = useAuth()
+    console.log(auth, user)
 
     const getCartInfo = () => {
         if (!auth) { return }
@@ -23,19 +27,22 @@ export const CartItems = () => {
         })
             .then(resp => resp.json())
             .then(data => {
-                console.log(data)
                 if (data.success) {
                     setCartData(data.result)
                 }
+                setLoading(false)
             })
     }
 
-    // useEffect(() => {
-    getCartInfo()
+    useEffect(() => {
+        getCartInfo()
+    }, user)
 
     return (
         <div className="cartItems">
+            <h1>{auth.toString()}</h1>
             <div className="head">Shopping Cart</div>
+            <h1>{loading ? "Loading" : null}</h1>
             {
                 cartData.map((item, index) => {
                     const productData = all_products.find((product) => product._id === item.id);
@@ -64,7 +71,6 @@ export const CartItems = () => {
                                             Rs {productData.price}
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                             <div className="cartItems-bill"></div>

@@ -1,5 +1,5 @@
 import React, { createContext, useState } from "react";
-import {toast} from "react-toastify";
+
 import all_products from "../Components/Assets/ProductData/allproducts.js"
 import new_arrivals from "../Components/Assets/ProductData/new_arrivals.js";
 
@@ -15,37 +15,7 @@ export const ShopContext = createContext(null);
 
 const ShopContextProvider = (props) => {
 
-    /*const [cartItems,setCartItems] = useState(getDefaultCart());*/
     const [cartItems, setCartItems] = useState({});
-
-    {/*const addToCart = (itemId) =>{
-        setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
-        console.log(cartItems);
-    }*/}
-
-    const addToCart = async (itemId, size) => {
-        if (!size) {
-            toast.error("Select Product Size");
-            return
-        }
-
-        let cartData = structuredClone(cartItems);
-
-        if (cartData[itemId]) {
-            if(cartData[itemId][size]) {
-                cartData[itemId][size]+=1;
-            }
-            else {
-                cartData[itemId][size] = 1;
-            }
-        }
-        else {
-            cartData[itemId] = {};
-            cartData[itemId][size] = 1;
-        }
-        console.log(cartItems);
-        setCartItems(cartData);
-    }
 
     const getCartCount = () => {
         let totalCount = 0;
@@ -63,22 +33,8 @@ const ShopContextProvider = (props) => {
         return totalCount;
     }
 
-    const updateQuantity = async (itemId, size, quantity) => {
+    const contextValue = { all_products, new_arrivals, getCartCount };
 
-        let cartData = structuredClone(cartItems);
-
-        cartData[itemId][size] = quantity;
-
-        setCartItems(cartData);
-
-    }
-
-    const removefromCart = (itemId) =>{
-        setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
-    }
-
-    const contextValue = { all_products, new_arrivals, cartItems, addToCart, getCartCount, updateQuantity, removefromCart };
-    
     return (
         <ShopContext.Provider value={contextValue}>
             {props.children}
