@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom'
 import "./ProductDisplay.css"
 
@@ -16,7 +17,10 @@ export const ProductDisplay = (props) => {
     console.log(product)
 
     const addToCart = () => {
-        if (!size) { return }
+        if (!size) {
+            toast.error("Select Product Size"); 
+            return
+        }
 
         if (!auth) { navigate("/login"); return }
 

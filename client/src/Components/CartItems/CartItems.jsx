@@ -122,7 +122,7 @@ export const CartItems = () => {
                                                 }}
                                                     className='' type="number" min={1} max={5} defaultValue={item.quantity} />
                                                 <div className="cartItems-products-right-price">
-                                                    Rs {productData.price}
+                                                    ₹ {productData.price}
                                                 </div>
                                             </div>
                                         </div>
