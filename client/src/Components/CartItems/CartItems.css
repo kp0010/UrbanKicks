@@ -1,0 +1,7 @@
+.cartItems-products {
+    display: flex;
+}
+.cartItems-products-left img {
+    width: 200px;
+    height: 200px;
+}
