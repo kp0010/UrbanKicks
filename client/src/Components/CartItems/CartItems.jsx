@@ -11,6 +11,7 @@ export const CartItems = () => {
     const [cartData, setCartData] = useState([])
     const [cartChanged, setCartChanged] = useState(false)
     const [loading, setLoading] = useState(true)
+    const [price, setPrice] = useState(0)
 
     const { auth, user } = useAuth()
 
@@ -33,13 +34,62 @@ export const CartItems = () => {
             })
     }
 
+    const updatePrice = (productid, size, quantity) => {
+        let cartItem = null;
+        let acc = 0
+
+        console.log("QUANT", quantity)
+
+        for (cartItem of cartData) {
+            const product = all_products.find((product) => product.id === cartItem.productid);
+            if (productid === cartItem.productid & size === cartItem.size) {
+                if (quantity !== undefined)
+                    acc = acc + (product.price * quantity)
+            }
+            else {
+                acc = acc + (product.price * cartItem.quantity)
+            }
+        }
+
+        setPrice(acc)
+    }
+
+    const initPrice = () => {
+        let cartItem = null;
+        let acc = 0
+
+        console.log("INIT: ", cartData[0])
+
+        for (cartItem of cartData) {
+            const product = all_products.find((product) => product.id === cartItem.productid);
+            acc = acc + (product.price * cartItem.quantity)
+        }
+
+        setPrice(acc)
+    }
+
     useEffect(() => {
         getCart()
     }, [user, cartChanged])
 
+    useEffect(() => {
+        console.log(cartData.length, price)
+        if (cartData.length > 0 & price === 0) {
+            initPrice()
+        }
+
+    }, [cartData])
+
+    useEffect(() => {
+        updatePrice()
+    }, [])
+
+
     const updateCart = (productid, size, quantity) => {
         if (!(quantity <= 5 & quantity >= 1)) { return }
         if (!auth) { return }
+
+        updatePrice(productid, size, quantity)
 
         fetch("http://localhost:8080/updateCart", {
             method: "PUT",
@@ -52,18 +102,13 @@ export const CartItems = () => {
             }),
             credentials: "include"
         })
-            .then(resp => resp.json())
-            .then(data => {
-                if (data.success) {
-                    console.log(data.result[0])
-                }
-                setLoading(true)
-                setCartChanged(!cartChanged)
-            })
+            .then(setCartChanged(!cartChanged))
     }
 
     const deleteCart = (productid, size) => {
         if (!auth) { return }
+
+        updatePrice(productid, size)
 
         fetch("http://localhost:8080/updateCart", {
             method: "DELETE",
@@ -75,14 +120,8 @@ export const CartItems = () => {
             }),
             credentials: "include"
         })
-            .then(resp => resp.json())
-            .then(data => {
-                if (data.success) {
-                    console.log(data.result[0])
-                }
-                setLoading(true)
-                setCartChanged(!cartChanged)
-            })
+        // setLoading(true)
+        setCartChanged(!cartChanged)
     }
 
 
@@ -95,7 +134,7 @@ export const CartItems = () => {
                     {
                         cartData.map((item, index) => {
                             const productData = all_products.find((product) => product.id === item.productid);
-                            return <div className="cartItems-key">
+                            return <div className="cartItems-key" key={index}>
                                 <div key={index} >
                                     <div className="cartItems-products">
                                         <div className="cartItems-products-left">
@@ -107,9 +146,7 @@ export const CartItems = () => {
                                                     <h4>{productData.title}</h4>  {/*add link to product page*/}
                                                     <h5>{productData.subtitle}</h5>
                                                 </div>
-                                                <button onClick={() => deleteCart(item.productid, item.size)}>
-                                                    <img className='' src={bin_icon} alt="" />
-                                                </button>
+                                                <img onClick={() => deleteCart(item.productid, item.size)} className='' src={bin_icon} alt="" />
                                             </div>
                                             <hr />      {/*put only border bottom*/}
                                             <div className="cartItems-products-right-size">
@@ -144,9 +181,9 @@ export const CartItems = () => {
                             <p>Total</p>
                         </div>
                         <div className="cartItems-subtotal-right">
-                            <p>Amount</p>       {/*subtotal amount*/}
-                            <p>FREE</p>
-                            <p>Amount</p>       {/*Total amount*/}
+                            <p>₹{price}</p>
+                            <p>₹300</p>
+                            <p>₹{price + 300}</p>
                         </div>
                     </div>
                     <hr />

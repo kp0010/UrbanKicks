@@ -14,8 +14,6 @@ export const ProductDisplay = (props) => {
 
     const { auth, user } = useAuth()
 
-    console.log(product)
-
     const addToCart = () => {
         if (!size) {
             toast.error("Select Product Size"); 
