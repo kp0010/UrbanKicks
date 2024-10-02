@@ -1,7 +1,7 @@
 import express from "express"
 import pg from "pg"
 import cors from "cors"
-import passport from "passport"
+import passport, { Passport } from "passport"
 import LocalStratergy from "passport-local"
 import session from "express-session"
 import bcrypt from "bcrypt"
@@ -65,7 +65,6 @@ passport.use(new LocalStratergy(function verify(username, password, cb) {
         if (!res.rows[0]) { console.log("Invalid Username"); return cb(null, false, { message: "Email or Number Invalid" }) }
 
         const temp = bcrypt.compare(password, res.rows[0].password)
-        console.log(res.rows[0].password, password, temp)
         if (bcrypt.compare(password, res.rows[0].password)) {
             console.log("Password Verified")
             return cb(null, res.rows[0])
@@ -102,10 +101,7 @@ app.post("/login", (req, res, next) => {
 })
 
 app.post("/signup", (req, res) => {
-    const mail = req.body.mail
-    const number = req.body.number
-    const password = req.body.password
-    const fullname = req.body.fullname
+    const { mail, number, password, fullname } = req.body
 
     bcrypt.hash(password, saltRounds)
         .then((hashedPassword) => {
@@ -129,30 +125,39 @@ app.get("/user", (req, res) => {
     }
 })
 
-app.post("/cart", (req, res) => {
-    const productId = req.body.productId
-    const mail = req.body.mail
-    const quantity = req.body.quantity
-    const size = req.body.size
+app.post("/updateCart", (req, res) => {
+    const { productId, mail, quantity, size } = req.body
 
-    db.query("INSERT INTO cart (mail, productId, quantity, size) VALUES ($1, $2, $3, $4) RETURNING mail",
-        [mail, productId, quantity, size], (error, result) => {
-            return res.status(200).json(
-                { success: !Boolean(error) }
-            )
+    db.query("SELECT * FROM cart WHERE mail=$1 AND productId=$2 AND size=$3",
+        [mail, productId, size], (error, result) => {
+            if (result.rows.length > 0) {
+                db.query("UPDATE cart SET quantity=$1",
+                    [quantity + result.rows[0].quantity], (error, result) => {
+                        res.status(200).json(
+                            { success: !Boolean(error) }
+                        )
+                        return
+                    }
+                )
+            } else {
+                db.query("INSERT INTO cart (mail, productId, quantity, size) VALUES ($1, $2, $3, $4) RETURNING mail",
+                    [mail, productId, quantity, size], (error, result) => {
+                        return res.status(200).json(
+                            { success: !Boolean(error) }
+                        )
+                    })
+            }
+
         })
+
 
 })
 
-
 app.post("/getCart/", (req, res) => {
     const mail = req.body.mail
-    console.log("getting")
-    console.log(mail)
 
     db.query("SELECT * FROM cart WHERE mail=$1",
         [mail], (error, result) => {
-            console.log(result.rows)
             return res.status(200).json(
                 {
                     success: !Boolean(error),
@@ -162,6 +167,53 @@ app.post("/getCart/", (req, res) => {
             )
         })
 
+})
+
+app.put("/updateCart/", (req, res) => {
+    const { productId, mail, quantity, size } = req.body
+    console.log(productId, mail, size, quantity)
+
+    db.query("UPDATE cart SET quantity=$1 WHERE mail=$2 AND size=$3 AND productId=$4 RETURNING *",
+        [quantity, mail, size, productId], (error, result) => {
+            if (result.rows.length > 0) {
+                res.status(200).json(
+                    {
+                        success: !Boolean(error),
+                        result: result.rows[0],
+                    }
+                )
+            } else {
+                return res.status(200).json(
+                    {
+                        success: false,
+                    }
+                )
+            }
+        })
+})
+
+
+app.delete("/updateCart/", (req, res) => {
+    const { productId, mail, size } = req.body
+    console.log(productId, mail, size)
+
+    db.query("DELETE from cart WHERE productId=$3 AND mail=$1 AND size=$2 RETURNING *",
+        [mail, size, productId], (error, result) => {
+            if (result.rows.length > 0) {
+                res.status(200).json(
+                    {
+                        success: !Boolean(error),
+                        result: result.rows[0],
+                    }
+                )
+            } else {
+                return res.status(404).json(
+                    {
+                        success: false,
+                    }
+                )
+            }
+        })
 })
 
 app.post("/logout", (req, res) => {

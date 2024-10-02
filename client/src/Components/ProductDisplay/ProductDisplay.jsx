@@ -1,15 +1,12 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import "./ProductDisplay.css"
 
 import { useAuth } from '../../Context/AuthContext'
-import { ShopContext } from '../../Context/ShopContext'
 
 export const ProductDisplay = (props) => {
     const navigate = useNavigate()
     const { product } = props;
-
-    // const {}
 
     const [size, setSize] = useState('');
     const [quantity, setQuantity] = useState(1);
@@ -21,9 +18,9 @@ export const ProductDisplay = (props) => {
     const addToCart = () => {
         if (!size) { return }
 
-        if (!auth) { navigate("/login") }
+        if (!auth) { navigate("/login"); return }
 
-        fetch("http://localhost:8080/cart", {
+        fetch("http://localhost:8080/updateCart", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -38,9 +35,9 @@ export const ProductDisplay = (props) => {
             .then(data => {
                 // // data = {sucesss: bool, mail: str}
                 // if (data.success) {
-                //     window.location.replace("/login")
+                //      Handle success notification sending here
                 // } else {
-                //     setResp(1)
+                //      Handle failure notification sending here
                 // }
             });
     }

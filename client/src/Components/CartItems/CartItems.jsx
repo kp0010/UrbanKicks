@@ -13,9 +13,8 @@ export const CartItems = () => {
     const [loading, setLoading] = useState(true)
 
     const { auth, user } = useAuth()
-    console.log(auth, user)
 
-    const getCartInfo = () => {
+    const getCart = () => {
         if (!auth) { return }
         fetch("http://localhost:8080/getCart", {
             method: "POST",
@@ -35,19 +34,65 @@ export const CartItems = () => {
     }
 
     useEffect(() => {
-        getCartInfo()
-    }, user)
+        getCart()
+    }, [user, cartChanged])
+
+    const updateCart = (productid, size, quantity) => {
+        if (!(quantity <= 5 & quantity >= 1)) { return }
+        if (!auth) { return }
+
+        fetch("http://localhost:8080/updateCart", {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                productId: productid,
+                mail: user.mail,
+                size: size,
+                quantity: quantity
+            }),
+            credentials: "include"
+        })
+            .then(resp => resp.json())
+            .then(data => {
+                if (data.success) {
+                    console.log(data.result[0])
+                }
+                setLoading(true)
+                setCartChanged(!cartChanged)
+            })
+    }
+
+    const deleteCart = (productid, size) => {
+        if (!auth) { return }
+
+        fetch("http://localhost:8080/updateCart", {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                productId: productid,
+                mail: user.mail,
+                size: size,
+            }),
+            credentials: "include"
+        })
+            .then(resp => resp.json())
+            .then(data => {
+                if (data.success) {
+                    console.log(data.result[0])
+                }
+                setLoading(true)
+                setCartChanged(!cartChanged)
+            })
+    }
+
 
     return (
         <div className="cartItems">
-            <h1>{auth.toString()}</h1>
             <div className="head">Shopping Cart</div>
             <h1>{loading ? "Loading" : null}</h1>
             {
                 cartData.map((item, index) => {
-                    const productData = all_products.find((product) => product._id === item.id);
-                    
-
+                    const productData = all_products.find((product) => product.id === item.productid);
                     return <div>
                         <div key={index} className="cartItems-main">
                             <div className="cartItems-products">
@@ -65,10 +110,13 @@ export const CartItems = () => {
                                         <p>In Stock</p>
                                     </div>
                                     <div className="cartItems-products-right-quantity-price">
-                                        <input onChange={(e) => e.target.value === '' || e.target.value === '0' ? null : null} className='' type="number" min={1} defaultValue={item.quantity} />
-                                        <img onClick={() => null} className='' src={bin_icon} alt="" />
+                                        <input onChange={(e) => {
+                                            updateCart(item.productid, item.size, e.target.value)
+                                        }}
+                                            className='' type="number" min={1} max={5} defaultValue={item.quantity} />
+                                        <img onClick={() => deleteCart(item.productid, item.size)} className='' src={bin_icon} alt="" />
                                         <div className="cartItems-products-right-price">
-                                            Rs {productData.price}
+                                            ₹ {productData.price}
                                         </div>
                                     </div>
                                 </div>
