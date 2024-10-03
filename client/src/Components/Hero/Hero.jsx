@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Hero.css"
 
-import hero1 from "../Assets/HomeAssets/hero1.png"
+import hero1 from "../Assets/HomeAssets/hero_1.png"
 import hero2 from "../Assets/HomeAssets/hero2.png"
 import hero3 from "../Assets/HomeAssets/hero3.png"
 
