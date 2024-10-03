@@ -192,6 +192,7 @@ export const CartItems = () => {
                     </div>
                     <div className="cartItems-order">
                         <p><span>Payment Method :- Cash on Delivery Only</span></p>
+                        <p>Pay via VYOMA Bank Credit card</p>
                         <p><span>Address :- </span><input className="cartItems-address" type="text" /></p>
                         <p><button>Change Address</button></p>
                         <button>Place an Order</button>
