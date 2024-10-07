@@ -217,8 +217,9 @@ app.post("/logout", (req, res) => {
         res.json({ message: 'Logged out' });
     });
 });
-
-
+app.get("/temp", (rq, rs) => {
+    rs.json({ message: "HELLO WORLD" })
+})
 app.listen(PORT, () => {
     console.log(`App is listening on port ${PORT}`)
 });

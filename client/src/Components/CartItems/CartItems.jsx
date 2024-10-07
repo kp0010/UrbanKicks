@@ -1,10 +1,16 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useNavigate } from "react-router-dom"
 import "./CartItems.css"
 import bin_icon from "../Assets/HomeAssets/bin_icon.png"
 
 import { useShop } from '../../Context/ShopContext'
+import { useAuth } from '../../Context/AuthContext'
 
 export const CartItems = () => {
+    const navigate = useNavigate()
+    const { auth } = useAuth()
+
+    if (!auth) { navigate("/login") }
+
     const {
         all_products,
         cartData,

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import './Navbar.css'
 import logo1 from "../Assets/logo_1.png"
 
@@ -10,6 +10,8 @@ export const Navbar = () => {
   const navigate = useNavigate()
 
   const { auth, setAuth, user, setUser } = useAuth()
+
+  const [dropdown, setDropdown] = useState("")
 
   const { cartCount } = useShop()
 
@@ -52,9 +54,9 @@ export const Navbar = () => {
   }
 
   const Dropdown = () => {
-    const element =
-      (auth) && (user !== null) ?
-        (<div class="dropdown">
+    if ((auth) && user !== null) {
+      setDropdown(
+        <div class="dropdown">
           <ul class="dropdown-menu dropdown-menu-dark text-small shadow" >
             <li><strong class="dropdown-item">Hello, {toTitleCase(user.fullname)}</strong></li>
             <li><a class="dropdown-item" href="#">Settings</a></li>
@@ -63,17 +65,20 @@ export const Navbar = () => {
             <li><a class="dropdown-item" onClick={handleLogout}>Log out</a></li>
           </ul>
         </div >)
-        :
-        (<div class="dropdown">
+    }
+    else {
+      setDropdown(
+        <div class="dropdown">
           <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
             <Link class="dropdown-item" onClick={gotoLogin}><li>Log In</li></Link>
             <li><hr class="dropdown-divider" /></li>
             <Link class="dropdown-item" onClick={gotoSignup}><li>Sign Up</li></Link>
           </ul>
         </div >)
-
-    return (element)
+    }
   }
+
+  useEffect(() => { Dropdown() }, [auth, user])
 
   return (
     <nav>
@@ -98,7 +103,7 @@ export const Navbar = () => {
             );
           })}
           <li className="menu-items"><a href="#" class="nav-item d-flex align-items-center text-decoration-none dropdown-toggle active" data-bs-toggle="dropdown" e>
-            <i class="bi bi-person"></i><Dropdown />
+            <i class="bi bi-person"></i>{dropdown}
           </a></li>
         </ul>
       </div>

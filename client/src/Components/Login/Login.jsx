@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Link } from 'react-router-dom'
 
 import "./Login.css"
 
@@ -63,8 +64,8 @@ export const Login = () => {
             {resp === 1 && <p>Mail or Phone Number does not exist, please try again.</p>}
             {resp === 2 && <p>Invalid Password, please try again.</p>}
             <button type="submit" className="login-button">Login</button>
-            <p className="links"><a href="#">Forgot Password?</a></p>
-            <p className="links">Don't have an account? <a href="/signup">Sign Up</a></p>
+            <p className="links"><a >Forgot Password?</a></p>
+            <p className="links">Don't have an account? <Link to="/signup">Sign Up</Link></p>
           </form>
         </div>
       </main>

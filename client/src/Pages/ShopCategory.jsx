@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./CSS/ShopCategory.css"
 import { useShop } from '../Context/ShopContext';
 import { CategoryItem } from '../Components/CategoryItem/CategoryItem';
@@ -48,7 +48,6 @@ export const ShopCategory = (props) => {
   }
 
   const sortProduct = () => {
-
     let fpCopy = filterProducts.slice();
     switch (sortType) {
       case 'Low-High':
@@ -66,12 +65,13 @@ export const ShopCategory = (props) => {
   }
 
   useEffect(() => {
+
     applyFilters();
-  }, [category]);
+  }, [category,]);
 
   useEffect(() => {
     sortProduct();
-  }, [sortType])
+  }, [sortType,])
 
 
   return (

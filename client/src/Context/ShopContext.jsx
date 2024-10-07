@@ -29,7 +29,11 @@ const ShopContextProvider = ({ children }) => {
     const { auth, user } = useAuth()
 
     const getCart = () => {
-        if (!auth) { return }
+        if (!auth) {
+            setCartData([])
+            setCartCount(0)
+            return
+        }
         fetch("http://localhost:8080/getCart", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -137,7 +141,7 @@ const ShopContextProvider = ({ children }) => {
         setPrice(acc)
     }
 
-    useEffect(() => { getCart() }, [cartChanged, auth])
+    useEffect(() => { getCart() }, [cartChanged, auth, user])
     useEffect(() => { getPrice() }, [cartData])
 
     const contextValue = {
