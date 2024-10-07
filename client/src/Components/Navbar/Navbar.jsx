@@ -1,17 +1,17 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './Navbar.css'
 import logo1 from "../Assets/logo_1.png"
 
 import { NavLink, useNavigate, Link } from 'react-router-dom'
 import { useAuth } from '../../Context/AuthContext'
-import { ShopContext } from '../../Context/ShopContext'
+import { useShop } from '../../Context/ShopContext'
 
 export const Navbar = () => {
   const navigate = useNavigate()
 
   const { auth, setAuth, user, setUser } = useAuth()
 
-  const {getCartCount} = useContext(ShopContext);
+  const { cartCount } = useShop()
 
   const handleLogout = () => {
     fetch("http://localhost:8080/logout", {
@@ -75,31 +75,25 @@ export const Navbar = () => {
     return (element)
   }
 
-  const handleClick = (event) => {
-    event.preventDefault();
-    window.scrollTo(0,0);
-    window.location.href = event.currentTarget.href;
-  };
-
   return (
     <nav>
       <div class="nav">
-        <NavLink to="/" onClick={handleClick}><img src={logo1} class="logo"></img></NavLink>
+        <NavLink to="/" ><img src={logo1} class="logo"></img></NavLink>
         <ul class="list">
-          <li><NavLink to="/men" onClick={handleClick}>Men</NavLink></li>
-          <li><NavLink to="/women" onClick={handleClick}>Women</NavLink></li>
-          <li><NavLink to="/kids" onClick={handleClick}>Kids</NavLink></li>
+          <li><NavLink to="/men" >Men</NavLink></li>
+          <li><NavLink to="/women" >Women</NavLink></li>
+          <li><NavLink to="/kids" >Kids</NavLink></li>
         </ul>
         <ul class="icons menus">
           {menuItemsData.map((menu, index) => {
             return (
-              <li className="menu-items">
-                <a href={menu.url}>
+              <li key={index} className="menu-items">
+                <Link to={menu.url}>
                   <i class={menu.icon} />
-                  {menu.icon === 'bi bi-bag' && getCartCount() > 0 && (
-                    <span className="cart-count">{getCartCount()}</span>
+                  {(menu.icon === 'bi bi-bag' && cartCount > 0) && (
+                    <span className="cart-count">{cartCount}</span>
                   )}
-                </a>
+                </Link>
               </li>
             );
           })}

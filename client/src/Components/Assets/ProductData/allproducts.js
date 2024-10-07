@@ -6622,7 +6622,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 553,
@@ -6634,7 +6634,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 554,
@@ -6646,7 +6646,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 555,
@@ -6658,7 +6658,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 556,
@@ -6670,7 +6670,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 557,
@@ -6682,7 +6682,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 558,
@@ -6694,7 +6694,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 559,
@@ -6706,7 +6706,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 560,
@@ -6718,7 +6718,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 561,
@@ -6730,7 +6730,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 562,
@@ -6742,7 +6742,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 563,
@@ -6754,7 +6754,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 564,
@@ -6766,7 +6766,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 565,
@@ -6778,7 +6778,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 566,
@@ -6790,7 +6790,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 567,
@@ -6802,7 +6802,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 568,
@@ -6814,7 +6814,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 569,
@@ -6826,7 +6826,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 570,
@@ -6838,7 +6838,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 571,
@@ -6850,7 +6850,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 572,
@@ -6862,7 +6862,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 573,
@@ -6874,7 +6874,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 574,
@@ -6886,7 +6886,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 575,
@@ -6898,7 +6898,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 576,
@@ -6910,7 +6910,7 @@ let all_products = [
         gender: 'kids',
         category: 'lifestyle',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 577,
@@ -6922,7 +6922,7 @@ let all_products = [
         gender: 'kids',
         category: 'lifestyle',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 578,
@@ -6934,7 +6934,7 @@ let all_products = [
         gender: 'kids',
         category: 'lifestyle',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 579,
@@ -6946,7 +6946,7 @@ let all_products = [
         gender: 'kids',
         category: 'lifestyle',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 580,
@@ -6958,7 +6958,7 @@ let all_products = [
         gender: 'kids',
         category: 'lifestyle',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 581,
@@ -6970,7 +6970,7 @@ let all_products = [
         gender: 'kids',
         category: 'lifestyle',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 582,
@@ -6982,7 +6982,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 583,
@@ -6994,7 +6994,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 584,
@@ -7006,7 +7006,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 585,
@@ -7018,7 +7018,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 586,
@@ -7030,7 +7030,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 587,
@@ -7042,7 +7042,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 588,
@@ -7054,7 +7054,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 589,
@@ -7066,7 +7066,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 590,
@@ -7078,7 +7078,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 591,
@@ -7090,7 +7090,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 592,
@@ -7102,7 +7102,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 593,
@@ -7114,7 +7114,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 594,
@@ -7126,7 +7126,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 595,
@@ -7138,7 +7138,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 596,
@@ -7150,7 +7150,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 597,
@@ -7162,7 +7162,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 598,
@@ -7174,7 +7174,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 599,
@@ -7186,7 +7186,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 600,
@@ -7198,7 +7198,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 601,
@@ -7210,7 +7210,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 602,
@@ -7222,7 +7222,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 603,
@@ -7234,7 +7234,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 604,
@@ -7246,7 +7246,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 605,
@@ -7258,7 +7258,7 @@ let all_products = [
         gender: 'kids',
         category: 'sneaker',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 606,
@@ -7270,7 +7270,7 @@ let all_products = [
         gender: 'kids',
         category: 'running',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 607,
@@ -7282,7 +7282,7 @@ let all_products = [
         gender: 'kids',
         category: 'running',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 608,
@@ -7294,7 +7294,7 @@ let all_products = [
         gender: 'kids',
         category: 'running',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 609,
@@ -7306,7 +7306,7 @@ let all_products = [
         gender: 'kids',
         category: 'running',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 610,
@@ -7318,7 +7318,7 @@ let all_products = [
         gender: 'kids',
         category: 'running',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 611,
@@ -7330,7 +7330,7 @@ let all_products = [
         gender: 'kids',
         category: 'running',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 612,
@@ -7342,7 +7342,7 @@ let all_products = [
         gender: 'kids',
         category: 'running',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 613,
@@ -7354,7 +7354,7 @@ let all_products = [
         gender: 'kids',
         category: 'running',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 614,
@@ -7366,7 +7366,7 @@ let all_products = [
         gender: 'kids',
         category: 'running',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 615,
@@ -7378,7 +7378,7 @@ let all_products = [
         gender: 'kids',
         category: 'running',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 616,
@@ -7390,7 +7390,7 @@ let all_products = [
         gender: 'kids',
         category: 'running',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 617,
@@ -7402,7 +7402,7 @@ let all_products = [
         gender: 'kids',
         category: 'running',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 618,
@@ -7414,7 +7414,7 @@ let all_products = [
         gender: 'kids',
         category: 'running',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 619,
@@ -7426,7 +7426,7 @@ let all_products = [
         gender: 'kids',
         category: 'running',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 620,
@@ -7438,7 +7438,7 @@ let all_products = [
         gender: 'kids',
         category: 'running',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 621,
@@ -7450,7 +7450,7 @@ let all_products = [
         gender: 'kids',
         category: 'running',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 622,
@@ -7462,7 +7462,7 @@ let all_products = [
         gender: 'kids',
         category: 'running',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 623,
@@ -7474,7 +7474,7 @@ let all_products = [
         gender: 'kids',
         category: 'running',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 624,
@@ -7486,7 +7486,7 @@ let all_products = [
         gender: 'kids',
         category: 'running',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 625,
@@ -7498,7 +7498,7 @@ let all_products = [
         gender: 'kids',
         category: 'running',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 626,
@@ -7510,7 +7510,7 @@ let all_products = [
         gender: 'kids',
         category: 'running',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 627,
@@ -7522,7 +7522,7 @@ let all_products = [
         gender: 'kids',
         category: 'running',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 628,
@@ -7534,7 +7534,7 @@ let all_products = [
         gender: 'kids',
         category: 'running',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     },
     {
         id: 629,
@@ -7546,7 +7546,7 @@ let all_products = [
         gender: 'kids',
         category: 'running',
         brand: 'puma',
-        sizes: ['1', '2', '3', '4', '5']
+        sizes: ['3', '4', '5', '6', '7']
     }
 
 

@@ -1,7 +1,7 @@
 import express from "express"
 import pg from "pg"
 import cors from "cors"
-import passport, { Passport } from "passport"
+import passport from "passport"
 import LocalStratergy from "passport-local"
 import session from "express-session"
 import bcrypt from "bcrypt"
@@ -44,8 +44,6 @@ const dbConfig = {
     user: 'postgres',
     host: 'localhost',
     database: 'wonderwalks',
-    // password: '0010',
-    //password: 'sahil@135',
     port: 5432,
 }
 
@@ -64,7 +62,6 @@ passport.use(new LocalStratergy(function verify(username, password, cb) {
 
         if (!res.rows[0]) { console.log("Invalid Username"); return cb(null, false, { message: "Email or Number Invalid" }) }
 
-        const temp = bcrypt.compare(password, res.rows[0].password)
         if (bcrypt.compare(password, res.rows[0].password)) {
             console.log("Password Verified")
             return cb(null, res.rows[0])
@@ -125,7 +122,7 @@ app.get("/user", (req, res) => {
     }
 })
 
-app.post("/updateCart", (req, res) => {
+app.post("/cart", (req, res) => {
     const { productId, mail, quantity, size } = req.body
 
     db.query("SELECT * FROM cart WHERE mail=$1 AND productId=$2 AND size=$3",
@@ -153,10 +150,10 @@ app.post("/updateCart", (req, res) => {
 
 })
 
-app.post("/getCart/", (req, res) => {
+app.post("/getCart", (req, res) => {
     const mail = req.body.mail
 
-    db.query("SELECT * FROM cart WHERE mail=$1 ORDER BY productId",
+    db.query("SELECT * FROM cart WHERE mail=$1 ORDER BY productId, size",
         [mail], (error, result) => {
             return res.status(200).json(
                 {
@@ -169,7 +166,7 @@ app.post("/getCart/", (req, res) => {
 
 })
 
-app.put("/updateCart/", (req, res) => {
+app.put("/cart/", (req, res) => {
     const { productId, mail, quantity, size } = req.body
 
     db.query("UPDATE cart SET quantity=$1 WHERE mail=$2 AND size=$3 AND productId=$4 RETURNING *",
@@ -192,7 +189,7 @@ app.put("/updateCart/", (req, res) => {
 })
 
 
-app.delete("/updateCart/", (req, res) => {
+app.delete("/cart/", (req, res) => {
     const { productId, mail, size } = req.body
 
     db.query("DELETE from cart WHERE productId=$3 AND mail=$1 AND size=$2 RETURNING *",

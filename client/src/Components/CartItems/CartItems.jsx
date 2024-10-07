@@ -2,133 +2,20 @@ import React, { useContext, useEffect, useState } from 'react'
 import "./CartItems.css"
 import bin_icon from "../Assets/HomeAssets/bin_icon.png"
 
-import { ShopContext } from '../../Context/ShopContext'
-import { useAuth } from '../../Context/AuthContext'
+import { useShop } from '../../Context/ShopContext'
 
 export const CartItems = () => {
-    const { all_products } = useContext(ShopContext);
-
-    const [cartData, setCartData] = useState([])
-    const [cartChanged, setCartChanged] = useState(false)
-    const [loading, setLoading] = useState(true)
-    const [price, setPrice] = useState(0)
-
-    const { auth, user } = useAuth()
-
-    const getCart = () => {
-        if (!auth) { return }
-        fetch("http://localhost:8080/getCart", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                mail: user.mail,
-            }),
-            credentials: "include"
-        })
-            .then(resp => resp.json())
-            .then(data => {
-                if (data.success) {
-                    setCartData(data.result)
-                }
-                setLoading(false)
-            })
-    }
-
-    const updatePrice = (productid, size, quantity) => {
-        let cartItem = null;
-        let acc = 0
-
-        console.log("QUANT", quantity)
-
-        for (cartItem of cartData) {
-            const product = all_products.find((product) => product.id === cartItem.productid);
-            if (productid === cartItem.productid & size === cartItem.size) {
-                if (quantity !== undefined)
-                    acc = acc + (product.price * quantity)
-            }
-            else {
-                acc = acc + (product.price * cartItem.quantity)
-            }
-        }
-
-        setPrice(acc)
-    }
-
-    const initPrice = () => {
-        let cartItem = null;
-        let acc = 0
-
-        console.log("INIT: ", cartData[0])
-
-        for (cartItem of cartData) {
-            const product = all_products.find((product) => product.id === cartItem.productid);
-            acc = acc + (product.price * cartItem.quantity)
-        }
-
-        setPrice(acc)
-    }
-
-    useEffect(() => {
-        getCart()
-    }, [user, cartChanged])
-
-    useEffect(() => {
-        console.log(cartData.length, price)
-        if (cartData.length > 0 & price === 0) {
-            initPrice()
-        }
-
-    }, [cartData])
-
-    useEffect(() => {
-        updatePrice()
-    }, [])
-
-
-    const updateCart = (productid, size, quantity) => {
-        if (!(quantity <= 5 & quantity >= 1)) { return }
-        if (!auth) { return }
-
-        updatePrice(productid, size, quantity)
-
-        fetch("http://localhost:8080/updateCart", {
-            method: "PUT",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                productId: productid,
-                mail: user.mail,
-                size: size,
-                quantity: quantity
-            }),
-            credentials: "include"
-        })
-            .then(setCartChanged(!cartChanged))
-    }
-
-    const deleteCart = (productid, size) => {
-        if (!auth) { return }
-
-        updatePrice(productid, size)
-
-        fetch("http://localhost:8080/updateCart", {
-            method: "DELETE",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                productId: productid,
-                mail: user.mail,
-                size: size,
-            }),
-            credentials: "include"
-        })
-        // setLoading(true)
-        setCartChanged(!cartChanged)
-    }
-
+    const {
+        all_products,
+        cartData,
+        updateCart,
+        deleteCart,
+        price
+    } = useShop()
 
     return (
         <div className="cartItems">
             <div className="head">Shopping Cart</div>
-            <h1>{loading ? "Loading" : null}</h1>
             <div className="cartItems-main">
                 <div className="cartItems-left">
                     {
@@ -170,7 +57,7 @@ export const CartItems = () => {
                         })
                     }
                 </div>
-                
+
                 <div className="cartItems-right">
                     <div className="cartItems-bill">
                         <h4>Price Details</h4>
@@ -183,8 +70,8 @@ export const CartItems = () => {
                             </div>
                             <div className="cartItems-subtotal-right">
                                 <p>₹{price}</p>
-                                <p>₹300</p>
-                                <p>₹{price + 300}</p>
+                                <p>₹{price !== 0 ? "300" : "0"}</p>
+                                <p>₹{price !== 0 ? price + 300 : "0"}</p>
                             </div>
                         </div>
                         <hr />
@@ -197,7 +84,7 @@ export const CartItems = () => {
                         <button>Place an Order</button>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     )

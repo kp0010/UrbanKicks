@@ -13,14 +13,14 @@ import { Homepage } from './Pages/Homepage';
 import { ShopCategory } from './Pages/ShopCategory';
 import { Product } from './Pages/Product';
 import { Cart } from './Pages/Cart';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <ToastContainer/>
+        <ToastContainer />
         <Navbar />
         <RoutesList />
       </Router>

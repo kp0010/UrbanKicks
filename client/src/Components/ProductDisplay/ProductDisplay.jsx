@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom'
 import "./ProductDisplay.css"
 
 import { useAuth } from '../../Context/AuthContext'
+import { useShop } from '../../Context/ShopContext'
+
 
 export const ProductDisplay = (props) => {
     const navigate = useNavigate()
@@ -12,37 +14,20 @@ export const ProductDisplay = (props) => {
     const [size, setSize] = useState('');
     const [quantity, setQuantity] = useState(1);
 
-    const { auth, user } = useAuth()
+    const { auth } = useAuth()
 
-    const addToCart = () => {
-        if (!size) {
-            toast.error("Select Product Size"); 
-            return
-        }
+    const { addToCart } = useShop()
 
-        if (!auth) { navigate("/login"); return }
+    const checkAddToCart = (productid, size, quantity) => {
+        if (!auth) { toast.error("Please Login First"); navigate('/login'); return }
 
-        fetch("http://localhost:8080/updateCart", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                productId: product.id,
-                mail: user.mail,
-                quantity,
-                size
-            }),
-            credentials: "include"
-        })
-            .then(response => response.json())
-            .then(data => {
-                // // data = {sucesss: bool, mail: str}
-                // if (data.success) {
-                //      Handle success notification sending here
-                // } else {
-                //      Handle failure notification sending here
-                // }
-            });
+        if (!size) { toast.error("Please Select a Size"); return }
+
+        addToCart(productid, size, quantity)
+
+        toast.success("Product Added to Cart"); return
     }
+
 
     return (
         <div className="productdisplay">
@@ -80,7 +65,7 @@ export const ProductDisplay = (props) => {
                     <h6>Quantity</h6>
                     <div className="productdisplay-right-quantity-value">
                         <a onClick={() => setQuantity(Math.max(1, quantity - 1))}>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                 <title>Subtract</title>
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
                             </svg>
@@ -89,7 +74,7 @@ export const ProductDisplay = (props) => {
                         <input type="text" name="quantity" value={quantity} onChange={event => setQuantity(Math.max(1, Math.min(5, event.target.value)))} />
 
                         <a onClick={() => setQuantity(Math.min(5, quantity + 1))}>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                 <title>Add</title>
                                 <line x1="12" y1="5" x2="12" y2="19"></line>
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -97,7 +82,7 @@ export const ProductDisplay = (props) => {
                         </a>
                     </div>
                 </div>
-                <button onClick={() => { addToCart(product.id, size) }} className="productdisplay-right-addToCart">ADD TO CART</button>
+                <button onClick={() => { checkAddToCart(product.id, size, quantity) }} className="productdisplay-right-addToCart">ADD TO CART</button>
                 {/*Add to wishlist or favorites*/}
                 <p className="productdisplay-right-category"><span>Category : </span>{product.category}</p>
                 <p className="productdisplay-right-brand"><span>Brand : </span>{product.brand}</p>
