@@ -19,7 +19,7 @@ export const Item = (props) => {
                 ₹{props.new_price}
             </div>
               <div className="item-price-old">
-                ₹{props.old_price}
+              ₹{Math.round(props.new_price * 1.5 / 5) * 5}
             </div>
         </div>
       </NavLink>
