@@ -78,16 +78,22 @@ export const Navbar = () => {
     }
   }
 
+  const handleClick = (event) => {
+    event.preventDefault();
+    window.scrollTo(0,0);
+    window.location.href = event.currentTarget.href;
+  };
+
   useEffect(() => { Dropdown() }, [auth, user])
 
   return (
     <nav>
       <div class="nav">
-        <NavLink to="/" ><img src={logo1} class="logo"></img></NavLink>
+        <NavLink to="/" onClick={handleClick} ><img src={logo1} class="logo"></img></NavLink>
         <ul class="list">
-          <li><NavLink to="/men" >Men</NavLink></li>
-          <li><NavLink to="/women" >Women</NavLink></li>
-          <li><NavLink to="/kids" >Kids</NavLink></li>
+          <li><NavLink to="/men" onClick={handleClick} >Men</NavLink></li>
+          <li><NavLink to="/women" onClick={handleClick} >Women</NavLink></li>
+          <li><NavLink to="/kids" onClick={handleClick} >Kids</NavLink></li>
         </ul>
         <ul class="icons menus">
           {menuItemsData.map((menu, index) => {

@@ -90,10 +90,19 @@
     font-size: 14px;
     font-weight: 350;
 }
-.cartItems-order {
+/*.cartItems-order {
     border: 1px solid rgb(113, 124, 88);
     padding: 20px;
 }
 .cartItems-order span {
     font-weight: 500;
+}*/
+.cartItems-place-order-btn button{
+    width: 300px;
+    margin-left: 70px;
+    margin-top: 10px;
+    padding: 5px;
+    background-color: #d2cd72;
+    color: black;
+    outline: none;
 }

@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import "./CartItems.css"
 import bin_icon from "../Assets/HomeAssets/bin_icon.png"
+import { NavLink } from "react-router-dom"
 
 import { useShop } from '../../Context/ShopContext'
 import { useAuth } from '../../Context/AuthContext'
@@ -83,12 +84,15 @@ export const CartItems = () => {
                         <hr />
                         <p className="tax-tag">All prices are including tax*</p>
                     </div>
-                    <div className="cartItems-order">
+                    {/* <div className="cartItems-order">
                         <p><span>Payment Method :- Cash on Delivery Only</span></p>
                         <p>Pay via VYOMA Bank Credit card</p>
                         <p><span>Address :- </span><input className="cartItems-address" type="text" /></p>
                         <p><button>Change Address</button></p>
                         <button>Place an Order</button>
+                    </div> */}
+                    <div className="cartItems-place-order-btn">
+                        <NavLink to="/checkout"><button>Checkout</button></NavLink>
                     </div>
                 </div>
 

@@ -13,6 +13,7 @@ import { Homepage } from './Pages/Homepage';
 import { ShopCategory } from './Pages/ShopCategory';
 import { Product } from './Pages/Product';
 import { Cart } from './Pages/Cart';
+import { Checkout } from './Pages/Checkout';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -41,6 +42,7 @@ const RoutesList = () => {
         <Route path=':productId' element={<Product />} />
       </Route>
       <Route path="/cart" element={<Cart />} />
+      <Route path="/checkout" element={<Checkout />} />
     </Routes>
   )
 }
