@@ -65,7 +65,6 @@ export const ShopCategory = (props) => {
   }
 
   useEffect(() => {
-
     applyFilters();
   }, [category,]);
 

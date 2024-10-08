@@ -1,5 +1,4 @@
 let all_products = [
-
     {
         id: 1,
         img: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/4a77744a-a08a-4a22-986c-c6cbefef1f77/AIR+JORDAN+4+RM.png',

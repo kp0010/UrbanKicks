@@ -212,6 +212,47 @@ app.delete("/cart/", (req, res) => {
         })
 })
 
+app.post("/order/", (req, res) => {
+    const { mail, totalamount, shippingaddress } = req.body
+
+    var orderid = null;
+    var cartData = [];
+    var temp = []
+
+    const insertCartItems = (cartData, orderid) => {
+        for (let item of cartData) {
+            db.query("INSERT INTO orderitems (orderid, productid, quantity, price, size) VALUES ($1, $2, $3, $4, $5) RETURNING orderitemid",
+                [orderid, item.productid, item.quantity, 1000, item.size], (error, result) => {
+                    temp.push(result.rows[0].orderitemid)
+                })
+        }
+        res.status(200).json({
+            temp
+        })
+    }
+
+    const getCartItems = (orderid) => {
+        db.query("SELECT * FROM cart WHERE mail=$1 ORDER BY productId, size",
+            [mail], (error, result) => {
+                // if (error) { throw error }
+                cartData = result.rows
+                insertCartItems(result.rows, orderid)
+            })
+    }
+
+    db.query("INSERT INTO orders (mail, totalamount, shippingaddress) VALUES ($1, $2, $3) RETURNING orderid",
+        [mail, totalamount, shippingaddress], (error, result) => {
+            // if (error) { throw error }
+            orderid = result.rows[0].orderid
+            getCartItems(orderid)
+        })
+
+    // function getProductPrice() {
+    //     // return 100000
+    // }
+    //
+})
+
 app.post("/logout", (req, res) => {
     req.logout(err => {
         if (err) return res.status(500).json({ message: 'Logout error' });
