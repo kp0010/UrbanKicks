@@ -90,7 +90,7 @@ export const Navbar = () => {
 
   return (
     <nav>
-      <div class="nav">
+      <div class="nav" id="main">
         <NavLink to="/" onClick={handleClick} ><img src={logo1} class="logo"></img></NavLink>
         <ul class="list">
           <li><NavLink to="/men" onClick={handleClick} >Men</NavLink></li>
@@ -101,16 +101,16 @@ export const Navbar = () => {
           {menuItemsData.map((menu, index) => {
             return (
               <li key={index} className="menu-items">
-                <Link to={menu.url}>
+                <NavLink to={menu.url}>
                   <i class={menu.icon} />
                   {(menu.icon === 'bi bi-bag' && cartCount > 0) && (
                     <span className="cart-count">{cartCount}</span>
                   )}
-                </Link>
+                </NavLink>
               </li>
             );
           })}
-          <li className="menu-items"><a href="#" class="nav-item d-flex align-items-center text-decoration-none dropdown-toggle active" data-bs-toggle="dropdown" e>
+          <li className="menu-items"><a href="#" class="nav-item d-flex align-items-center text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" e>
             <i class="bi bi-person"></i>{dropdown}
           </a></li>
         </ul>
