@@ -212,6 +212,21 @@ app.delete("/cart/", (req, res) => {
         })
 })
 
+app.get("/products", (req, res) => {
+    let sizeResp;
+
+    db.query("SELECT * FROM sizes", (err, result) => {
+        sizeResp = result.rows
+    })
+
+    db.query("SELECT * FROM products", (err, result) => {
+        res.status(200).json({
+            products: result.rows,
+            sizes: sizeResp
+        })
+    })
+})
+
 app.post("/order/", (req, res) => {
     const { mail, totalamount, shippingaddress } = req.body
 
@@ -221,7 +236,7 @@ app.post("/order/", (req, res) => {
 
     const insertCartItems = (cartData, orderid) => {
         for (let item of cartData) {
-            db.query("INSERT INTO orderitems (orderid, productid, quantity, price, size) VALUES ($1, $2, $3, $4, $5) RETURNING orderitemid",
+            db.query("INSERT INTO orderitems (orderid, productid, quantity, pice, size) VALUES ($1, $2, $3, $4, $5) RETURNING orderitemid",
                 [orderid, item.productid, item.quantity, 1000, item.size], (error, result) => {
                     temp.push(result.rows[0].orderitemid)
                 })
@@ -259,9 +274,7 @@ app.post("/logout", (req, res) => {
         res.json({ message: 'Logged out' });
     });
 });
-app.get("/temp", (rq, rs) => {
-    rs.json({ message: "HELLO WORLD" })
-})
+
 app.listen(PORT, () => {
     console.log(`App is listening on port ${PORT}`)
 });
