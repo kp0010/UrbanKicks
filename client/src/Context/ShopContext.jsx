@@ -1,7 +1,7 @@
 import { createContext, useState, useEffect } from "react";
 import { useContext } from "react";
 
-import all_products from "../Components/Assets/ProductData/allproducts.js"
+// import all_products from "../Components/Assets/ProductData/allproducts.js"
 import new_arrivals from "../Components/Assets/ProductData/new_arrivals.js";
 
 import { useAuth } from "./AuthContext"
@@ -14,7 +14,8 @@ const ShopContext = createContext({
     updateCart: () => { },
     deleteCart: () => { },
     addToCart: () => { },
-    price: 0
+    price: 0,
+    loading: true
 });
 
 export const useShop = () => useContext(ShopContext)
@@ -24,9 +25,37 @@ const ShopContextProvider = ({ children }) => {
     const [cartData, setCartData] = useState([])
     const [cartCount, setCartCount] = useState(0);
     const [cartChanged, setCartChanged] = useState(false)
-    const [price, setPrice] = useState(false)
+    const [price, setPrice] = useState(0)
+    const [all_products, setAllProducts] = useState([])
+    const [loading, setLoading] = useState(true)
 
     const { auth, user } = useAuth()
+
+    const getAllProducts = () => {
+        setLoading(true)
+        fetch("http://localhost:8080/products", {
+            method: "GET",
+            headers: { "Content-Type": "application/json" },
+        })
+            .then(resp => resp.json())
+            .then(data => {
+                const sizes = data.sizes
+                const products = data.products
+                // console.log(sizes[0], products[0])
+
+                if (sizes !== undefined) {
+                    const combinedData = products.map((product) => {
+                        return {
+                            ...product,
+                            sizes: sizes.filter((size) => size.sizeid === product.sizeid).map(size => size.sizenumber)
+                        }
+                    })
+                    setAllProducts(combinedData)
+                    setLoading(false)
+                }
+                // console.log(combinedData[0].productid, combinedData[0].sizes)
+            })
+    }
 
     const getCart = () => {
         if (!auth) {
@@ -117,7 +146,8 @@ const ShopContextProvider = ({ children }) => {
         let acc = 0
 
         for (cartItem of cartData) {
-            const product = all_products.find((product) => product.id === cartItem.productid);
+            const product = all_products.find((product) => product.productid === cartItem.productid);
+            if (!product) { return }
             acc = acc + (product.price * cartItem.quantity)
         }
 
@@ -129,7 +159,8 @@ const ShopContextProvider = ({ children }) => {
         let acc = 0
 
         for (cartItem of cartData) {
-            const product = all_products.find((product) => product.id === cartItem.productid);
+            const product = all_products.find((product) => product.productid === cartItem.productid);
+            if (!product) { return }
             if (productid === cartItem.productid & size === cartItem.size) {
                 if (quantity !== undefined)
                     acc = acc + (product.price * quantity)
@@ -142,7 +173,8 @@ const ShopContextProvider = ({ children }) => {
     }
 
     useEffect(() => { getCart() }, [cartChanged, auth, user])
-    useEffect(() => { getPrice() }, [cartData])
+    useEffect(() => { getPrice() }, [cartData, all_products, loading])
+    useEffect(() => { getAllProducts() }, [])
 
     const contextValue = {
         all_products,
@@ -152,7 +184,8 @@ const ShopContextProvider = ({ children }) => {
         addToCart,
         updateCart,
         deleteCart,
-        price
+        price,
+        loading
     };
 
     return (

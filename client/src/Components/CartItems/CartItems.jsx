@@ -27,12 +27,12 @@ export const CartItems = () => {
                 <div className="cartItems-left">
                     {
                         cartData.map((item, index) => {
-                            const productData = all_products.find((product) => product.id === item.productid);
+                            const productData = all_products.find((product) => product.productid === item.productid);
                             return <div className="cartItems-key" key={index}>
                                 <div key={index} >
                                     <div className="cartItems-products">
                                         <div className="cartItems-products-left">
-                                            <img src={productData.img} alt="." />
+                                            <img src={productData.image} alt="." />
                                         </div>
                                         <div className="cartItems-products-right">
                                             <div className="cartItems-products-right-top">

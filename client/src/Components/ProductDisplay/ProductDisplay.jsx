@@ -28,18 +28,17 @@ export const ProductDisplay = (props) => {
         toast.success("Product Added to Cart"); return
     }
 
-
     return (
         <div className="productdisplay">
             <div className="productdisplay-left">
                 <div className="productdisplay-image-list">
-                    <img src={product.img} alt="" />
-                    <img src={product.img} alt="" />
-                    <img src={product.img} alt="" />
-                    <img src={product.img} alt="" />
+                    <img src={product.image} alt="" />
+                    <img src={product.image} alt="" />
+                    <img src={product.image} alt="" />
+                    <img src={product.image} alt="" />
                 </div>
                 <div className="productdisplay-img">
-                    <img className="productdisplay-main-img" src={product.img} alt="" />
+                    <img className="productdisplay-main-img" src={product.image} alt="" />
                 </div>
             </div>
             <div className="productdisplay-right">
@@ -82,7 +81,7 @@ export const ProductDisplay = (props) => {
                         </a>
                     </div>
                 </div>
-                <button onClick={() => { checkAddToCart(product.id, size, quantity) }} className="productdisplay-right-addToCart">ADD TO CART</button>
+                <button onClick={() => { checkAddToCart(product.productid, size, quantity) }} className="productdisplay-right-addToCart">ADD TO CART</button>
                 {/*Add to wishlist or favorites*/}
                 <p className="productdisplay-right-category"><span>Category : </span>{product.category}</p>
                 <p className="productdisplay-right-brand"><span>Brand : </span>{product.brand}</p>

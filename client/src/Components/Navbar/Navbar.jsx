@@ -80,8 +80,10 @@ export const Navbar = () => {
 
   const handleClick = (event) => {
     event.preventDefault();
-    window.scrollTo(0,0);
-    window.location.href = event.currentTarget.href;
+    window.scrollTo(0, 0);
+    // window.location.href = event.currentTarget.href;
+    const splitLink = event.currentTarget.href.split("/")
+    navigate(splitLink[splitLink.length - 1])
   };
 
   useEffect(() => { Dropdown() }, [auth, user])

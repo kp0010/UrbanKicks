@@ -9,7 +9,7 @@ import banner_3 from "../Components/Assets/HomeAssets/kids_banner.png"
 import { useLocation } from 'react-router-dom';
 
 export const ShopCategory = (props) => {
-  const { all_products } = useShop();
+  const { all_products, loading } = useShop();
 
   const [filterProducts, setFilterProducts] = useState([]);
   const [category, setCategory] = useState([]);
@@ -70,8 +70,7 @@ export const ShopCategory = (props) => {
 
   useEffect(() => {
     sortProduct();
-  }, [sortType,])
-
+  }, [sortType, loading])
 
   return (
     <div className="shop-category">
@@ -116,7 +115,7 @@ export const ShopCategory = (props) => {
         <div className="shop-category-products">
           {filterProducts.map((item, i) => {
             if (props.category === item.gender) {
-              return <CategoryItem key={i} id={item.id} name={item.title} subtitle={item.subtitle} image={item.img} new_price={item.price} />
+              return <CategoryItem key={i} id={item.productid} name={item.title} subtitle={item.subtitle} image={item.image} new_price={item.price} />
             }
             else {
               return null;

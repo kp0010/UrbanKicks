@@ -15,7 +15,7 @@ export const BestSellers = (props) => {
 
         <div className="Best-Sellers-item">
           {new_arrivals.map((item, i) => {
-            return <Item key={i} id={item.id} name={item.title} subtitle={item.subtitle} image={item.img} new_price={item.price} />
+            return <Item key={i} id={item.id} name={item.title} subtitle={item.subtitle} image={item.image} new_price={item.price} />
           })}
         </div>
         <div className="view-product">
