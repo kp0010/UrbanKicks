@@ -230,19 +230,30 @@ app.get("/products", (req, res) => {
 app.post("/order/", (req, res) => {
     const { mail, totalamount, shippingaddress } = req.body
 
-    var orderid = null;
-    var cartData = [];
-    var temp = []
+    const insertCartItems = async (cartData, orderid) => {
+        var orderItems = []
+        var orderPrices = []
 
-    const insertCartItems = (cartData, orderid) => {
-        for (let item of cartData) {
-            db.query("INSERT INTO orderitems (orderid, productid, quantity, pice, size) VALUES ($1, $2, $3, $4, $5) RETURNING orderitemid",
-                [orderid, item.productid, item.quantity, 1000, item.size], (error, result) => {
-                    temp.push(result.rows[0].orderitemid)
-                })
-        }
+        const promises = cartData.map(async (item) => {
+            const curItemPrice = await getProductPrice(item.productid)
+            return new Promise((resolve, reject) => {
+                db.query("INSERT INTO orderitems (orderid, productid, quantity, price, size) VALUES ($1, $2, $3, $4, $5) RETURNING orderitemid",
+                    [orderid, item.productid, item.quantity, curItemPrice, item.size], (error, result) => {
+                        orderItems.push(result.rows[0].orderitemid)
+                        orderPrices.push(curItemPrice)
+                        resolve(result.rows[0].orderitemid)
+                    })
+            })
+        })
+
+        await Promise.all(promises)
+
+        const totalPrice = orderPrices.reduce((acc, curr) => parseFloat(acc) + parseFloat(curr), 0)
+        db.query("UPDATE orders SET totalamount=$1", [totalPrice])
+        db.query("DELETE FROM cart WHERE mail=$1", [mail])
+
         res.status(200).json({
-            temp
+            temp: orderItems
         })
     }
 
@@ -250,7 +261,6 @@ app.post("/order/", (req, res) => {
         db.query("SELECT * FROM cart WHERE mail=$1 ORDER BY productId, size",
             [mail], (error, result) => {
                 // if (error) { throw error }
-                cartData = result.rows
                 insertCartItems(result.rows, orderid)
             })
     }
@@ -258,14 +268,18 @@ app.post("/order/", (req, res) => {
     db.query("INSERT INTO orders (mail, totalamount, shippingaddress) VALUES ($1, $2, $3) RETURNING orderid",
         [mail, totalamount, shippingaddress], (error, result) => {
             // if (error) { throw error }
-            orderid = result.rows[0].orderid
-            getCartItems(orderid)
+            getCartItems(result.rows[0].orderid)
         })
 
-    // function getProductPrice() {
-    //     // return 100000
-    // }
-    //
+    const getProductPrice = async (productid) => {
+        return new Promise((resolve, reject) => {
+            db.query("SELECT price FROM products WHERE productid=$1", [productid], (error, result) => {
+                console.log(result.rows[0].price)
+                resolve(result.rows[0].price)
+            })
+        })
+    }
+
 })
 
 app.post("/logout", (req, res) => {
