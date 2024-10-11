@@ -228,11 +228,11 @@ app.get("/products", (req, res) => {
 })
 
 app.post("/order/", (req, res) => {
-    const { mail, totalamount, shippingaddress } = req.body
+    const { mail, shippingaddress } = req.body
 
     const insertCartItems = async (cartData, orderid) => {
         var orderItems = []
-        var orderPrices = []
+        // var orderPrices = []
 
         const promises = cartData.map(async (item) => {
             const curItemPrice = await getProductPrice(item.productid)
@@ -240,7 +240,7 @@ app.post("/order/", (req, res) => {
                 db.query("INSERT INTO orderitems (orderid, productid, quantity, price, size) VALUES ($1, $2, $3, $4, $5) RETURNING orderitemid",
                     [orderid, item.productid, item.quantity, curItemPrice, item.size], (error, result) => {
                         orderItems.push(result.rows[0].orderitemid)
-                        orderPrices.push(curItemPrice)
+                        // orderPrices.push(curItemPrice)
                         resolve(result.rows[0].orderitemid)
                     })
             })
@@ -248,33 +248,44 @@ app.post("/order/", (req, res) => {
 
         await Promise.all(promises)
 
-        const totalPrice = orderPrices.reduce((acc, curr) => parseFloat(acc) + parseFloat(curr), 0)
-        db.query("UPDATE orders SET totalamount=$1", [totalPrice])
-        db.query("DELETE FROM cart WHERE mail=$1", [mail])
+        // const totalPrice = orderPrices.reduce((acc, curr) => parseFloat(acc) + parseFloat(curr), 0)
+        // db.query("UPDATE orders SET totalamount=$1", [totalPrice])
+        // db.query("DELETE FROM cart WHERE mail=$1", [mail])
 
         res.status(200).json({
             temp: orderItems
         })
     }
 
-    const getCartItems = (orderid) => {
-        db.query("SELECT * FROM cart WHERE mail=$1 ORDER BY productId, size",
-            [mail], (error, result) => {
+    db.query("SELECT * FROM cart WHERE mail=$1 ORDER BY productId, size",
+        [mail], async (error, result) => {
+            // if (error) { throw error }
+            const resultRows = [...result.rows]
+
+            const pricePromises = result.rows.map(async (item) => {
+                const currItemPrice = await getProductPrice(item.productid) * item.quantity
+                return parseFloat(currItemPrice)
+            })
+
+            const prices = await Promise.all(pricePromises)
+
+            const totalAmount = prices.reduce((acc, curr) => acc + curr, 0) + 300
+
+            insertOrder(resultRows, totalAmount)
+        })
+
+    const insertOrder = (cartData, totalAmount) => {
+        db.query("INSERT INTO orders (mail, totalamount, shippingaddress) VALUES ($1, $2, $3) RETURNING orderid",
+            [mail, totalAmount, shippingaddress], (error, result) => {
                 // if (error) { throw error }
-                insertCartItems(result.rows, orderid)
+                // getCartItems(result.rows[0].orderid)
+                insertCartItems(cartData, result.rows[0].orderid)
             })
     }
-
-    db.query("INSERT INTO orders (mail, totalamount, shippingaddress) VALUES ($1, $2, $3) RETURNING orderid",
-        [mail, totalamount, shippingaddress], (error, result) => {
-            // if (error) { throw error }
-            getCartItems(result.rows[0].orderid)
-        })
 
     const getProductPrice = async (productid) => {
         return new Promise((resolve, reject) => {
             db.query("SELECT price FROM products WHERE productid=$1", [productid], (error, result) => {
-                console.log(result.rows[0].price)
                 resolve(result.rows[0].price)
             })
         })
