@@ -14,7 +14,7 @@ export const BestSellers = () => {
         <h2 className="head2">BestSellers</h2>
 
         <div className="Best-Sellers-item">
-          {new_arrivals.map((item, i) => {
+          {new_arrivals.slice(0,4).map((item, i) => {
             return <Item key={i} id={item.id} name={item.title} subtitle={item.subtitle} image={item.img} new_price={item.price} />
           })}
         </div>

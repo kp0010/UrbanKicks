@@ -16,6 +16,7 @@ import { Cart } from './Pages/Cart';
 import { Checkout } from './Pages/Checkout';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { NewArrivalsPage } from './Pages/NewArrivalsPage';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ const RoutesList = () => {
       <Route path="/men" element={<ShopCategory category="men" />} />
       <Route path="/women" element={<ShopCategory category="women" />} />
       <Route path="/kids" element={<ShopCategory category="kids" />} />
+      <Route path="/newarrivals" element={<NewArrivalsPage />} />
       <Route path="/product" element={<Product />}>
         <Route path=':productId' element={<Product />} />
       </Route>

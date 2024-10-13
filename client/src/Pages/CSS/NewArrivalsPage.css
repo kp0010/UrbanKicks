@@ -1,0 +1,20 @@
+.New_Arrivals_Page {
+    background-color: #25232e;
+    height: 100%;
+    opacity: 0.9;
+}
+.New_Arrivals_head {
+    color: white;
+    text-align: center;
+    font-size: 60px;
+    padding-top: 120px;
+}
+.New_Arrvals_products {
+    margin: 0px 60px;
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 20vh;
+    gap: 40px;
+    padding-bottom: 40px;
+}
