@@ -21,7 +21,7 @@ export const Item = (props) => {
             <img src={props.image} alt="."/>
         </div>
         <div >
-          <p>{props.name} : {props.subtitle}</p>
+          <p className="item-product-name">{props.name} : {props.subtitle}</p>
         </div>  
         
         <div className="item-prices">

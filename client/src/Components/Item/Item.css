@@ -1,7 +1,7 @@
 .item {
     width: 302px;
     /* cursor: pointer; */
-    border: 1px solid rgb(194, 164, 164);
+    border: 1px solid black;
     border-radius: 10px;
     position: relative;
 }
@@ -40,6 +40,9 @@
     visibility: hidden;
     transition: opacity 0.6s ease visibility 0.6s ease;
     z-index: 1;
+}
+.item-product-name {
+    text-overflow: ellipsis;
 }
 .item p {
     margin: 0px;
