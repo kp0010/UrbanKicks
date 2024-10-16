@@ -13,6 +13,13 @@ export const Checkout = () => {
             <div className="checkout-left-shipping">
               <p>1.SHIPPING</p>
             </div>
+            <div className="checkout-saved-address">
+              <p>Select a Saved Address :</p>
+              <select className="checkout-select-saved-address">
+                <option value="relevant">Select a saved address</option>
+                <option value="relevant">No saved address</option>
+              </select>
+            </div>
             <div className="checkout-address-label">
               <p>Add New Address</p>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none">

@@ -18,6 +18,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { NewArrivalsPage } from './Pages/NewArrivalsPage';
 import { BestSellersPage } from './Pages/BestSellersPage';
+import { Wishlist } from './Pages/Wishlist';
 
 function App() {
   return (
@@ -47,6 +48,7 @@ const RoutesList = () => {
       </Route>
       <Route path="/cart" element={<Cart />} />
       <Route path="/checkout" element={<Checkout />} />
+      <Route path="/wishlist" element={<Wishlist />} />
     </Routes>
   )
 }

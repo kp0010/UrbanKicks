@@ -34,7 +34,7 @@ export const Navbar = () => {
     },
     {
       icon: 'bi bi-heart',
-      url: '/',
+      url: '/wishlist',
     },
   ];
 
