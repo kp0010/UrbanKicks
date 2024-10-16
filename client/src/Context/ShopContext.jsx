@@ -3,12 +3,14 @@ import { useContext } from "react";
 
 // import all_products from "../Components/Assets/ProductData/allproducts.js"
 import new_arrivals from "../Components/Assets/ProductData/new_arrivals.js";
+import best_sellers from "../Components/Assets/ProductData/bestsellers.js"
 
 import { useAuth } from "./AuthContext"
 
 const ShopContext = createContext({
     all_products: [],
     new_arrivals: [],
+    best_sellers: [],
     cartData: [],
     cartCount: 0,
     updateCart: () => { },
@@ -179,6 +181,7 @@ const ShopContextProvider = ({ children }) => {
     const contextValue = {
         all_products,
         new_arrivals,
+        best_sellers,
         cartData,
         cartCount,
         addToCart,

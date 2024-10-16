@@ -1,21 +1,21 @@
 import React, { useContext } from 'react'
 import "./BestSellers.css"
 import { useShop } from '../../Context/ShopContext.jsx'
-import new_arrival from "../Assets/HomeAssets/bestsellers1.png"
+import best_seller from "../Assets/HomeAssets/bestsellers1.png"
 import data_product from '../Assets/ProductData/new_arrivals.js'
 import { Item } from '../Item/Item'
 import { NavLink } from 'react-router-dom'
 
 export const BestSellers = () => {
-  const { new_arrivals } = useShop();
+  const { best_sellers } = useShop();
   return (
     <div>
       <div className="Best-Sellers">
-        <img src={new_arrival} class="new1" alt='...'></img>
+        <img src={best_seller} class="new1" alt='...'></img>
         <h2 className="head2">BestSellers</h2>
 
         <div className="Best-Sellers-item">
-          {new_arrivals.slice(0,4).map((item, i) => {
+          {best_sellers.slice(0,4).map((item, i) => {
             return <Item key={i} id={item.id} name={item.title} subtitle={item.subtitle} image={item.img} new_price={item.price} />
           })}
         </div>
