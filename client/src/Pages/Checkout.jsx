@@ -1,6 +1,7 @@
 import React from 'react'
 import "./CSS/Checkout.css"
 import { useShop } from '../Context/ShopContext'
+import { NavLink } from 'react-router-dom'
 
 export const Checkout = () => {
   const { cartData, all_products, cartCount, price } = useShop()
@@ -50,14 +51,19 @@ export const Checkout = () => {
                 <input type="tel" id="phonenumber" placeholder="PHONE NUMBER" />
               </div>
               <div className="checkout-buttons">
-                <button className="button-save">SAVE</button>
+                <NavLink to="/delivery"><button className="button-save">SAVE</button></NavLink>
                 <button className="button-cancel">CANCEL</button>
               </div>
             </div>
           </div>
           <div className="checkout-left-payment-content">
             <p className="checkout-payment">2.PAYMENT</p>
-            <p className="payment-delivery-label">Pay On Delivery</p>
+            <div className="checkout-payment-option">
+              <label ><input type="radio" value="CashOnDelivery" /> Cash On Delivery</label>
+              <label ><input type="radio" value="viaUPI" /> via UPI</label>
+              <label ><input type="radio" value="viaCreditCard" /> via Credit Card</label>
+              <label ><input type="radio" value="viaDebitCard" /> via Debit Card</label>
+            </div>
           </div>
         </div>
         <div className="checkout-right">

@@ -105,7 +105,9 @@
     padding-left: 12px;
     letter-spacing: 0.5px;
 }
-.payment-delivery-label {
+.checkout-payment-option label {
+    display: block;
+    flex-direction: column;
     padding-left: 18px;
     font-size: 16px;
     font-weight: 700;

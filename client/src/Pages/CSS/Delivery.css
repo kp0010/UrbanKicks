@@ -1,0 +1,92 @@
+.delivery {
+    display: block;
+    background-color: antiquewhite;
+    height: 100%;
+}
+.delivery-head {
+    font-size: 40px;
+    text-align: center;
+    padding-top: 100px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.delivery-info {
+    font-size: 30px;
+    font-weight: 600;
+    margin-left: 100px;
+}
+.delivery-order-info {
+    margin-left: 150px;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+.delivery-main {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 150px;
+    margin-right: 100px;
+}
+.delivery-products {
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.delivery-products-left img {
+    width: 150px;
+    height: 150px;
+}
+.delivery-products-right {
+    display: block;
+    width: 60%;
+    margin-left: 50px;
+}
+.delivery-products-right-top {
+    display: flex;
+    justify-content: space-between;
+}
+.delivery-products-right-title h5 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 0px  ;
+}
+.delivery-products-right hr {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.delivery-products-right-size {
+    margin-bottom: 8px;
+}
+.delivery-products-right-size span {
+    font-weight: 700;
+}
+.delivery-products-right-price span {
+    font-weight: 500;
+}
+.delivery-right {
+    width: 40%;
+}
+.delivery-right-bill {
+    height: fit-content;
+    margin-top: 15px;
+    border: 1px solid rgb(113, 124, 88);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.delivery-right-subtotal {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 450;
+}
+.delivery-right-subtotal span {
+    font-weight: 500;
+}
+.tax-tag {
+    font-size: 14px;
+    font-weight: 350;
+}
+.payment-method {
+    padding-top: 5px;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
