@@ -53,9 +53,9 @@
     padding-left: 18px;
     font-size: 15px;
 }
-.checkout-address-label svg {
-    margin-right: 10px;
-    margin-top: 10px;
+.plus-minus {
+    background-color: antiquewhite;
+    border: none;
 }
 .checkout-left-address {
     display: block;
