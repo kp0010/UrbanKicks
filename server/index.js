@@ -237,6 +237,59 @@ app.post("/getAddress/", (req, res) => {
         })
 })
 
+app.post("/address/", (req, res) => {
+    const { mail, address } = req.body
+    const { firstName, lastName, addressLine1, addressLine2,
+        zipCode, state, city, country, phoneNo } = address
+
+    db.query("INSERT INTO addresses(mail, firstName, lastName, addressLine1, addressLine2," +
+        "zipCode, state, city, country, phoneNo) VALUES ( $1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING addressId",
+        [mail, firstName, lastName, addressLine1, addressLine2, zipCode, state, city, country, phoneNo]
+        , (error, result) => {
+            if (result.rows.length > 0) {
+                console.log("ADD: ", result.rows[0])
+                res.status(200).json(
+                    {
+                        success: !Boolean(error),
+                        addressId: result.rows[0].addressid,
+                    }
+                )
+            } else {
+                return res.status(201).json(
+                    {
+                        success: false,
+                    }
+                )
+            }
+        })
+})
+
+app.delete("/address/", (req, res) => {
+    const { mail, addressid } = req.body
+
+    db.query("UPDATE addresses SET mail='tempmail' WHERE mail " +
+        "zipCode, state, city, country, phoneNo) VALUES ( $1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING addressId",
+        [mail, firstName, lastName, addressLine1, addressLine2, zipCode, state, city, country, phoneNo]
+        , (error, result) => {
+            if (result.rows.length > 0) {
+                console.log("ADD: ", result.rows[0])
+                res.status(200).json(
+                    {
+                        success: !Boolean(error),
+                        addressId: result.rows[0].addressId,
+                    }
+                )
+            } else {
+                return res.status(201).json(
+                    {
+                        success: false,
+                        // address: []
+                    }
+                )
+            }
+        })
+})
+
 app.get("/products", (req, res) => {
     let sizeResp;
 

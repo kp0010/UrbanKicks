@@ -3,16 +3,29 @@ import { useShop } from '../Context/ShopContext'
 import { NavLink } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { useAuth } from "../Context/AuthContext"
+import { toast } from "react-toastify"
 
 export const Checkout = () => {
   const { cartData, all_products, cartCount, price } = useShop()
   const { user, auth } = useAuth()
 
+  const emptyAddr = {
+    firstName: "",
+    lastName: "",
+    addressLine1: "",
+    addressLine2: "",
+    zipCode: "",
+    state: "",
+    city: "",
+    country: "",
+    phoneNo: "",
+  }
+
+  const [newAddress, setNewAddress] = useState(emptyAddr)
   const [addresses, setAddresses] = useState([{ addressline1: "HELLO WORLD" }])
   const [addChanged, setAddChanged] = useState([])
 
   useEffect(() => {
-    console.log("ADDRESS RETREIVE 0")
     if (!auth) { return }
 
     fetch("http://localhost:8080/getAddress", {
@@ -25,12 +38,50 @@ export const Checkout = () => {
     })
       .then(resp => resp.json())
       .then(data => {
-        console.log("ADDRESS RETREIVE")
         if (data.address.length) {
           setAddresses(data.address)
         }
       })
   }, [auth, user, addChanged])
+
+
+  const handleAddressInsert = (e) => {
+    e.preventDefault()
+
+    // if (
+    //   emptyAddr.firstName !== newAddress.firstName &&
+    //   emptyAddr.lastName !== newAddress.lastName &&
+    //   emptyAddr.addressLine1 !== newAddress.addressLine1 &&
+    //   emptyAddr.addressLine2 !== newAddress.addressLine2 &&
+    //   emptyAddr.zipCode !== newAddress.zipCode &&
+    //   emptyAddr.state !== newAddress.state &&
+    //   emptyAddr.city !== newAddress.city &&
+    //   emptyAddr.country !== newAddress.country &&
+    //   emptyAddr.phoneNo !== newAddress.phoneNo
+    // ) {
+    //   toast.error("Please Enter Complete Address")
+    // }
+
+    console.log("INSERTING")
+    console.log(newAddress)
+
+    if (!auth) { return }
+
+    if (addresses.length >= 3) {
+      toast.error("Only 3 Addresses can be stored")
+      return
+    }
+
+    fetch("http://localhost:8080/address", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        mail: user.mail,
+        address: newAddress
+      }),
+      credentials: "include",
+    }).then(() => { setAddChanged(!addChanged); setNewAddress(emptyAddr) })
+  }
 
 
   return (
@@ -46,14 +97,13 @@ export const Checkout = () => {
             <div className="checkout-saved-address">
               <p>Select a Saved Address :</p>
               <select className="checkout-select-saved-address">
-                <option value="relevant">Select a saved address</option>
+                <option id="default" value="relevant">Select a saved address</option>
                 {addresses.length > 0 ? (
-                  addresses.map((add) => {
-                    { console.log("HERE", add.addressline1) }
-                    return <option value="">{add.addressline1}</option>
+                  addresses.map((add, index) => {
+                    return <option id={index} value="">{add.addressline1}</option>
                   })
                 ) : (
-                  <option value="relevant">No saved address {addresses.length}</option>
+                  <option id="none" value="relevant">No saved address {addresses.length}</option>
                 )}
               </select>
             </div>
@@ -64,33 +114,42 @@ export const Checkout = () => {
               </svg>
             </div>
 
-            <div className="checkout-left-address">
+            <form className="checkout-left-address" onSubmit={handleAddressInsert}>
               <div className="checkout-row">
-                <input type="text" id="firstname" placeholder="FIRST NAME" />
-                <input type="text" id="lastname" placeholder="LAST NAME" />
+                <input type="text" id="firstName" placeholder="FIRST NAME"
+                  value={newAddress.firstName} onChange={((e) => setNewAddress({ ...newAddress, firstName: e.target.value }))} required />
+                <input type="text" id="lastName" placeholder="LAST NAME"
+                  value={newAddress.lastName} onChange={((e) => setNewAddress({ ...newAddress, lastName: e.target.value }))} required />
               </div>
               <div className="checkout-row">
-                <input type="text" id="address1" placeholder="ADDRESS LINE 1" />
+                <input type="text" id="addressLine1" placeholder="ADDRESS LINE 1"
+                  value={newAddress.addressLine1} onChange={((e) => setNewAddress({ ...newAddress, addressLine1: e.target.value }))} required />
               </div>
               <div className="checkout-row">
-                <input type="text" id="address2" placeholder="ADDRESS LINE 2 (OPTIONAL)" />
+                <input type="text" id="addressLine2" placeholder="ADDRESS LINE 2 (OPTIONAL)"
+                  value={newAddress.addressLine2} onChange={((e) => setNewAddress({ ...newAddress, addressLine2: e.target.value }))} />
               </div>
               <div className="checkout-row">
-                <input type="number" id="postalcode" placeholder="POSTAL CODE" />
-                <input type="text" id="state" placeholder="STATE" />
+                <input type="number" id="zipCode" placeholder="POSTAL CODE"
+                  value={newAddress.zipCode} onChange={((e) => setNewAddress({ ...newAddress, zipCode: e.target.value }))} required />
+                <input type="text" id="state" placeholder="STATE"
+                  value={newAddress.state} onChange={((e) => setNewAddress({ ...newAddress, state: e.target.value }))} required />
               </div>
               <div className="checkout-row">
-                <input type="text" id="city" placeholder="CITY" />
-                <input type="text" id="country" placeholder="COUNTRY" />
+                <input type="text" id="city" placeholder="CITY"
+                  value={newAddress.city} onChange={((e) => setNewAddress({ ...newAddress, city: e.target.value }))} required />
+                <input type="text" id="country" placeholder="COUNTRY"
+                  value={newAddress.country} onChange={((e) => setNewAddress({ ...newAddress, country: e.target.value }))} required />
               </div>
               <div className="checkout-row">
-                <input type="tel" id="phonenumber" placeholder="PHONE NUMBER" />
+                <input type="tel" id="phoneNo" placeholder="PHONE NUMBER"
+                  value={newAddress.phoneNo} onChange={((e) => setNewAddress({ ...newAddress, phoneNo: e.target.value }))} required />
               </div>
               <div className="checkout-buttons">
-                <NavLink to="/delivery"><button className="button-save">SAVE</button></NavLink>
+                <button type="submit" className="button-save">SAVE</button>
                 <button className="button-cancel">CANCEL</button>
               </div>
-            </div>
+            </form>
           </div>
           <div className="checkout-left-payment-content">
             <p className="checkout-payment">2.PAYMENT</p>

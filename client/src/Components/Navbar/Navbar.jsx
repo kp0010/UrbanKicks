@@ -58,11 +58,11 @@ export const Navbar = () => {
       setDropdown(
         <div class="dropdown">
           <ul class="dropdown-menu dropdown-menu-dark text-small shadow" >
-            <li><strong class="dropdown-item">Hello, {toTitleCase(user.fullname)}</strong></li>
-            <li><a class="dropdown-item" href="#">Settings</a></li>
-            <li><a class="dropdown-item" href="#">Profile</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" onClick={handleLogout}>Log out</a></li>
+            <li id="1"><strong class="dropdown-item">Hello, {toTitleCase(user.fullname)}</strong></li>
+            <li id="2"><a class="dropdown-item" href="#">Settings</a></li>
+            <li id="3"><a class="dropdown-item" href="#">Profile</a></li>
+            <li id="4"><hr class="dropdown-divider" /></li>
+            <li id="5"><a class="dropdown-item" onClick={handleLogout}>Log out</a></li>
           </ul>
         </div >)
     }
@@ -71,7 +71,7 @@ export const Navbar = () => {
         <div class="dropdown">
           <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
             <Link class="dropdown-item" onClick={gotoLogin}><li>Log In</li></Link>
-            <li><hr class="dropdown-divider" /></li>
+            <li id="1"><hr class="dropdown-divider" /></li>
             <Link class="dropdown-item" onClick={gotoSignup}><li>Sign Up</li></Link>
           </ul>
         </div >)
