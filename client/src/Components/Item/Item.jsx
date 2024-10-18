@@ -20,17 +20,16 @@ export const Item = (props) => {
         <div>
             <img src={props.image} alt="."/>
         </div>
-        <div >
+        <div className="item-info">
           <p className="item-product-name">{props.name} : {props.subtitle}</p>
-        </div>  
-        
-        <div className="item-prices">
-            <div className="item-price-new">
-                ₹{props.new_price}
-            </div>
-              <div className="item-price-old">
-              ₹{Math.round(props.new_price * 1.5 / 5) * 5}
-            </div>
+          <div className="item-prices">
+              <div className="item-price-new">
+                  ₹{props.new_price}
+              </div>
+                <div className="item-price-old">
+                ₹{Math.round(props.new_price * 1.5 / 5) * 5}
+              </div>
+          </div>
         </div>
       </NavLink>
       
