@@ -212,6 +212,31 @@ app.delete("/cart/", (req, res) => {
         })
 })
 
+app.post("/getAddress/", (req, res) => {
+    const { mail } = req.body
+    console.log("ADD CALL")
+
+    db.query("SELECT * FROM addresses WHERE mail=$1",
+        [mail], (error, result) => {
+            if (result.rows.length > 0) {
+                console.log("ADD: ", result.rows[0])
+                res.status(200).json(
+                    {
+                        success: !Boolean(error),
+                        address: result.rows,
+                    }
+                )
+            } else {
+                return res.status(201).json(
+                    {
+                        success: false,
+                        address: []
+                    }
+                )
+            }
+        })
+})
+
 app.get("/products", (req, res) => {
     let sizeResp;
 
@@ -246,8 +271,10 @@ app.post("/order/", (req, res) => {
 
         await Promise.all(promises)
 
+        db.query("DELETE FROM cart WHERE mail=$1", [mail])
+
         res.status(200).json({
-            temp: orderItems
+            orderIds: orderItems
         })
     }
 

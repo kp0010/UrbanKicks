@@ -1,12 +1,41 @@
-import React from 'react'
 import "./CSS/Checkout.css"
 import { useShop } from '../Context/ShopContext'
 import { NavLink } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { useAuth } from "../Context/AuthContext"
 
 export const Checkout = () => {
   const { cartData, all_products, cartCount, price } = useShop()
+  const { user, auth } = useAuth()
+
+  const [addresses, setAddresses] = useState([{ addressline1: "HELLO WORLD" }])
+  const [addChanged, setAddChanged] = useState([])
+
+  useEffect(() => {
+    console.log("ADDRESS RETREIVE 0")
+    if (!auth) { return }
+
+    fetch("http://localhost:8080/getAddress", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        mail: user.mail,
+      }),
+      credentials: "include",
+    })
+      .then(resp => resp.json())
+      .then(data => {
+        console.log("ADDRESS RETREIVE")
+        if (data.address.length) {
+          setAddresses(data.address)
+        }
+      })
+  }, [auth, user, addChanged])
+
+
   return (
-    <div className="checkout">
+    < div className="checkout" >
+      {window.scrollTo(0, 0)}
       <div className="checkout-head">Checkout</div>
       <div className="checkout-main">
         <div className="checkout-left">
@@ -18,7 +47,14 @@ export const Checkout = () => {
               <p>Select a Saved Address :</p>
               <select className="checkout-select-saved-address">
                 <option value="relevant">Select a saved address</option>
-                <option value="relevant">No saved address</option>
+                {addresses.length > 0 ? (
+                  addresses.map((add) => {
+                    { console.log("HERE", add.addressline1) }
+                    return <option value="">{add.addressline1}</option>
+                  })
+                ) : (
+                  <option value="relevant">No saved address {addresses.length}</option>
+                )}
               </select>
             </div>
             <div className="checkout-address-label">
@@ -27,17 +63,17 @@ export const Checkout = () => {
                 <path d="M 8 8 L 16 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
               </svg>
             </div>
-            
+
             <div className="checkout-left-address">
               <div className="checkout-row">
                 <input type="text" id="firstname" placeholder="FIRST NAME" />
                 <input type="text" id="lastname" placeholder="LAST NAME" />
               </div>
               <div className="checkout-row">
-                <input type="text" id="address1" placeholder="ADDRESS 1" />
+                <input type="text" id="address1" placeholder="ADDRESS LINE 1" />
               </div>
               <div className="checkout-row">
-                <input type="text" id="address2" placeholder="ADDRESS 2 (OPTIONAL)" />
+                <input type="text" id="address2" placeholder="ADDRESS LINE 2 (OPTIONAL)" />
               </div>
               <div className="checkout-row">
                 <input type="number" id="postalcode" placeholder="POSTAL CODE" />
@@ -124,6 +160,6 @@ export const Checkout = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   )
 }
