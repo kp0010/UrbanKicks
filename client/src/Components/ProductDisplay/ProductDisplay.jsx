@@ -2,9 +2,13 @@ import React, { useState } from 'react'
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom'
 import "./ProductDisplay.css"
-
+import men_size_chart from "../Assets/HomeAssets/MenSizeChart.png"
+import women_size_chart from "../Assets/HomeAssets/WomensSizeChart.png"
+import kids_size_chart from "../Assets/HomeAssets/KidSizeChart.png"
 import { useAuth } from '../../Context/AuthContext'
 import { useShop } from '../../Context/ShopContext'
+import { Modal } from '../Modal/Modal';
+
 
 
 export const ProductDisplay = (props) => {
@@ -13,6 +17,7 @@ export const ProductDisplay = (props) => {
 
     const [size, setSize] = useState('');
     const [quantity, setQuantity] = useState(1);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const { auth } = useAuth()
 
@@ -26,6 +31,27 @@ export const ProductDisplay = (props) => {
         addToCart(productid, size, quantity)
 
         toast.success("Product Added to Cart"); return
+    }
+
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+    
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
+    const Chart = () => {
+        
+        let chartImage;
+        if (product.gender === "men") {
+            chartImage = <img src={men_size_chart} alt="men.." />
+        } else if (product.gender === "women") {
+            chartImage = <img src={women_size_chart} alt="women.." />
+        } else if (product.gender === "kids") {
+            chartImage = <img src={kids_size_chart} alt="kids.." />
+        }
+        return <div> {chartImage} </div>
     }
 
     return (
@@ -55,7 +81,12 @@ export const ProductDisplay = (props) => {
                 <div className="productdisplay-right-size">
                     <div className="productdisplay-right-size-label">
                         <h1>Select Size (UK)</h1>
-                        <a href="">Size Chart</a>
+                        <div className="productdisplay-size-chart">
+                            <button onClick={openModal}>Size Chart</button>
+                            <Modal isOpen={isModalOpen} onClose={closeModal}>
+                                <Chart />
+                            </Modal>
+                        </div>
                     </div>
                     <div className="productdisplay-right-size-variety">
                         {product.sizes.map((item, index) => (
