@@ -324,6 +324,12 @@ app.post("/payment/", (req, res) => {
 app.post("/order/", (req, res) => {
     const { mail, shippingAddressId } = req.body
 
+    const hardAddressDeleter = () => {
+        db.query("DELETE FROM addresses WHERE isDeleted = TRUE " +
+            "AND addressId NOT IN (SELECT DISTINCT shippingAddressId from orders)"
+        )
+    }
+
     const insertCartItems = async (cartData, orderid) => {
         var orderItems = []
 
@@ -341,6 +347,7 @@ app.post("/order/", (req, res) => {
         await Promise.all(promises)
 
         db.query("DELETE FROM cart WHERE mail=$1", [mail])
+        hardAddressDeleter()
 
         res.status(200).json({
             success: true,
@@ -393,11 +400,15 @@ app.post("/getOrders", async (req, res) => {
     var orderInfoRes = await db.query("SELECT * FROM orders WHERE orderid=$1", [orderId])
     var orderInfo = orderInfoRes.rows[0]
 
+    var addressInfoRes = await db.query("SELECT * FROM addresses WHERE addressid=$1", [orderInfo.shippingaddressid])
+    var addressInfo = addressInfoRes.rows[0]
+
     if (orderInfo !== undefined && orderItemsInfo !== undefined) {
         res.status(200).json({
             success: true,
             orderInfo: orderInfo,
-            orderItemsInfo: orderItemsInfo
+            orderItemsInfo: orderItemsInfo,
+            addressInfo: addressInfo
         })
     } else {
         res.status(400).json({

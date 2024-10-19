@@ -10,10 +10,9 @@ export const Delivery = () => {
     const location = useLocation()
     const orderId = location.state?.orderId
 
-    const { cartData, price } = { cartData: [], price: 0 }
-
     const [orderInfo, setOrderInfo] = useState({})
     const [orderItemsInfo, setOrderItemsInfo] = useState([])
+    const [addressInfo, setAddressInfo] = useState({})
 
     useEffect(() => {
         console.log(orderId)
@@ -30,7 +29,9 @@ export const Delivery = () => {
             .then((data) => {
                 setOrderInfo(data.orderInfo)
                 setOrderItemsInfo(data.orderItemsInfo)
+                setAddressInfo(data.addressInfo)
             })
+
     }, [orderId])
 
 
@@ -86,15 +87,16 @@ export const Delivery = () => {
                                 <p><span>Total</span></p>
                             </div>
                             <div className="delivery-right-subtotal-right">
-                                <p>₹{price}</p>
-                                <p>₹{price !== 0 ? "300" : "0"}</p>
-                                <p><span>₹{price !== 0 ? price + 300 : "0"}</span></p>
+                                <p>₹{parseFloat(orderInfo.totalamount)}</p>
+                                <p>₹{orderInfo.totalamount !== 0 ? "300" : "0"}</p>
+                                <p><span>₹{orderInfo.totalamount !== 0 ? parseFloat(orderInfo.totalamount) + 300 : "0"}</span></p>
                             </div>
                         </div>
                         <hr />
                         <h5 className="payment-method">Payment Method: Cash On Delivery</h5>
                         <hr />
-                        <h6>Address: Flat No.103, Sahyadri CHS, Sector-17, Vashi, Navi Mumbai - 400808</h6>
+                        <h5>Respondant Name: {addressInfo.firstname + " " + addressInfo.lastname},</h5><h6>Contact No: XXXXXX{addressInfo.phoneno.slice(-4)}</h6>
+                        <h6>Address: {addressInfo.addressline1}</h6>
                     </div>
                 </div>
             </div>

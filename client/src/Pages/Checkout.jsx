@@ -107,6 +107,7 @@ export const Checkout = () => {
   const processOrderCheckout = () => {
     if (!auth) { return }
     if (cartData.length <= 0) { toast.warn("No Products in Cart"); return }
+    if (currShippingId == 0) { toast.warn("Please Select an Address"); return }
 
     fetch("http://localhost:8080/order", {
       method: "POST",
@@ -234,7 +235,7 @@ export const Checkout = () => {
                 </div>
                 <div className="checkout-buttons">
                   <button type="submit" className="button-save">SAVE</button>
-                  <button className="button-cancel">CANCEL</button>
+                  <button className="button-cancel" onClick={() => setIsFormVisible(false)}>CANCEL</button>
                 </div>
               </form>
             </CSSTransition>
