@@ -147,8 +147,6 @@ app.post("/cart", (req, res) => {
             }
 
         })
-
-
 })
 
 app.post("/getCart", (req, res) => {
@@ -225,7 +223,7 @@ app.post("/getAddress/", (req, res) => {
                     }
                 )
             } else {
-                return res.status(201).json(
+                return res.status(400).json(
                     {
                         success: false,
                         address: []
@@ -260,7 +258,7 @@ app.post("/address/", (req, res) => {
                     }
                 )
             } else {
-                res.status(201).json(
+                res.status(400).json(
                     {
                         success: false,
                     }
@@ -270,11 +268,18 @@ app.post("/address/", (req, res) => {
 })
 
 app.delete("/address/", (req, res) => {
-    const { mail, addressid } = req.body
+    const { mail, addressId } = req.body
+
+    const hardAddressDeleter = () => {
+        db.query("DELETE FROM addresses WHERE isDeleted = TRUE " +
+            "AND addressId NOT IN (SELECT DISTINCT shippingAddressId from orders)"
+        )
+    }
 
     db.query("UPDATE addresses SET isDeleted = TRUE WHERE mail=$1 AND addressid=$2 RETURNING addressid",
-        [mail, addressid]
+        [mail, addressId]
         , (error, result) => {
+            hardAddressDeleter()
             if (result.rows.length > 0) {
                 res.status(200).json(
                     {
@@ -283,7 +288,7 @@ app.delete("/address/", (req, res) => {
                     }
                 )
             } else {
-                return res.status(201).json(
+                return res.status(400).json(
                     {
                         success: false,
                     }
@@ -305,6 +310,15 @@ app.get("/products", (req, res) => {
             sizes: sizeResp
         })
     })
+})
+
+app.post("/payment/", (req, res) => {
+    const { paymentType, orderId, amount } = req.body
+
+    db.query("INSERT INTO payment(paymentType, orderId, amount, status) VALUES " +
+        `(${paymentType}, ${orderId}, ${amount}})`, (error, result) => {
+            result.rows
+        })
 })
 
 app.post("/order/", (req, res) => {
@@ -330,7 +344,8 @@ app.post("/order/", (req, res) => {
 
         res.status(200).json({
             success: true,
-            orderIds: orderItems
+            orderItems: orderItems,
+            orderId: orderid
         })
     }
 
@@ -366,6 +381,29 @@ app.post("/order/", (req, res) => {
             insertOrder(resultRows, totalAmount)
         })
 
+})
+
+
+app.post("/getOrders", async (req, res) => {
+    const { orderId } = req.body
+
+    var orderItemsInfoRes = await db.query("SELECT * FROM orderitems WHERE orderid=$1", [orderId])
+    var orderItemsInfo = orderItemsInfoRes.rows
+
+    var orderInfoRes = await db.query("SELECT * FROM orders WHERE orderid=$1", [orderId])
+    var orderInfo = orderInfoRes.rows[0]
+
+    if (orderInfo !== undefined && orderItemsInfo !== undefined) {
+        res.status(200).json({
+            success: true,
+            orderInfo: orderInfo,
+            orderItemsInfo: orderItemsInfo
+        })
+    } else {
+        res.status(400).json({
+            success: false
+        })
+    }
 })
 
 app.post("/logout", (req, res) => {

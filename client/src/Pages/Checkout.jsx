@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 
 import { useShop } from '../Context/ShopContext'
 import { useAuth } from "../Context/AuthContext"
-import { NavLink } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import { toast } from "react-toastify"
 import { CSSTransition } from 'react-transition-group'
@@ -13,6 +13,8 @@ import "./CSS/Checkout.css"
 export const Checkout = () => {
   const { cartData, all_products, cartCount, price, refreshCart } = useShop()
   const { user, auth } = useAuth()
+
+  const navigate = useNavigate()
 
   const emptyAddr = {
     firstName: "",
@@ -29,7 +31,7 @@ export const Checkout = () => {
   const [newAddress, setNewAddress] = useState(emptyAddr)
   const [addresses, setAddresses] = useState([])
   const [addChanged, setAddChanged] = useState([])
-  const [currShippingId, setCurrShippingId] = useState(1)
+  const [currShippingId, setCurrShippingId] = useState(0)
 
   const [isFormVisible, setIsFormVisible] = useState(false);
 
@@ -94,6 +96,7 @@ export const Checkout = () => {
       .then((resp) => resp.json())
       .then((data) => {
         if (data.success) {
+          setAddChanged(!addChanged)
           toast.success("Address Deleted")
         } else {
           toast.error("Could not Delelete the Address")
@@ -119,10 +122,18 @@ export const Checkout = () => {
         if (data.success) {
           refreshCart()
           toast.success("Order Placed")
+          navigate('/delivery', {
+            state: { orderId: data.orderId },
+          })
         } else {
           toast.error("Could not Place Order")
         }
       })
+  }
+
+  const handleAddress = (event) => {
+    console.log(event.target.value)
+    setCurrShippingId(event.target.value)
   }
 
   const toggleFormVisibility = () => {
@@ -142,19 +153,6 @@ export const Checkout = () => {
             <div className="checkout-left-shipping">
               <p>1.SHIPPING</p>
             </div>
-            {/* <div className="checkout-saved-address">
-              <p>Select a Saved Address :</p>
-              <select className="checkout-select-saved-address">
-                <option key="0" value="relevant">Select a saved address</option>
-                {addresses.length > 0 ? (
-                  addresses.map((add, index) => {
-                    return <option key={index} value="">{add.addressline1}</option>
-                  })
-                ) : (
-                  <option key="1" value="relevant">No saved address {addresses.length}</option>
-                )}
-              </select>
-            </div> */}
             <div className="checkout-saved-address">
               <p><strong>Your Addresses</strong></p>
               <hr />
@@ -165,11 +163,12 @@ export const Checkout = () => {
                       type="radio"
                       id={`address-${index}`}
                       name="saved-address"
-                      value={add.addressline1}
+                      value={add.addressid}
+                      onChange={handleAddress}
                     />
-                    <label htmlFor={`address-${index}`}><strong>{add.firstname} {add.lastname}</strong>, XXXXXX{add.phoneno.slice(-4)} 
-                    <br />
-                    {add.addressline1}, {add.city}, {add.state}, {add.zipcode}, {add.country} </label>
+                    <label htmlFor={`address-${index}`}><strong>{add.firstname} {add.lastname}</strong>, XXXXXX{add.phoneno.slice(-4)}
+                      <br />
+                      {add.addressline1}, {add.city}, {add.state}, {add.zipcode}, {add.country} </label>
                     <img onClick={() => handleAddressDelete(add.addressid)} src={bin_icon} alt="..." />
                   </div>
                 ))
@@ -246,7 +245,7 @@ export const Checkout = () => {
               <label ><input type="radio" name="paymentoption" value="viaCreditCard" /> via Credit Card</label>
               <label ><input type="radio" name="paymentoption" value="viaDebitCard" /> via Debit Card</label>
             </div>
-            <NavLink to="/delivery"><button onClick={() => processOrderCheckout()}>Place an Order</button></NavLink>
+            <button onClick={() => processOrderCheckout()}>Place an Order</button>
           </div>
         </div>
         <div className="checkout-right">

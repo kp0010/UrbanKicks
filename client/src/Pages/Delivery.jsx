@@ -1,9 +1,39 @@
-import React from 'react'
+import React, { useState, uesEffect } from 'react'
 import "./CSS/Delivery.css"
 import { useShop } from '../Context/ShopContext'
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 export const Delivery = () => {
-    const { cartData, all_products, cartCount, price } = useShop();
+    const { all_products } = useShop();
+
+    const location = useLocation()
+    const orderId = location.state?.orderId
+
+    const { cartData, price } = { cartData: [], price: 0 }
+
+    const [orderInfo, setOrderInfo] = useState({})
+    const [orderItemsInfo, setOrderItemsInfo] = useState([])
+
+    useEffect(() => {
+        console.log(orderId)
+
+        fetch("http://localhost:8080/getOrders", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                orderId: orderId,
+            }),
+            credentials: "include",
+        })
+            .then((resp) => resp.json())
+            .then((data) => {
+                setOrderInfo(data.orderInfo)
+                setOrderItemsInfo(data.orderItemsInfo)
+            })
+    }, [orderId])
+
+
     return (
         <div className="delivery">
             <div className="delivery-head">DELIVERY</div>
@@ -13,8 +43,8 @@ export const Delivery = () => {
             <p className="delivery-order-info">Order Information:</p>
             <div className="delivery-main">
                 <div className="delivery-left">
-                    {
-                        cartData.map((item, index) => {
+                    {orderItemsInfo !== undefined &&
+                        orderItemsInfo.map((item, index) => {
                             const productData = all_products.find((product) => product.productid === item.productid);
                             return <div className="delivery-key" key={index}>
                                 <div key={index} >
@@ -31,10 +61,11 @@ export const Delivery = () => {
                                             </div>
                                             <hr />
                                             <div className="delivery-products-right-size">
-                                                <p><span>Size: </span>{item.size}</p>
+                                                <p><span>Size: </span>{item.size.toString()}</p>
+                                                <p><span>Quantity: </span>{item.quantity.toString()}</p>
                                             </div>
                                             <div className="delivery-products-right-price">
-                                                <span>Price:</span> ₹ {productData.price}
+                                                <span>Price:</span> ₹ {item.price}
                                             </div>
                                         </div>
                                     </div>
