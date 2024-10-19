@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import "./Item.css"
-import { NavLink } from 'react-router-dom'
 
 export const Item = (props) => {
 
@@ -14,25 +13,25 @@ export const Item = (props) => {
 
   return (
     <div className='item'>
-      <span><i className={`bi ${liked ? 'bi-heart-fill' : 'bi-heart'} heart-icon ${liked ? 'liked' : ''}`} onClick={toggleLike} /></span>
-      <button className="item-addtocart">ADD TO CART</button>
-      <NavLink to={`/product/${props.id}`}>
+      <span><i className={`bi ${liked ? 'bi-heart-fill' : 'bi-heart'} heart - icon ${liked ? 'liked' : ''}`} onClick={toggleLike} /></span>
+      <a href={`/product/${props.id}`}>
+        <button className="item-addtocart">ADD TO CART</button>
         <div>
-            <img src={props.image} alt="."/>
+          <img src={props.image} alt="." />
         </div>
         <div className="item-info">
           <p className="item-product-name">{props.name} : {props.subtitle}</p>
           <div className="item-prices">
-              <div className="item-price-new">
-                  ₹{props.new_price}
-              </div>
-                <div className="item-price-old">
-                ₹{Math.round(props.new_price * 1.5 / 5) * 5}
-              </div>
+            <div className="item-price-new">
+              ₹{props.new_price}
+            </div>
+            <div className="item-price-old">
+              ₹{Math.round(props.new_price * 1.5 / 5) * 5}
+            </div>
           </div>
         </div>
-      </NavLink>
-      
+      </a>
+
     </div>
   )
 }

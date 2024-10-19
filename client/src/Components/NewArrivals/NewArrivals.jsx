@@ -26,8 +26,8 @@ export const NewArrivals = () => {
         <img src={new_arrival} class="new" alt='...'></img>
 
         <div className="New-Arrivals-item">
-          {new_arrivals.slice(0,4).map((item, i) => {
-            return <Item key={i} id={item.id} name={item.title} subtitle={item.subtitle} image={item.img} new_price={item.price} />
+          {new_arrivals.slice(0, 4).map((item, i) => {
+            return <Item key={i} id={item.productid} name={item.title} subtitle={item.subtitle} image={item.img} new_price={item.price} />
           })}
         </div>
 

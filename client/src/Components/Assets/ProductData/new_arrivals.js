@@ -1,6 +1,6 @@
 let new_arrivals = [
   {
-    id: 144,
+    productid: 144,
     img: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b49fa6f3-a1ee-4abc-9b27-05d801b18b73/AIR+ZOOM+PEGASUS+41.png',
     title: 'Nike Pegasus 41',
     price: 11895,
@@ -12,7 +12,7 @@ let new_arrivals = [
     sizes: ['6', '7', '8', '9', '10']
   },
   {
-    id: 145,
+    productid: 145,
     img: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f14e8f51-b56a-4e57-8019-95415b627784/AIR+ZOOM+PEGASUS+41.png',
     title: 'Nike Pegasus 41',
     price: 11895,
@@ -24,7 +24,7 @@ let new_arrivals = [
     sizes: ['6', '7', '8', '9', '10']
   },
   {
-    id: 146,
+    productid: 146,
     img: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d6c435e3-f6f6-451a-9052-160531612392/PEGASUS+PLUS.png',
     title: 'Nike Pegasus Plus',
     price: 16995,
@@ -36,7 +36,7 @@ let new_arrivals = [
     sizes: ['6', '7', '8', '9', '10']
   },
   {
-    id: 147,
+    productid: 147,
     img: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d15d9326-cb42-430d-9abb-58a923e80205/AIR+ZOOM+PEGASUS+41+WIDE.png',
     title: 'Nike Pegasus 41',
     price: 11895,
@@ -48,7 +48,7 @@ let new_arrivals = [
     sizes: ['6', '7', '8', '9', '10']
   },
   {
-    id: 188,
+    productid: 188,
     img: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/aa16f9bd-40e0-4db3-a3d1-a48d4b20cf3b/NIKE+REVOLUTION+7+WIDE.png',
     title: 'Nike Revolution 7',
     price: 3695,
@@ -60,7 +60,7 @@ let new_arrivals = [
     sizes: ['6', '7', '8', '9', '10']
   },
   {
-    id: 189,
+    productid: 189,
     img: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f9316648-fbd5-4087-b3e4-d6da064c27d6/NIKE+REACTX+INFINITY+RUN+4+OLY.png',
     title: 'Nike InfinityRN 4 Electric',
     price: 15595,
@@ -72,7 +72,7 @@ let new_arrivals = [
     sizes: ['6', '7', '8', '9', '10']
   },
   {
-    id: 190,
+    productid: 190,
     img: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/9dcdc903-2860-4efa-81bd-ffffeb788e47/ZOOMX+INVINCIBLE+RUN+3+WIDE.png',
     title: 'Nike Invincible 3',
     price: 16995,
@@ -84,7 +84,7 @@ let new_arrivals = [
     sizes: ['6', '7', '8', '9', '10']
   },
   {
-    id: 191,
+    productid: 191,
     img: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/801ac98b-fa80-4083-81fd-13869af7a141/NIKE+INTERACT+RUN.png',
     title: 'Nike Interact Run',
     price: 7095,
@@ -96,7 +96,7 @@ let new_arrivals = [
     sizes: ['6', '7', '8', '9', '10']
   },
   {
-    id: 192,
+    productid: 192,
     img: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/05101027-9c5a-4b75-b257-2e9f0627acf3/NIKE+ZOOMX+INVINCIBLE+RUN+FK+3.png',
     title: 'Nike Invincible 3',
     price: 16995,
@@ -108,7 +108,7 @@ let new_arrivals = [
     sizes: ['6', '7', '8', '9', '10']
   },
   {
-    id: 193,
+    productid: 193,
     img: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/8f3b0bbe-643d-411b-a377-ed0ee9dd40b0/NIKE+REACTX+PEGASUS+TRAIL+5.png',
     title: 'Nike Pegasus Trail 5',
     price: 12795,
@@ -120,7 +120,7 @@ let new_arrivals = [
     sizes: ['6', '7', '8', '9', '10']
   },
   {
-    id: 244,
+    productid: 244,
     img: "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/375431/02/sv01/fnd/IND/fmt/png/Pacer-Styx-Men's-Running-Sneakers",
     title: "Pacer Styx Men's Running Sneakers",
     price: 4499,
@@ -132,7 +132,7 @@ let new_arrivals = [
     sizes: ['6', '7', '8', '9', '10']
   },
   {
-    id: 245,
+    productid: 245,
     img: "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/375431/01/sv01/fnd/IND/fmt/png/Pacer-Styx-Men's-Running-Sneakers",
     title: "Pacer Styx Men's Running Sneakers",
     price: 4499,
@@ -144,7 +144,7 @@ let new_arrivals = [
     sizes: ['6', '7', '8', '9', '10']
   },
   {
-    id: 246,
+    productid: 246,
     img: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/380435/10/sv01/fnd/IND/fmt/png/Electron-E-Unisex-Sneakers',
     title: 'Electron E Unisex Sneakers',
     price: 4999,
@@ -156,7 +156,7 @@ let new_arrivals = [
     sizes: ['6', '7', '8', '9', '10']
   },
   {
-    id: 247,
+    productid: 247,
     img: "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/368483/02/sv01/fnd/IND/fmt/png/Propel-EL-Men's-Sportstyle-Sneakers",
     title: "Propel EL Men's Sportstyle Sneakers",
     price: 3999,
@@ -168,7 +168,7 @@ let new_arrivals = [
     sizes: ['6', '7', '8', '9', '10']
   },
   {
-    id: 248,
+    productid: 248,
     img: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/380435/04/sv01/fnd/IND/fmt/png/Electron-E-Unisex-Sneakers',
     title: 'Electron E Unisex Sneakers',
     price: 4999,
@@ -180,7 +180,7 @@ let new_arrivals = [
     sizes: ['6', '7', '8', '9', '10']
   },
   {
-    id: 334,
+    productid: 334,
     img: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/396463/22/sv01/fnd/IND/fmt/png/Palermo-Unisex-Sneakers',
     title: 'Palermo Unisex Sneakers',
     price: 6999,
@@ -192,7 +192,7 @@ let new_arrivals = [
     sizes: ['6', '7', '8', '9', '10']
   },
   {
-    id: 335,
+    productid: 335,
     img: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/396463/07/sv01/fnd/IND/fmt/png/Palermo-Unisex-Sneakers',
     title: 'Palermo Unisex Sneakers',
     price: 6999,
@@ -204,7 +204,7 @@ let new_arrivals = [
     sizes: ['6', '7', '8', '9', '10']
   },
   {
-    id: 336,
+    productid: 336,
     img: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/398800/01/sv01/fnd/IND/fmt/png/Suede-XL-CARROTS-Unisex-Sneakers',
     title: 'Suede XL CARROTS Unisex Sneakers',
     price: 9999,
@@ -216,7 +216,7 @@ let new_arrivals = [
     sizes: ['6', '7', '8', '9', '10']
   },
   {
-    id: 337,
+    productid: 337,
     img: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/399777/01/sv01/fnd/IND/fmt/png/PLAY-LOUD-Suede-XL-Unisex-Sneakers',
     title: 'PLAY LOUD Suede XL Unisex Sneakers',
     price: 8999,
@@ -228,7 +228,7 @@ let new_arrivals = [
     sizes: ['6', '7', '8', '9', '10']
   },
   {
-    id: 338,
+    productid: 338,
     img: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/990cda9d-ab7c-4d99-ac1b-20e8ea9694b7/WMNS+AIR+JORDAN+4+RM.png',
     title: 'Air Jordan 4RM',
     price: 12795,
@@ -240,7 +240,7 @@ let new_arrivals = [
     sizes: ['4', '5', '6', '7', '8']
   },
   {
-    id: 339,
+    productid: 339,
     img: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/ecf0395b-bb15-419d-8db7-dbd1de356b58/WMNS+AIR+JORDAN+1+LOW.png',
     title: 'Air Jordan 1 Low',
     price: 8295,
@@ -252,7 +252,7 @@ let new_arrivals = [
     sizes: ['4', '5', '6', '7', '8']
   },
   {
-    id: 340,
+    productid: 340,
     img: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/98e72536-3be0-4867-bdcb-91218c83ce9c/WMNS+AIR+JORDAN+1+BROOKLYN.png',
     title: 'Air Jordan 1 Brooklyn',
     price: 15295,
@@ -264,7 +264,7 @@ let new_arrivals = [
     sizes: ['4', '5', '6', '7', '8']
   },
   {
-    id: 414,
+    productid: 414,
     img: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/990cda9d-ab7c-4d99-ac1b-20e8ea9694b7/WMNS+AIR+JORDAN+4+RM.png',
     title: 'Air Jordan 4RM',
     price: 12795,
@@ -276,7 +276,7 @@ let new_arrivals = [
     sizes: ['4', '5', '6', '7', '8']
   },
   {
-    id: 415,
+    productid: 415,
     img: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/90a050af-b957-4440-9cac-43922e42fdac/W+AIR+MAX+SOL+SANDAL.png',
     title: 'Nike Air Max Sol',
     price: 7095,
@@ -288,7 +288,7 @@ let new_arrivals = [
     sizes: ['4', '5', '6', '7', '8']
   },
   {
-    id: 416,
+    productid: 416,
     img: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2d44f9ac-dfae-4451-981e-fd57e7b0bbcd/W+NIKE+ZOOM+AIR+FIRE.png',
     title: 'Nike Zoom Air Fire',
     price: 10795,
@@ -300,7 +300,7 @@ let new_arrivals = [
     sizes: ['4', '5', '6', '7', '8']
   },
   {
-    id: 417,
+    productid: 417,
     img: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/6a65f8c1-b984-49d1-a311-f690923b5d29/W+AIR+JORDAN+1+LOW+SE.png',
     title: 'Air Jordan 1 Low SE',
     price: 12295,
@@ -312,7 +312,7 @@ let new_arrivals = [
     sizes: ['4', '5', '6', '7', '8']
   },
   {
-    id: 418,
+    productid: 418,
     img: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b3c6efb6-4085-4885-8513-7af651b1f3d0/W+NIKE+CORTEZ.png',
     title: 'Nike Cortez Textile',
     price: 8695,
@@ -324,7 +324,7 @@ let new_arrivals = [
     sizes: ['4', '5', '6', '7', '8']
   },
   {
-    id: 419,
+    productid: 419,
     img: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2e26cd53-b90d-4e06-bc0f-15fea66ac896/W+AIR+MAX+DN+SE.png',
     title: 'Nike Air Max Dn SE',
     price: 14995,
@@ -336,7 +336,7 @@ let new_arrivals = [
     sizes: ['4', '5', '6', '7', '8']
   },
   {
-    id: 518,
+    productid: 518,
     img: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/195109/04/sv01/fnd/IND/fmt/png/Comet-2-Alt-Beta-Unisex-Running-Shoes',
     title: 'Comet 2 Alt Beta Unisex Running Shoes',
     price: 4499,
@@ -348,7 +348,7 @@ let new_arrivals = [
     sizes: ['4', '5', '6', '7', '8']
   },
   {
-    id: 519,
+    productid: 519,
     img: "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/378684/01/sv01/fnd/IND/fmt/png/Deviate-NITRO™-2-'Marathon-Series'-Women's-Running-Shoes",
     title: "Deviate NITRO™ 2 'Marathon Series' Women's Running Shoes",
     price: 16999,
@@ -360,7 +360,7 @@ let new_arrivals = [
     sizes: ['4', '5', '6', '7', '8']
   },
   {
-    id: 520,
+    productid: 520,
     img: "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/310426/01/sv01/fnd/IND/fmt/png/SOFTRIDE-Posse-Women's-Slip-On-Shoes",
     title: "SOFTRIDE Posse Women's Slip-On Shoes",
     price: 5499,
@@ -372,7 +372,7 @@ let new_arrivals = [
     sizes: ['4', '5', '6', '7', '8']
   },
   {
-    id: 521,
+    productid: 521,
     img: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/190556/12/sv01/fnd/IND/fmt/png/NRGY-Comet-Unisex-Running-Shoes',
     title: 'NRGY Comet Unisex Running Shoes',
     price: 4499,
@@ -384,7 +384,7 @@ let new_arrivals = [
     sizes: ['4', '5', '6', '7', '8']
   },
   {
-    id: 522,
+    productid: 522,
     img: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/190556/34/sv01/fnd/IND/fmt/png/NRGY-Comet-Unisex-Running-Shoes',
     title: 'NRGY Comet Unisex Running Shoes',
     price: 4499,
@@ -396,7 +396,7 @@ let new_arrivals = [
     sizes: ['4', '5', '6', '7', '8']
   },
   {
-    id: 523,
+    productid: 523,
     img: "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/378473/01/sv01/fnd/IND/fmt/png/ForeverRun-NITRO™-WTR-Women's-Running-Shoes",
     title: "ForeverRun NITRO™ WTR Women's Running Shoes",
     price: 16999,
@@ -408,7 +408,7 @@ let new_arrivals = [
     sizes: ['4', '5', '6', '7', '8']
   },
   {
-    id: 524,
+    productid: 524,
     img: "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/379114/01/sv01/fnd/IND/fmt/png/PUMA-x-FIRST-MILE-Velocity-NITRO™-2-Women's-Running-Shoes",
     title: "PUMA x FIRST MILE Velocity NITRO™ 2 Women's Running Shoes",
     price: 12999,
@@ -420,7 +420,7 @@ let new_arrivals = [
     sizes: ['4', '5', '6', '7', '8']
   },
   {
-    id: 525,
+    productid: 525,
     img: "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/376908/01/sv01/fnd/IND/fmt/png/Magnify-NITRO™-Knit-Women's-Running-Shoes",
     title: "Magnify NITRO™ Knit Women's Running Shoes",
     price: 14999,
@@ -432,7 +432,7 @@ let new_arrivals = [
     sizes: ['4', '5', '6', '7', '8']
   },
   {
-    id: 526,
+    productid: 526,
     img: "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/379085/02/sv01/fnd/IND/fmt/png/Electrify-NITRO™-3-Knit-Women's-Running-Shoes",
     title: "Electrify NITRO™ 3 Knit Women's Running Shoes",
     price: 9999,
@@ -444,7 +444,7 @@ let new_arrivals = [
     sizes: ['4', '5', '6', '7', '8']
   },
   {
-    id: 527,
+    productid: 527,
     img: "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/379085/03/sv01/fnd/IND/fmt/png/Electrify-NITRO™-3-Knit-Women's-Running-Shoes",
     title: "Electrify NITRO™ 3 Knit Women's Running Shoes",
     price: 9999,
@@ -456,7 +456,7 @@ let new_arrivals = [
     sizes: ['4', '5', '6', '7', '8']
   },
   {
-    id: 528,
+    productid: 528,
     img: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/195109/01/sv01/fnd/IND/fmt/png/Comet-2-Alt-Beta-Unisex-Running-Shoes',
     title: 'Comet 2 Alt Beta Unisex Running Shoes',
     price: 4499,
@@ -468,7 +468,7 @@ let new_arrivals = [
     sizes: ['4', '5', '6', '7', '8']
   },
   {
-    id: 608,
+    productid: 608,
     img: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/386238/09/sv01/fnd/IND/fmt/png/Evolve-Run-Mesh-Youth-Sneakers',
     title: 'Evolve Run Mesh Youth Sneakers',
     price: 4499,
@@ -480,7 +480,7 @@ let new_arrivals = [
     sizes: ['3', '4', '5', '6', '7']
   },
   {
-    id: 609,
+    productid: 609,
     img: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/391872/01/sv01/fnd/IND/fmt/png/Hobbes-Slip-On-Youth-Sneakers',
     title: 'Hobbes Slip On Youth Sneakers',
     price: 2999,
@@ -492,7 +492,7 @@ let new_arrivals = [
     sizes: ['3', '4', '5', '6', '7']
   },
   {
-    id: 610,
+    productid: 610,
     img: "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/372004/01/sv01/fnd/IND/fmt/png/Anzarun-Lite-Kid's-Sneakers",
     title: "Anzarun Lite Kid's Sneakers",
     price: 3499,
