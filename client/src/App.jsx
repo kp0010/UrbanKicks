@@ -21,6 +21,7 @@ import { BestSellersPage } from './Pages/BestSellersPage';
 import { Wishlist } from './Pages/Wishlist';
 import { Footer } from './Components/Footer/Footer';
 import { Delivery } from './Pages/Delivery';
+import { PreviousOrders } from './Pages/PreviousOrders';
 
 function App() {
   return (
@@ -52,7 +53,8 @@ const RoutesList = () => {
       <Route path="/cart" element={<Cart />} />
       <Route path="/checkout" element={<Checkout />} />
       <Route path="/wishlist" element={<Wishlist />} />
-      <Route path="/delivery" element={<Delivery />}/>
+      <Route path="/delivery" element={<Delivery />} />
+      <Route path="/previousOrders" element={<PreviousOrders />} />
     </Routes>
   )
 }

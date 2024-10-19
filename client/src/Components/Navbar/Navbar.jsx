@@ -46,6 +46,10 @@ export const Navbar = () => {
     navigate("/signup")
   }
 
+  const gotoPreviousOrders = () => {
+    navigate("/previousOrders")
+  }
+
   function toTitleCase(str) {
     return str.replace(
       /\w\S*/g,
@@ -59,7 +63,7 @@ export const Navbar = () => {
         <div className="dropdown">
           <ul className="dropdown-menu dropdown-menu-dark text-small shadow" >
             <li id="1"><strong className="dropdown-item">Hello, {toTitleCase(user.fullname)}</strong></li>
-            <li id="2" className="dropdown-item" href="#">Settings</li>
+            <li id="2" className="dropdown-item" onClick={gotoPreviousOrders} >Previous Orders</li>
             <li id="3" className="dropdown-item" href="#">Profile</li>
             <li id="4"><hr className="dropdown-divider" /></li>
             <li id="5" className="dropdown-item" onClick={handleLogout}>Log out</li>
