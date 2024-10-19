@@ -214,12 +214,10 @@ app.delete("/cart/", (req, res) => {
 
 app.post("/getAddress/", (req, res) => {
     const { mail } = req.body
-    console.log("ADD CALL")
 
-    db.query("SELECT * FROM addresses WHERE mail=$1",
+    db.query("SELECT * FROM addresses WHERE mail=$1 AND isdeleted!=TRUE",
         [mail], (error, result) => {
             if (result.rows.length > 0) {
-                console.log("ADD: ", result.rows[0])
                 res.status(200).json(
                     {
                         success: !Boolean(error),
@@ -242,12 +240,19 @@ app.post("/address/", (req, res) => {
     const { firstName, lastName, addressLine1, addressLine2,
         zipCode, state, city, country, phoneNo } = address
 
+
+    const hardAddDeleter = () => {
+        db.query("DELETE FROM addresses WHERE isDeleted = TRUE " +
+            "AND addressId NOT IN (SELECT DISTINCT shippingAddressId from orders)"
+        )
+    }
+
     db.query("INSERT INTO addresses(mail, firstName, lastName, addressLine1, addressLine2," +
         "zipCode, state, city, country, phoneNo) VALUES ( $1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING addressId",
         [mail, firstName, lastName, addressLine1, addressLine2, zipCode, state, city, country, phoneNo]
         , (error, result) => {
+            hardAddDeleter()
             if (result.rows.length > 0) {
-                console.log("ADD: ", result.rows[0])
                 res.status(200).json(
                     {
                         success: !Boolean(error),
@@ -255,7 +260,7 @@ app.post("/address/", (req, res) => {
                     }
                 )
             } else {
-                return res.status(201).json(
+                res.status(201).json(
                     {
                         success: false,
                     }
@@ -267,23 +272,20 @@ app.post("/address/", (req, res) => {
 app.delete("/address/", (req, res) => {
     const { mail, addressid } = req.body
 
-    db.query("UPDATE addresses SET mail='tempmail' WHERE mail " +
-        "zipCode, state, city, country, phoneNo) VALUES ( $1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING addressId",
-        [mail, firstName, lastName, addressLine1, addressLine2, zipCode, state, city, country, phoneNo]
+    db.query("UPDATE addresses SET isDeleted = TRUE WHERE mail=$1 AND addressid=$2 RETURNING addressid",
+        [mail, addressid]
         , (error, result) => {
             if (result.rows.length > 0) {
-                console.log("ADD: ", result.rows[0])
                 res.status(200).json(
                     {
                         success: !Boolean(error),
-                        addressId: result.rows[0].addressId,
+                        addressId: result.rows[0].addressid,
                     }
                 )
             } else {
                 return res.status(201).json(
                     {
                         success: false,
-                        // address: []
                     }
                 )
             }

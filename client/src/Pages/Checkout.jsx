@@ -22,9 +22,9 @@ export const Checkout = () => {
   }
 
   const [newAddress, setNewAddress] = useState(emptyAddr)
-  const [addresses, setAddresses] = useState([{ addressline1: "HELLO WORLD" }])
+  const [addresses, setAddresses] = useState([])
   const [addChanged, setAddChanged] = useState([])
-  const [ isFormVisible, setIsFormVisible] = useState(false);
+  const [isFormVisible, setIsFormVisible] = useState(false);
 
   useEffect(() => {
     if (!auth) { return }
@@ -49,23 +49,6 @@ export const Checkout = () => {
   const handleAddressInsert = (e) => {
     e.preventDefault()
 
-    // if (
-    //   emptyAddr.firstName !== newAddress.firstName &&
-    //   emptyAddr.lastName !== newAddress.lastName &&
-    //   emptyAddr.addressLine1 !== newAddress.addressLine1 &&
-    //   emptyAddr.addressLine2 !== newAddress.addressLine2 &&
-    //   emptyAddr.zipCode !== newAddress.zipCode &&
-    //   emptyAddr.state !== newAddress.state &&
-    //   emptyAddr.city !== newAddress.city &&
-    //   emptyAddr.country !== newAddress.country &&
-    //   emptyAddr.phoneNo !== newAddress.phoneNo
-    // ) {
-    //   toast.error("Please Enter Complete Address")
-    // }
-
-    console.log("INSERTING")
-    console.log(newAddress)
-
     if (!auth) { return }
 
     if (addresses.length >= 3) {
@@ -81,7 +64,34 @@ export const Checkout = () => {
         address: newAddress
       }),
       credentials: "include",
-    }).then(() => { setAddChanged(!addChanged); setNewAddress(emptyAddr) })
+    }).then(() => {
+      setAddChanged(!addChanged)
+      setNewAddress(emptyAddr)
+      toast.success("Address Added")
+      setIsFormVisible(false)
+    })
+  }
+
+  const handleAddressDelete = (addressId) => {
+    if (!auth) { return }
+
+    fetch("http://localhost:8080/address", {
+      method: "delete",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        mail: user.mail,
+        addressId: addressId
+      }),
+      credentials: "include",
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        if (data.success) {
+          toast.success("Address Deleted")
+        } else {
+          toast.error("Could not Delelete the Address")
+        }
+      })
   }
 
   const toggleFormVisibility = () => {
@@ -117,14 +127,14 @@ export const Checkout = () => {
                 {isFormVisible ? (
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                     <path d="M 4 10 L 16 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
-                </svg>
+                  </svg>
                 ) : (
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                     <path d="M 4 10 L 16 10 M 10 4 L 10 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
                   </svg>
                 )}
               </button>
-              
+
             </div>
 
             {isFormVisible && (
@@ -165,7 +175,7 @@ export const Checkout = () => {
                 </div>
               </form>
             )}
-            
+
           </div>
           <div className="checkout-left-payment-content">
             <p className="checkout-payment">2.PAYMENT</p>
