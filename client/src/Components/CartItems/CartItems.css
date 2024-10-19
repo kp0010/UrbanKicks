@@ -97,6 +97,9 @@
 .cartItems-order span {
     font-weight: 500;
 }*/
+.cartItems-place-order-btn {
+    margin-bottom: 30px;
+}
 .cartItems-place-order-btn button{
     width: 300px;
     margin-left: 70px;

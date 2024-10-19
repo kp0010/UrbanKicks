@@ -53,7 +53,7 @@ export const ProductDisplay = (props) => {
                 </div>
                 <div className="productdisplay-right-description">{product.description}</div>
                 <div className="productdisplay-right-size">
-                    <h1>Select Size</h1>
+                    <h1>Select Size (UK)</h1>
                     <div className="productdisplay-right-size-variety">
                         {product.sizes.map((item, index) => (
                             <button onClick={() => setSize(item)} className={item === size ? 'border-red' : ''} key={index}>{item}</button>

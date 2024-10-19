@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { Breadcrums } from '../Components/Breadcrums/Breadcrums';
 import { ProductDisplay } from '../Components/ProductDisplay/ProductDisplay';
 import { RelatedProducts } from '../Components/RelatedProducts/RelatedProducts';
+import { Reviews } from '../Components/Reviews/Reviews';
 
 export const Product = () => {
   const { all_products, loading } = useShop();
@@ -21,6 +22,7 @@ export const Product = () => {
         <Breadcrums product={product} />
         <ProductDisplay product={product} />
         <RelatedProducts category={product.gender} subCategory={product.category} />
+        <Reviews product={product} />
       </>)
     }
   }, [all_products, loading])

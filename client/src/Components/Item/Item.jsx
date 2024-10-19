@@ -13,9 +13,10 @@ export const Item = (props) => {
 
   return (
     <div className='item'>
-      <span><i className={`bi ${liked ? 'bi-heart-fill' : 'bi-heart'} heart - icon ${liked ? 'liked' : ''}`} onClick={toggleLike} /></span>
+      <span><i className={`bi ${liked ? 'bi-heart-fill' : 'bi-heart'} heart-icon ${liked ? 'liked' : ''}`} onClick={toggleLike} /></span>
+      <button className="item-addtocart">ADD TO CART</button>
       <a href={`/product/${props.id}`}>
-        <button className="item-addtocart">ADD TO CART</button>
+        
         <div>
           <img src={props.image} alt="." />
         </div>
