@@ -5,12 +5,13 @@ import { NavLink } from "react-router-dom"
 
 import { useShop } from '../../Context/ShopContext'
 import { useAuth } from '../../Context/AuthContext'
+import { toast } from "react-toastify"
 
 export const CartItems = () => {
     const navigate = useNavigate()
     const { auth } = useAuth()
 
-    if (!auth) { navigate("/login") }
+    // if (!auth) { navigate("/login") }
 
     const {
         all_products,
@@ -20,11 +21,20 @@ export const CartItems = () => {
         price
     } = useShop()
 
+    const handleCheckout = () => {
+        if (cartData.length > 0) {
+            navigate("/checkout")
+        } else {
+            toast.error("No Items in Cart")
+        }
+    }
+
     return (
         <div className="cartItems">
             <div className="head">Shopping Cart</div>
             <div className="cartItems-main">
                 <div className="cartItems-left">
+                    {cartData.length == 0 && <h2>No Items in cart, Have fun shopping!</h2>}
                     {
                         cartData.map((item, index) => {
                             const productData = all_products.find((product) => product.productid === item.productid);
@@ -92,7 +102,7 @@ export const CartItems = () => {
                         <button>Place an Order</button>
                     </div> */}
                     <div className="cartItems-place-order-btn">
-                        <NavLink to="/checkout"><button>Checkout</button></NavLink>
+                        <button onClick={() => handleCheckout()}>Checkout</button>
                     </div>
                 </div>
 

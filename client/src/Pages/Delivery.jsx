@@ -14,6 +14,11 @@ export const Delivery = () => {
     const [orderItemsInfo, setOrderItemsInfo] = useState([])
     const [addressInfo, setAddressInfo] = useState({})
 
+    var orderDate = new Date()
+    var deliveryDate = new Date()
+
+    const [dateString, setDateString] = useState("")
+
     useEffect(() => {
         console.log(orderId)
 
@@ -30,21 +35,41 @@ export const Delivery = () => {
                 setOrderInfo(data.orderInfo)
                 setOrderItemsInfo(data.orderItemsInfo)
                 setAddressInfo(data.addressInfo)
+                orderDate = new Date(data.orderInfo.orderdate)
             })
 
     }, [orderId])
 
+    useEffect(() => {
+        console.log(orderDate.toString());
+        const tempDate = new Date(orderDate)
+        deliveryDate = tempDate.setDate(tempDate.getDate() + 3)
+    }, [orderDate])
+
+
+    const convDate = (delDate) => {
+        console.log("DATE", delDate)
+        const delDateConv = new Date(delDate)
+        // return delDate.toString()
+
+        const options = { day: '2-digit', year: 'numeric', month: 'long' };
+        const formattedDate = delDateConv.toLocaleDateString('en-US', options);
+
+        return formattedDate
+    }
+
+    useEffect(() => { console.log("CONV: ", deliveryDate); setDateString(convDate(deliveryDate)) }, [deliveryDate])
 
     return (
         <div className="delivery">
             <div className="delivery-head">DELIVERY</div>
             <hr />
-            <div className="delivery-info">Your Order will be delivered in 2 Days.</div>
+            <div className="delivery-info">Your Order will be delivered on {dateString}</div>
             <hr />
             <p className="delivery-order-info">Order Information:</p>
             <div className="delivery-main">
                 <div className="delivery-left">
-                    {orderItemsInfo !== undefined &&
+                    {orderItemsInfo.length > 0 &&
                         orderItemsInfo.map((item, index) => {
                             const productData = all_products.find((product) => product.productid === item.productid);
                             return <div className="delivery-key" key={index}>
@@ -62,8 +87,7 @@ export const Delivery = () => {
                                             </div>
                                             <hr />
                                             <div className="delivery-products-right-size">
-                                                <p><span>Size: </span>{item.size.toString()}</p>
-                                                <p><span>Quantity: </span>{item.quantity.toString()}</p>
+                                                <p><span>Size: </span>{item.size.toString()}  |  <span>Quantity: </span>{item.quantity.toString()}</p>
                                             </div>
                                             <div className="delivery-products-right-price">
                                                 <span>Price:</span> ₹ {item.price}
@@ -95,8 +119,13 @@ export const Delivery = () => {
                         <hr />
                         <h5 className="payment-method">Payment Method: Cash On Delivery</h5>
                         <hr />
-                        <h5>Respondant Name: {addressInfo.firstname + " " + addressInfo.lastname},</h5><h6>Contact No: XXXXXX{addressInfo.phoneno.slice(-4)}</h6>
-                        <h6>Address: {addressInfo.addressline1}</h6>
+                        {addressInfo.addressline1 !== undefined &&
+                            <>
+                                <h5>Respondant Name: {addressInfo.firstname + " " + addressInfo.lastname},</h5>
+                                <h6>Contact No: XXXXXX{addressInfo.phoneno.slice(-4)}</h6>
+                                <h6>Address: {addressInfo.addressline1}</h6>
+                            </>
+                        }
                     </div>
                 </div>
             </div>
