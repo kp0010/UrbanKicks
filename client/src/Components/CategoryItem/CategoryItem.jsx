@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import "./CategoryItem.css"
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export const CategoryItem = (props) => {
 
@@ -18,7 +18,7 @@ export const CategoryItem = (props) => {
       <button className="category-item-addtocart">
         ADD TO CART
       </button>
-      <NavLink to={`/product/${props.id}`}>
+      <Link to={`/product/${props.id}`}>
         <div>
           <img src={props.image} alt="." />
         </div>
@@ -33,7 +33,7 @@ export const CategoryItem = (props) => {
             ₹{Math.round(props.new_price * 1.5 / 5) * 5}
           </div>
         </div>
-      </NavLink>
+      </Link>
 
     </div>
   )

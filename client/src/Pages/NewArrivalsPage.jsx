@@ -9,7 +9,7 @@ export const NewArrivalsPage = () => {
         <h2 className="New_Arrivals_head">New Arrivals</h2>
         <div className="New_Arrvals_products">
             {new_arrivals.map((item, i) => {
-                return <Item key={i} id={item.id} name={item.title} subtitle={item.subtitle} image={item.img} new_price={item.price} />
+                return <Item key={i} id={item.productid} name={item.title} subtitle={item.subtitle} image={item.img} new_price={item.price} />
             })}
         </div>
     </div>

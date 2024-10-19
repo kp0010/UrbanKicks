@@ -100,7 +100,7 @@ export const Navbar = () => {
           {menuItemsData.map((menu, index) => {
             return (
               <li key={index} className="menu-items">
-                <NavLink to={menu.url}>
+                <NavLink to={menu.url } onClick={handleClick}>
                   <i className={menu.icon} />
                   {(menu.icon === 'bi bi-bag' && cartCount > 0) && (
                     <span className="cart-count">{cartCount}</span>

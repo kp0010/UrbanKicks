@@ -123,6 +123,7 @@ export const Checkout = () => {
         if (data.success) {
           refreshCart()
           toast.success("Order Placed")
+          window.scrollTo(0, 0);
           navigate('/delivery', {
             state: { orderId: data.orderId },
           })

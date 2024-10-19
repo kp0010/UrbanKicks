@@ -23,6 +23,7 @@ export const CartItems = () => {
 
     const handleCheckout = () => {
         if (cartData.length > 0) {
+            window.scrollTo(0, 0);
             navigate("/checkout")
         } else {
             toast.error("No Items in Cart")
