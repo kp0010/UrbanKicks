@@ -57,6 +57,12 @@
 .checkout-radio-address label {
     padding-left: 10px;
 }
+.checkout-radio-address img {
+    width: 24px;
+    height: 24px;
+    margin-top: 8px;
+    cursor: pointer;
+}
 .checkout-select-saved-address {
     outline: none;
     width: 35vw;
@@ -70,7 +76,7 @@
     justify-content: space-between;
     padding-left: 18px;
     font-size: 15px;
-    margin-top: 10px;
+    margin-top: 8px;
 }
 .checkout-address-label p {
     margin: 0;
@@ -79,6 +85,7 @@
 .plus-minus {
     background-color: antiquewhite;
     border: none;
+    padding-right: 3px;
 }
 
 .checkout-left-address {

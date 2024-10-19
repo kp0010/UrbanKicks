@@ -6,6 +6,7 @@ import { NavLink } from 'react-router-dom'
 
 import { toast } from "react-toastify"
 import { CSSTransition } from 'react-transition-group'
+import bin_icon from "../Components/Assets/HomeAssets/bin_icon.png"
 
 import "./CSS/Checkout.css"
 
@@ -169,6 +170,7 @@ export const Checkout = () => {
                     <label htmlFor={`address-${index}`}><strong>{add.firstname} {add.lastname}</strong>, XXXXXX{add.phoneno.slice(-4)} 
                     <br />
                     {add.addressline1}, {add.city}, {add.state}, {add.zipcode}, {add.country} </label>
+                    <img onClick={() => handleAddressDelete(add.addressid)} src={bin_icon} alt="..." />
                   </div>
                 ))
               ) : (
