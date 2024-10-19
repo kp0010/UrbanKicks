@@ -49,12 +49,16 @@
 }
 .checkout-radio-address {
     display: flex;
-    align-items:baseline;
+    justify-content: space-between;
     padding-bottom: 10px;
     padding-left: 30px;
     
 }
-.checkout-radio-address label {
+.checkout-radio {
+    display: flex;
+    align-items: baseline;
+}
+.checkout-radio label {
     padding-left: 10px;
 }
 .checkout-radio-address img {

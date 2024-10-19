@@ -159,16 +159,19 @@ export const Checkout = () => {
               {addresses.length > 0 ? (
                 addresses.map((add, index) => (
                   <div key={index} className="checkout-radio-address">
-                    <input
-                      type="radio"
-                      id={`address-${index}`}
-                      name="saved-address"
-                      value={add.addressid}
-                      onChange={handleAddress}
-                    />
-                    <label htmlFor={`address-${index}`}><strong>{add.firstname} {add.lastname}</strong>, XXXXXX{add.phoneno.slice(-4)}
-                      <br />
-                      {add.addressline1}, {add.city}, {add.state}, {add.zipcode}, {add.country} </label>
+                    <div className="checkout-radio">
+                      <input
+                        type="radio"
+                        id={`address-${index}`}
+                        name="saved-address"
+                        value={add.addressid}
+                        onChange={handleAddress}
+                      />
+                      <label htmlFor={`address-${index}`}><strong>{add.firstname} {add.lastname}</strong>, XXXXXX{add.phoneno.slice(-4)}
+                        <br />
+                        {add.addressline1}, {add.city}, {add.state}, {add.zipcode}, {add.country} </label>
+                    </div>
+                    
                     <img onClick={() => handleAddressDelete(add.addressid)} src={bin_icon} alt="..." />
                   </div>
                 ))
