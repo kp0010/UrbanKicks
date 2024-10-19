@@ -1,7 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 import { useContext } from "react";
 
-// import all_products from "../Components/Assets/ProductData/allproducts.js"
 import new_arrivals from "../Components/Assets/ProductData/new_arrivals.js";
 import best_sellers from "../Components/Assets/ProductData/bestsellers.js"
 
@@ -16,6 +15,7 @@ const ShopContext = createContext({
     updateCart: () => { },
     deleteCart: () => { },
     addToCart: () => { },
+    refreshCart: () => { },
     price: 0,
     loading: true
 });
@@ -174,6 +174,10 @@ const ShopContextProvider = ({ children }) => {
         setPrice(acc)
     }
 
+    const refreshCart = () => {
+        setCartChanged(true)
+    }
+
     useEffect(() => { getCart() }, [cartChanged, auth, user])
     useEffect(() => { getPrice() }, [cartData, all_products, loading])
     useEffect(() => { getAllProducts() }, [])
@@ -187,6 +191,7 @@ const ShopContextProvider = ({ children }) => {
         addToCart,
         updateCart,
         deleteCart,
+        refreshCart,
         price,
         loading
     };

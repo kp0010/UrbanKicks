@@ -1,12 +1,15 @@
-import "./CSS/Checkout.css"
-import { useShop } from '../Context/ShopContext'
-import { NavLink } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+
+import { useShop } from '../Context/ShopContext'
 import { useAuth } from "../Context/AuthContext"
+
 import { toast } from "react-toastify"
+import { CSSTransition } from 'react-transition-group'
+
+import "./CSS/Checkout.css"
 
 export const Checkout = () => {
-  const { cartData, all_products, cartCount, price } = useShop()
+  const { cartData, all_products, cartCount, price, refreshCart } = useShop()
   const { user, auth } = useAuth()
 
   const emptyAddr = {
@@ -24,6 +27,8 @@ export const Checkout = () => {
   const [newAddress, setNewAddress] = useState(emptyAddr)
   const [addresses, setAddresses] = useState([])
   const [addChanged, setAddChanged] = useState([])
+  const [currShippingId, setCurrShippingId] = useState(1)
+
   const [isFormVisible, setIsFormVisible] = useState(false);
 
   useEffect(() => {
@@ -76,7 +81,7 @@ export const Checkout = () => {
     if (!auth) { return }
 
     fetch("http://localhost:8080/address", {
-      method: "delete",
+      method: "DELETE",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
         mail: user.mail,
@@ -94,13 +99,40 @@ export const Checkout = () => {
       })
   }
 
+  const processOrderCheckout = () => {
+    if (!auth) { return }
+    if (cartData.length <= 0) { toast.warn("No Products in Cart"); return }
+
+    fetch("http://localhost:8080/order", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      credentials: "include",
+      body: JSON.stringify({
+        mail: user.mail,
+        shippingAddressId: currShippingId
+      }),
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        if (data.success) {
+          refreshCart()
+          toast.success("Order Placed")
+        } else {
+          toast.error("Could not Place Order")
+        }
+      })
+  }
+
   const toggleFormVisibility = () => {
+    if (addresses.length >= 3) {
+      toast.error("Only 3 Addresses can be stored")
+      return
+    }
     setIsFormVisible(prevState => !prevState);
   }
 
   return (
-    < div className="checkout" >
-      {window.scrollTo(0, 0)}
+    <div className="checkout" >
       <div className="checkout-head">Checkout</div>
       <div className="checkout-main">
         <div className="checkout-left">
@@ -137,7 +169,11 @@ export const Checkout = () => {
 
             </div>
 
-            {isFormVisible && (
+            <CSSTransition
+              in={isFormVisible === true}
+              unmountOnExit
+              timeout={400}
+              classNames="formPrimary">
               <form className="checkout-left-address" onSubmit={handleAddressInsert}>
                 <div className="checkout-row">
                   <input type="text" id="firstName" placeholder="FIRST NAME"
@@ -174,7 +210,7 @@ export const Checkout = () => {
                   <button className="button-cancel">CANCEL</button>
                 </div>
               </form>
-            )}
+            </CSSTransition>
 
           </div>
           <div className="checkout-left-payment-content">
@@ -185,6 +221,7 @@ export const Checkout = () => {
               <label ><input type="radio" value="viaCreditCard" /> via Credit Card</label>
               <label ><input type="radio" value="viaDebitCard" /> via Debit Card</label>
             </div>
+            <button onClick={() => processOrderCheckout()}>ORDER</button>
           </div>
         </div>
         <div className="checkout-right">

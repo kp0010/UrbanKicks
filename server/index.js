@@ -241,7 +241,7 @@ app.post("/address/", (req, res) => {
         zipCode, state, city, country, phoneNo } = address
 
 
-    const hardAddDeleter = () => {
+    const hardAddressDeleter = () => {
         db.query("DELETE FROM addresses WHERE isDeleted = TRUE " +
             "AND addressId NOT IN (SELECT DISTINCT shippingAddressId from orders)"
         )
@@ -251,7 +251,7 @@ app.post("/address/", (req, res) => {
         "zipCode, state, city, country, phoneNo) VALUES ( $1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING addressId",
         [mail, firstName, lastName, addressLine1, addressLine2, zipCode, state, city, country, phoneNo]
         , (error, result) => {
-            hardAddDeleter()
+            hardAddressDeleter()
             if (result.rows.length > 0) {
                 res.status(200).json(
                     {
@@ -308,7 +308,7 @@ app.get("/products", (req, res) => {
 })
 
 app.post("/order/", (req, res) => {
-    const { mail, shippingaddress } = req.body
+    const { mail, shippingAddressId } = req.body
 
     const insertCartItems = async (cartData, orderid) => {
         var orderItems = []
@@ -329,13 +329,14 @@ app.post("/order/", (req, res) => {
         db.query("DELETE FROM cart WHERE mail=$1", [mail])
 
         res.status(200).json({
+            success: true,
             orderIds: orderItems
         })
     }
 
     const insertOrder = (cartData, totalAmount) => {
-        db.query("INSERT INTO orders (mail, totalamount, shippingaddress) VALUES ($1, $2, $3) RETURNING orderid",
-            [mail, totalAmount, shippingaddress], (error, result) => {
+        db.query("INSERT INTO orders (mail, totalamount, shippingAddressId) VALUES ($1, $2, $3) RETURNING orderid",
+            [mail, totalAmount, shippingAddressId], (error, result) => {
                 insertCartItems(cartData, result.rows[0].orderid)
             })
     }
@@ -343,6 +344,7 @@ app.post("/order/", (req, res) => {
     const getProductPrice = async (productid) => {
         return new Promise((resolve, reject) => {
             db.query("SELECT price FROM products WHERE productid=$1", [productid], (error, result) => {
+                if (error) { reject(0) }
                 resolve(result.rows[0].price)
             })
         })

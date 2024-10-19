@@ -3,6 +3,7 @@
     background-color: antiquewhite;
     height: 100%;
 }
+
 .checkout-head {
     font-size: 40px;
     font-weight: 500;
@@ -10,6 +11,7 @@
     padding-top: 100px;
     margin-bottom: 20px;
 }
+
 .checkout-main {
     display: flex;
     justify-content: space-between;
@@ -17,14 +19,17 @@
     margin-right: 100px;
     margin-top: 30px;
 }
+
 .checkout-left {
     display: block;
     flex-direction: column;
     width: 50%;
 }
+
 .checkout-left-shipping-content {
     display: block;
 }
+
 .checkout-left-shipping {
     font-weight: 500;
     background-color: rgb(243, 205, 155);
@@ -32,14 +37,17 @@
     padding-left: 12px;
     margin-bottom: 20px;
 }
+
 .checkout-left-shipping p {
     margin: 0px;
     letter-spacing: 0.5px;
 }
+
 .checkout-saved-address p {
     margin-left: 20px;
     margin-bottom: 10px;
 }
+
 .checkout-select-saved-address {
     outline: none;
     width: 35vw;
@@ -47,25 +55,30 @@
     margin-bottom: 15px;
     padding: 5px;
 }
+
 .checkout-address-label {
     display: flex;
     justify-content: space-between;
     padding-left: 18px;
     font-size: 15px;
 }
+
 .plus-minus {
     background-color: antiquewhite;
     border: none;
 }
+
 .checkout-left-address {
     display: block;
-    
+
 }
+
 .checkout-row {
     display: flex;
     justify-content: space-between;
     margin: 18px;
 }
+
 .checkout-row input {
     width: 100%;
     margin-right: 20px;
@@ -73,12 +86,14 @@
     border-radius: 3px;
     border-style: solid;
 }
+
 .checkout-buttons {
     display: flex;
     width: 50%;
     justify-content: space-between;
     margin: 18px;
 }
+
 .checkout-buttons button {
     padding: 8px;
     width: 8vw;
@@ -86,18 +101,23 @@
     outline: none;
     color: black;
 }
+
 .button-save {
     background-color: rgb(250, 193, 107);
 }
+
 .button-save:hover {
     background-color: rgb(250, 182, 80);
 }
+
 .button-cancel:hover {
     background-color: rgb(250, 182, 80);
 }
+
 .checkout-left-payment-content {
     margin-top: 30px;
 }
+
 .checkout-payment {
     font-weight: 500;
     background-color: rgb(243, 205, 155);
@@ -105,6 +125,7 @@
     padding-left: 12px;
     letter-spacing: 0.5px;
 }
+
 .checkout-payment-option label {
     display: block;
     flex-direction: column;
@@ -112,9 +133,11 @@
     font-size: 16px;
     font-weight: 700;
 }
+
 .checkout-right {
     width: 40%;
 }
+
 .checkout-right-bill {
     height: fit-content;
     margin-top: 15px;
@@ -122,56 +145,87 @@
     padding: 20px;
     margin-bottom: 20px;
 }
+
 .checkout-right-subtotal {
     display: flex;
     justify-content: space-between;
     font-weight: 450;
 }
+
 .tax-tag {
     font-size: 14px;
     font-weight: 350;
 }
+
 .checkout-right-summary-products {
     display: block;
     flex-direction: column;
-    
+
 }
+
 .checkout-products {
     display: flex;
     margin-top: 30px;
     margin-bottom: 30px;
 }
+
 .checkout-products-left img {
     width: 150px;
     height: 150px;
 }
+
 .checkout-products-right {
     display: block;
     width: 60%;
     margin-left: 50px;
 }
+
 .checkout-products-right-top {
     display: flex;
     justify-content: space-between;
 }
+
 .checkout-products-right-title h5 {
     font-size: 16px;
     font-weight: 500;
-    margin-bottom: 0px  ;
+    margin-bottom: 0px;
 }
+
 .checkout-products-right hr {
     margin-top: 8px;
     margin-bottom: 8px;
 }
+
 .checkout-products-right-size {
     margin-bottom: 8px;
 }
+
 .checkout-products-right-size span {
     font-weight: 700;
 }
+
 .checkout-products-right-instock {
     font-size: 14px;
 }
+
 .checkout-products-right-price span {
     font-weight: 500;
+}
+
+.formPrimary-enter {
+    opacity: 0;
+}
+
+.formPrimary-enter-active {
+    opacity: 1;
+    transition: all 400ms
+}
+
+.formPrimary-exit {
+    opacity: 1;
+}
+
+.formPrimary-exit {
+    opacity: 0;
+    transition: all 100ms
 }
