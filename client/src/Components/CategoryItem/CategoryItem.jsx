@@ -16,14 +16,14 @@ export const CategoryItem = (props) => {
     <div className='category-item'>
       <span><i className={`bi ${liked ? 'bi-heart-fill' : 'bi-heart'} category-heart-icon ${liked ? 'liked' : ''}`} onClick={toggleLike} /></span>
       <button className="category-item-addtocart">
-          ADD TO CART
+        ADD TO CART
       </button>
       <NavLink to={`/product/${props.id}`}>
         <div>
           <img src={props.image} alt="." />
         </div>
         <div>
-          <p class='product-name'>{props.name} : {props.subtitle}</p>
+          <p className='product-name'>{props.name} : {props.subtitle}</p>
         </div>
         <div className="category-item-prices">
           <div className="category-item-price-new">

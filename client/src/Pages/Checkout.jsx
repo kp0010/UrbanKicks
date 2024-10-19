@@ -111,13 +111,13 @@ export const Checkout = () => {
             <div className="checkout-saved-address">
               <p>Select a Saved Address :</p>
               <select className="checkout-select-saved-address">
-                <option id="default" value="relevant">Select a saved address</option>
+                <option key="0" value="relevant">Select a saved address</option>
                 {addresses.length > 0 ? (
                   addresses.map((add, index) => {
-                    return <option id={index} value="">{add.addressline1}</option>
+                    return <option key={index} value="">{add.addressline1}</option>
                   })
                 ) : (
-                  <option id="none" value="relevant">No saved address {addresses.length}</option>
+                  <option key="1" value="relevant">No saved address {addresses.length}</option>
                 )}
               </select>
             </div>

@@ -20,11 +20,11 @@ export const BestSellers = () => {
   return (
     <div>
       <div className="Best-Sellers">
-        <img src={best_seller} class="new1" alt='...'></img>
+        <img src={best_seller} className="new1" alt='...'></img>
         <h2 className="head2">BestSellers</h2>
 
         <div className="Best-Sellers-item">
-          {best_sellers.slice(0,4).map((item, i) => {
+          {best_sellers.slice(0, 4).map((item, i) => {
             return <Item key={i} id={item.id} name={item.title} subtitle={item.subtitle} image={item.img} new_price={item.price} />
           })}
         </div>

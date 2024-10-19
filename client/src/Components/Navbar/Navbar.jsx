@@ -56,23 +56,23 @@ export const Navbar = () => {
   const Dropdown = () => {
     if ((auth) && user !== null) {
       setDropdown(
-        <div class="dropdown">
-          <ul class="dropdown-menu dropdown-menu-dark text-small shadow" >
-            <li id="1"><strong class="dropdown-item">Hello, {toTitleCase(user.fullname)}</strong></li>
-            <li id="2"><a class="dropdown-item" href="#">Settings</a></li>
-            <li id="3"><a class="dropdown-item" href="#">Profile</a></li>
-            <li id="4"><hr class="dropdown-divider" /></li>
-            <li id="5"><a class="dropdown-item" onClick={handleLogout}>Log out</a></li>
+        <div className="dropdown">
+          <ul className="dropdown-menu dropdown-menu-dark text-small shadow" >
+            <li id="1"><strong className="dropdown-item">Hello, {toTitleCase(user.fullname)}</strong></li>
+            <li id="2" className="dropdown-item" href="#">Settings</li>
+            <li id="3" className="dropdown-item" href="#">Profile</li>
+            <li id="4"><hr className="dropdown-divider" /></li>
+            <li id="5" className="dropdown-item" onClick={handleLogout}>Log out</li>
           </ul>
         </div >)
     }
     else {
       setDropdown(
-        <div class="dropdown">
-          <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-            <Link class="dropdown-item" onClick={gotoLogin}><li>Log In</li></Link>
-            <li id="1"><hr class="dropdown-divider" /></li>
-            <Link class="dropdown-item" onClick={gotoSignup}><li>Sign Up</li></Link>
+        <div className="dropdown">
+          <ul className="dropdown-menu dropdown-menu-dark text-small shadow">
+            <li className="dropdown-item" onClick={gotoLogin}>Log In</li>
+            <li id="1"><hr className="dropdown-divider" /></li>
+            <li className="dropdown-item" onClick={gotoSignup}>Sign Up</li>
           </ul>
         </div >)
     }
@@ -81,7 +81,6 @@ export const Navbar = () => {
   const handleClick = (event) => {
     event.preventDefault();
     window.scrollTo(0, 0);
-    // window.location.href = event.currentTarget.href;
     const splitLink = event.currentTarget.href.split("/")
     navigate(splitLink[splitLink.length - 1])
   };
@@ -90,19 +89,19 @@ export const Navbar = () => {
 
   return (
     <nav>
-      <div class="nav" id="main">
-        <NavLink to="/" onClick={handleClick} ><img src={logo1} class="logo"></img></NavLink>
-        <ul class="list">
+      <div className="nav" id="main">
+        <NavLink to="/" onClick={handleClick} ><img src={logo1} className="logo"></img></NavLink>
+        <ul className="list">
           <li><NavLink to="/men" onClick={handleClick} >Men</NavLink></li>
           <li><NavLink to="/women" onClick={handleClick} >Women</NavLink></li>
           <li><NavLink to="/kids" onClick={handleClick} >Kids</NavLink></li>
         </ul>
-        <ul class="icons menus">
+        <ul className="icons menus">
           {menuItemsData.map((menu, index) => {
             return (
               <li key={index} className="menu-items">
                 <NavLink to={menu.url}>
-                  <i class={menu.icon} />
+                  <i className={menu.icon} />
                   {(menu.icon === 'bi bi-bag' && cartCount > 0) && (
                     <span className="cart-count">{cartCount}</span>
                   )}
@@ -110,9 +109,9 @@ export const Navbar = () => {
               </li>
             );
           })}
-          <li className="menu-items"><a href="#" class="nav-item d-flex align-items-center text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" e>
-            <i class="bi bi-person"></i>{dropdown}
-          </a></li>
+          <li className="menu-items"><Link className="nav-item d-flex align-items-center text-decoration-none dropdown-toggle" data-bs-toggle="dropdown">
+            <i className="bi bi-person"></i>{dropdown}
+          </Link></li>
         </ul>
       </div>
     </nav>

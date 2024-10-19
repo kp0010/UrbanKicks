@@ -16,22 +16,22 @@ export const Footer = () => {
                     </div>
 
                     <div>
-                        <a href="#" className="text-white me-4">
+                        <a className="text-white me-4">
                             <i className="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#" className="text-white me-4">
+                        <a className="text-white me-4">
                             <i className="fab fa-twitter"></i>
                         </a>
-                        <a href="#" className="text-white me-4">
+                        <a className="text-white me-4">
                             <i className="fab fa-google"></i>
                         </a>
-                        <a href="#" className="text-white me-4">
+                        <a className="text-white me-4">
                             <i className="fab fa-instagram"></i>
                         </a>
-                        <a href="#" className="text-white me-4">
+                        <a className="text-white me-4">
                             <i className="fab fa-linkedin"></i>
                         </a>
-                        <a href="#" className="text-white me-4">
+                        <a className="text-white me-4">
                             <i className="fab fa-github"></i>
                         </a>
                     </div>
@@ -57,10 +57,10 @@ export const Footer = () => {
                                     className="mb-4 mt-0 d-inline-block mx-auto"
                                     style={{ width: '60px', backgroundColor: '#7c4dff', height: '2px' }}
                                 />
-                                <p><a href="#!" className="text-white">New Arrivals</a></p>
-                                <p><a href="#!" className="text-white">Men</a></p>
-                                <p><a href="#!" className="text-white">Women</a></p>
-                                <p><a href="#!" className="text-white">Kids</a></p>
+                                <p><a className="text-white">New Arrivals</a></p>footer
+                                <p><a className="text-white">Men</a></p>
+                                <p><a className="text-white">Women</a></p>
+                                <p><a className="text-white">Kids</a></p>
                             </div>
 
                             <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
@@ -69,10 +69,10 @@ export const Footer = () => {
                                     className="mb-4 mt-0 d-inline-block mx-auto"
                                     style={{ width: '60px', backgroundColor: '#7c4dff', height: '2px' }}
                                 />
-                                <p><a href="#!" className="text-white">Sneakers</a></p>
-                                <p><a href="#!" className="text-white">Running shoes</a></p>
-                                <p><a href="#!" className="text-white">Lifestyle shoes</a></p>
-                                <p><a href="#!" className="text-white">Sandals And Slippers</a></p>
+                                <p><a className="text-white">Sneakers</a></p>
+                                <p><a className="text-white">Running shoes</a></p>
+                                <p><a className="text-white">Lifestyle shoes</a></p>
+                                <p><a className="text-white">Sandals And Slippers</a></p>
                             </div>
 
                             <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">

@@ -39,34 +39,34 @@ export const Signup = () => {
 
   return (
     <>
-      <div class="Signup">
+      <div className="Signup">
         <main>
-          <div class="logo-placeholder">
+          <div className="logo-placeholder">
             <img src={logo_2} alt="Logo Placeholder" />
           </div>
 
-          <div class="signup-container">
-            <form class="signup-form" onSubmit={signupUser}>
+          <div className="signup-container">
+            <form className="signup-form" onSubmit={signupUser}>
               <h2>Create an Account</h2>
-              <div class="input-group">
+              <div className="input-group">
                 <label for="fullname">Name</label>
                 <input type="text" id="fullname" name="fullname" value={fullname} onChange={(e) => setFullname(e.target.value)} required />
               </div>
-              <div class="input-group">
+              <div className="input-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" value={mail} onChange={(e) => setMail(e.target.value)} required />
               </div>
-              <div class="input-group">
+              <div className="input-group">
                 <label for="phone">Phone Number</label>
                 <input type="tel" id="phone" name="phone" value={number} onChange={(e) => setNumber(e.target.value)} required />
               </div>
-              <div class="input-group">
+              <div className="input-group">
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
               </div>
-              <button type="submit" class="signup-button">Sign Up</button>
+              <button type="submit" className="signup-button">Sign Up</button>
               {resp === 1 && <p>Email or Phone Number already exists. Please Log In.</p>}
-              <p class="links">Already have an account? <a href="/login">Login</a></p>
+              <p className="links">Already have an account? <a href="/login">Login</a></p>
             </form>
           </div>
         </main>
