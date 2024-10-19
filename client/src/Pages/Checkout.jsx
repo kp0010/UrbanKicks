@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 
 import { useShop } from '../Context/ShopContext'
 import { useAuth } from "../Context/AuthContext"
+import { NavLink } from 'react-router-dom'
 
 import { toast } from "react-toastify"
 import { CSSTransition } from 'react-transition-group'
@@ -243,7 +244,7 @@ export const Checkout = () => {
               <label ><input type="radio" name="paymentoption" value="viaCreditCard" /> via Credit Card</label>
               <label ><input type="radio" name="paymentoption" value="viaDebitCard" /> via Debit Card</label>
             </div>
-            <button onClick={() => processOrderCheckout()}>ORDER</button>
+            <NavLink to="/delivery"><button onClick={() => processOrderCheckout()}>Place an Order</button></NavLink>
           </div>
         </div>
         <div className="checkout-right">

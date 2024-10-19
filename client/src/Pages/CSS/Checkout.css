@@ -146,6 +146,14 @@
     font-size: 16px;
     font-weight: 700;
 }
+.checkout-left-payment-content button {
+    background-color: rgb(250, 193, 107);
+    width: 15vw;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    padding: 8px;
+}
 .checkout-right {
     width: 40%;
 }
