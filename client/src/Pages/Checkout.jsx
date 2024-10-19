@@ -140,7 +140,7 @@ export const Checkout = () => {
             <div className="checkout-left-shipping">
               <p>1.SHIPPING</p>
             </div>
-            <div className="checkout-saved-address">
+            {/* <div className="checkout-saved-address">
               <p>Select a Saved Address :</p>
               <select className="checkout-select-saved-address">
                 <option key="0" value="relevant">Select a saved address</option>
@@ -152,9 +152,31 @@ export const Checkout = () => {
                   <option key="1" value="relevant">No saved address {addresses.length}</option>
                 )}
               </select>
+            </div> */}
+            <div className="checkout-saved-address">
+              <p><strong>Your Addresses</strong></p>
+              <hr />
+              {addresses.length > 0 ? (
+                addresses.map((add, index) => (
+                  <div key={index} className="checkout-radio-address">
+                    <input
+                      type="radio"
+                      id={`address-${index}`}
+                      name="saved-address"
+                      value={add.addressline1}
+                    />
+                    <label htmlFor={`address-${index}`}><strong>{add.firstname} {add.lastname}</strong>, XXXXXX{add.phoneno.slice(-4)} 
+                    <br />
+                    {add.addressline1}, {add.city}, {add.state}, {add.zipcode}, {add.country} </label>
+                  </div>
+                ))
+              ) : (
+                <p>No saved addresses available</p>
+              )}
             </div>
+
             <div className="checkout-address-label">
-              <p>Add New Address</p>
+              <p><strong>Add New Address</strong></p>
               <button className="plus-minus" onClick={toggleFormVisibility}>
                 {isFormVisible ? (
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -216,10 +238,10 @@ export const Checkout = () => {
           <div className="checkout-left-payment-content">
             <p className="checkout-payment">2.PAYMENT</p>
             <div className="checkout-payment-option">
-              <label ><input type="radio" value="CashOnDelivery" /> Cash On Delivery</label>
-              <label ><input type="radio" value="viaUPI" /> via UPI</label>
-              <label ><input type="radio" value="viaCreditCard" /> via Credit Card</label>
-              <label ><input type="radio" value="viaDebitCard" /> via Debit Card</label>
+              <label ><input type="radio" name="paymentoption" value="CashOnDelivery" /> Cash On Delivery</label>
+              <label ><input type="radio" name="paymentoption" value="viaUPI" /> via UPI</label>
+              <label ><input type="radio" name="paymentoption" value="viaCreditCard" /> via Credit Card</label>
+              <label ><input type="radio" name="paymentoption" value="viaDebitCard" /> via Debit Card</label>
             </div>
             <button onClick={() => processOrderCheckout()}>ORDER</button>
           </div>
