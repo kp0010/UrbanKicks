@@ -24,6 +24,7 @@ export const Checkout = () => {
   const [newAddress, setNewAddress] = useState(emptyAddr)
   const [addresses, setAddresses] = useState([{ addressline1: "HELLO WORLD" }])
   const [addChanged, setAddChanged] = useState([])
+  const [ isFormVisible, setIsFormVisible] = useState(false);
 
   useEffect(() => {
     if (!auth) { return }
@@ -83,6 +84,9 @@ export const Checkout = () => {
     }).then(() => { setAddChanged(!addChanged); setNewAddress(emptyAddr) })
   }
 
+  const toggleFormVisibility = () => {
+    setIsFormVisible(prevState => !prevState);
+  }
 
   return (
     < div className="checkout" >
@@ -109,47 +113,59 @@ export const Checkout = () => {
             </div>
             <div className="checkout-address-label">
               <p>Add New Address</p>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path d="M 8 8 L 16 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
-              </svg>
+              <button className="plus-minus" onClick={toggleFormVisibility}>
+                {isFormVisible ? (
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M 4 10 L 16 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
+                </svg>
+                ) : (
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M 4 10 L 16 10 M 10 4 L 10 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
+                  </svg>
+                )}
+              </button>
+              
             </div>
 
-            <form className="checkout-left-address" onSubmit={handleAddressInsert}>
-              <div className="checkout-row">
-                <input type="text" id="firstName" placeholder="FIRST NAME"
-                  value={newAddress.firstName} onChange={((e) => setNewAddress({ ...newAddress, firstName: e.target.value }))} required />
-                <input type="text" id="lastName" placeholder="LAST NAME"
-                  value={newAddress.lastName} onChange={((e) => setNewAddress({ ...newAddress, lastName: e.target.value }))} required />
-              </div>
-              <div className="checkout-row">
-                <input type="text" id="addressLine1" placeholder="ADDRESS LINE 1"
-                  value={newAddress.addressLine1} onChange={((e) => setNewAddress({ ...newAddress, addressLine1: e.target.value }))} required />
-              </div>
-              <div className="checkout-row">
-                <input type="text" id="addressLine2" placeholder="ADDRESS LINE 2 (OPTIONAL)"
-                  value={newAddress.addressLine2} onChange={((e) => setNewAddress({ ...newAddress, addressLine2: e.target.value }))} />
-              </div>
-              <div className="checkout-row">
-                <input type="number" id="zipCode" placeholder="POSTAL CODE"
-                  value={newAddress.zipCode} onChange={((e) => setNewAddress({ ...newAddress, zipCode: e.target.value }))} required />
-                <input type="text" id="state" placeholder="STATE"
-                  value={newAddress.state} onChange={((e) => setNewAddress({ ...newAddress, state: e.target.value }))} required />
-              </div>
-              <div className="checkout-row">
-                <input type="text" id="city" placeholder="CITY"
-                  value={newAddress.city} onChange={((e) => setNewAddress({ ...newAddress, city: e.target.value }))} required />
-                <input type="text" id="country" placeholder="COUNTRY"
-                  value={newAddress.country} onChange={((e) => setNewAddress({ ...newAddress, country: e.target.value }))} required />
-              </div>
-              <div className="checkout-row">
-                <input type="tel" id="phoneNo" placeholder="PHONE NUMBER"
-                  value={newAddress.phoneNo} onChange={((e) => setNewAddress({ ...newAddress, phoneNo: e.target.value }))} required />
-              </div>
-              <div className="checkout-buttons">
-                <button type="submit" className="button-save">SAVE</button>
-                <button className="button-cancel">CANCEL</button>
-              </div>
-            </form>
+            {isFormVisible && (
+              <form className="checkout-left-address" onSubmit={handleAddressInsert}>
+                <div className="checkout-row">
+                  <input type="text" id="firstName" placeholder="FIRST NAME"
+                    value={newAddress.firstName} onChange={((e) => setNewAddress({ ...newAddress, firstName: e.target.value }))} required />
+                  <input type="text" id="lastName" placeholder="LAST NAME"
+                    value={newAddress.lastName} onChange={((e) => setNewAddress({ ...newAddress, lastName: e.target.value }))} required />
+                </div>
+                <div className="checkout-row">
+                  <input type="text" id="addressLine1" placeholder="ADDRESS LINE 1"
+                    value={newAddress.addressLine1} onChange={((e) => setNewAddress({ ...newAddress, addressLine1: e.target.value }))} required />
+                </div>
+                <div className="checkout-row">
+                  <input type="text" id="addressLine2" placeholder="ADDRESS LINE 2 (OPTIONAL)"
+                    value={newAddress.addressLine2} onChange={((e) => setNewAddress({ ...newAddress, addressLine2: e.target.value }))} />
+                </div>
+                <div className="checkout-row">
+                  <input type="number" id="zipCode" placeholder="POSTAL CODE"
+                    value={newAddress.zipCode} onChange={((e) => setNewAddress({ ...newAddress, zipCode: e.target.value }))} required />
+                  <input type="text" id="state" placeholder="STATE"
+                    value={newAddress.state} onChange={((e) => setNewAddress({ ...newAddress, state: e.target.value }))} required />
+                </div>
+                <div className="checkout-row">
+                  <input type="text" id="city" placeholder="CITY"
+                    value={newAddress.city} onChange={((e) => setNewAddress({ ...newAddress, city: e.target.value }))} required />
+                  <input type="text" id="country" placeholder="COUNTRY"
+                    value={newAddress.country} onChange={((e) => setNewAddress({ ...newAddress, country: e.target.value }))} required />
+                </div>
+                <div className="checkout-row">
+                  <input type="tel" id="phoneNo" placeholder="PHONE NUMBER"
+                    value={newAddress.phoneNo} onChange={((e) => setNewAddress({ ...newAddress, phoneNo: e.target.value }))} required />
+                </div>
+                <div className="checkout-buttons">
+                  <button type="submit" className="button-save">SAVE</button>
+                  <button className="button-cancel">CANCEL</button>
+                </div>
+              </form>
+            )}
+            
           </div>
           <div className="checkout-left-payment-content">
             <p className="checkout-payment">2.PAYMENT</p>
