@@ -34,15 +34,13 @@ export const PreviousOrders = () => {
   return (
     <>
       <hr />
-      {/* <h1>{orderInfo[0].orderid} {orderInfo.length}</h1> */}
-    <hr />
       {orderInfo.length > 1 &&
         orderInfo.map((order) => {
           return order.orderItems.map((orderItem) => {
             const product = all_products.find((p) => p.productid === orderItem.productid)
             console.log(product.title, " ID")
             return <>
-              <div className="previousOrders">
+              {/* <div className="previousOrders">
                 <div className="previousOrders-orderData">
                   <div className="previousOrders-orderId">
                     <p>OrderId : {order.orderid}</p>
@@ -52,57 +50,55 @@ export const PreviousOrders = () => {
                     <p>ordered on {order.orderdate}</p>
                   </div>
                 </div>
+              </div> */}
+              <div className="previousOrders">
+                <div className="previousOrders-orderData">
+                  <div className="previousOrders-orderId">
+                    <p>OrderId : {order.orderid}</p>
+                  </div>
+                  <div className="previousOrders-orderDate">
+                    <p>ordered on {order.orderdate}</p>               {/* simplify this */}
+                  </div>
+                  <div className="previousOrders-phoneno">
+                    <p><strong>Phone Number :</strong> XXXXXX{order.addressInfo.phoneno.slice(-4)}</p>
+                  </div>
+                </div>
+                <div className="previousOrders-address">
+                  <p><strong>Address :</strong> {order.addressInfo.addressline1}, {order.addressInfo.city}, {order.addressInfo.state}, {order.addressInfo.country} </p>
+                </div>
+                <div className="previousOrders-main">
+                  <div className="previousOrders-products">
+                    <div className="previousOrders-products-image">
+                      <img src={product.image} alt="..." />
+                    </div>
+                    <div className="previousOrders-products-data">
+                      <div className="previousOrders-products-data-head">
+                        <h4>{product.title}</h4>
+                        <h5>{product.subtitle}</h5>
+                      </div>
+                      <div className="previousOrders-products-size">
+                        <p><strong>Size : </strong>{product.size}  |  <strong>Quantity : </strong>{product.quantity}</p>            {/* display size and quantity */}
+                        <p><strong>Price : </strong>{product.price}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="previousOrders-payment">
+                    <div className="previousOrders-payment-info">
+                      <div className="previousOrders-payment-method">
+                        <p><strong>Payment Method : </strong>{/* order.paymentInfo.paymenttype */}</p>
+                        <p><strong>Total Amount : </strong>{order.totalamount}</p>
+                        <p><strong>Status : </strong>{/* order.paymentInfo.status */}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <hr />
               </div>
+
             </>
           })
-          const product = all_products.find((p) => p.productid === order.orderItems[0].productid)     /* here only one product gets displayed from orderItems */
-          return <>
-            <div className="previousOrders">
-              <div className="previousOrders-orderData">
-                <div className="previousOrders-orderId">
-                  <p>OrderId : {order.orderid}</p>
-                </div>
-                <div className="previousOrders-orderDate">
-                  <p>ordered on {order.orderdate}</p>               {/* simplify this */}
-                </div>
-                <div className="previousOrders-phoneno">
-                  <p><strong>Phone Number :</strong> XXXXXX{order.addressInfo.phoneno.slice(-4)}</p>
-                </div>
-              </div>
-              <div className="previousOrders-address">
-                <p><strong>Address :</strong> {order.addressInfo.addressline1}, {order.addressInfo.city}, {order.addressInfo.state}, {order.addressInfo.country} </p>
-              </div>
-              <div className="previousOrders-main">
-                <div className="previousOrders-products">
-                  <div className="previousOrders-products-image">
-                    <img src={product.image} alt="..." />
-                  </div>
-                  <div className="previousOrders-products-data">
-                    <div className="previousOrders-products-data-head">
-                      <h4>{product.title}</h4>
-                      <h5>{product.subtitle}</h5>
-                    </div>
-                    <div className="previousOrders-products-size">
-                      <p><strong>Size : </strong>{product.size}  |  <strong>Quantity : </strong>{product.quantity}</p>            {/* display size and quantity */}
-                      <p><strong>Price : </strong>{product.price}</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="previousOrders-payment">
-                  <div className="previousOrders-payment-info">
-                    <div className="previousOrders-payment-method">
-                      <p><strong>Payment Method : </strong>{/* order.paymentInfo.paymenttype */}</p>
-                      <p><strong>Total Amount : </strong>{order.totalamount}</p>
-                      <p><strong>Status : </strong>{/* order.paymentInfo.status */}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
-              <hr />
-            </div>
-
-          </>
         })
       }
     </>
