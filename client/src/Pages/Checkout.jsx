@@ -141,7 +141,6 @@ export const Checkout = () => {
   }
 
   const handlePayment = (event) => {
-    console.log(event.target.value)
     setPaymentType(event.target.value)
   }
 

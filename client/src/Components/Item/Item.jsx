@@ -1,29 +1,38 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import "./Item.css"
 import { useShop } from '../../Context/ShopContext';
 
 export const Item = (props) => {
 
-  const [liked, setLiked] = useState(false);
+  const [liked, setLiked] = useState(" bi-heart ");
 
-  const { addToWishlist, deleteWishlist } = useShop();
+  const { addToWishlist, deleteWishlist, refreshWishlist, wishlistData } = useShop();
+
+  useEffect(() => {
+    const initLike = wishlistData.some(item => item.productid === props.id)
+
+    setLiked(initLike ? " bi-heart-fill liked " : " bi-heart ")
+  }, [wishlistData])
 
   const toggleLike = (id) => {
-    setLiked((prevLiked) => {
-      if (!prevLiked) {
-        addToWishlist(id)
-      }
-      else { deleteWishlist(id) }
-      return !prevLiked;
-    })
+    console.log(id)
+
+    if (liked === " bi-heart ") {
+      // console.log("true", liked)
+      addToWishlist(id)
+    } else {
+      console.log("false", liked)
+      deleteWishlist(id)
+    }
+    refreshWishlist()
+
   };
 
   return (
     <div className='item'>
-      <span><i className={`bi ${liked ? 'bi-heart-fill' : 'bi-heart'} heart-icon ${liked ? 'liked' : ''}`} onClick={() => toggleLike(props.id)} /></span>
+      <span><i className={`bi heart-icon` + liked} onClick={() => toggleLike(props.id)} /></span>
       <button className="item-addtocart">ADD TO CART</button>
       <a href={`/product/${props.id}`}>
-        
         <div>
           <img src={props.image} alt="." />
         </div>

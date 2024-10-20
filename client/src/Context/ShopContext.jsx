@@ -177,7 +177,6 @@ const ShopContextProvider = ({ children }) => {
                 if (data.success) {
                     setWishlistData(data.result)
                     setWishlistCount(data.length)
-                    console.log("Count1:",wishlistCount);
                     setWishlistChanged(false)
                 }
             })
@@ -205,6 +204,8 @@ const ShopContextProvider = ({ children }) => {
 
     const deleteWishlist = (productid) => {
         if (!auth) { return }
+
+        console.log(productid, " CALLED")
 
         fetch("http://localhost:8080/wishlist", {
             method: "DELETE",
