@@ -368,8 +368,6 @@ app.post("/order/", (req, res) => {
         }
 
         return new Promise(async (resolve, reject) => {
-            console.log(paymentType, amount, status)
-
             const query = `INSERT INTO payments (paymentType, amount, status) VALUES ('${paymentType}', ${amount}, '${status}') RETURNING *;`
             const paymentRes = await db.query(query)
 
@@ -405,8 +403,7 @@ app.post("/order/", (req, res) => {
 
 })
 
-
-app.post("/getOrders", async (req, res) => {
+app.post("/getOrder", async (req, res) => {
     const { orderId } = req.body
 
     var orderItemsInfoRes = await db.query("SELECT * FROM orderitems WHERE orderid=$1", [orderId])
@@ -421,6 +418,8 @@ app.post("/getOrders", async (req, res) => {
     var paymentInfoRes = await db.query("SELECT * FROM payments WHERE paymentid=$1", [orderInfo.paymentid])
     var paymentInfo = paymentInfoRes.rows[0]
 
+    console.log(orderItemsInfo)
+
     if (orderInfo !== undefined && orderItemsInfo !== undefined) {
         res.status(200).json({
             success: true,
@@ -428,6 +427,46 @@ app.post("/getOrders", async (req, res) => {
             orderItemsInfo: orderItemsInfo,
             addressInfo: addressInfo,
             paymentInfo: paymentInfo
+        })
+    } else {
+        res.status(400).json({
+            success: false
+        })
+    }
+})
+
+app.post("/getOrders", async (req, res) => {
+    const { mail } = req.body
+
+    console.log(mail)
+
+    var orderInfoRes = await db.query("SELECT * FROM orders WHERE mail=$1", [mail])
+    var orderInfo = orderInfoRes.rows
+
+    var allOrderInfo = await Promise.all(
+        orderInfo.map(async (order) => {
+            console.log(order.orderid, order.shippingaddressid, order.paymentid)
+            var orderItemsInfoRes = await db.query("SELECT * FROM orderitems WHERE orderid=$1", [order.orderid])
+
+            var addressInfoRes = await db.query("SELECT * FROM addresses WHERE addressid=$1", [order.shippingaddressid])
+
+            var paymentInfoRes = await db.query("SELECT * FROM payments WHERE paymentid=$1", [order.paymentid])
+
+            return {
+                ...order,
+                orderItems: orderItemsInfoRes.rows,
+                addressInfo: addressInfoRes.rows[0],
+                paymentInfo: paymentInfoRes.rows[0]
+            }
+        })
+    )
+
+    console.log(orderInfo.length, allOrderInfo.length, orderInfo.length === allOrderInfo.length)
+    if (orderInfo.length === allOrderInfo.length) {
+        console.log("TRUE")
+        res.status(200).json({
+            success: true,
+            allOrderInfo: allOrderInfo,
         })
     } else {
         res.status(400).json({
