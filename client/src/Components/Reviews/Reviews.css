@@ -95,3 +95,20 @@
 .reviews-writeReview-fieldset-submit input:hover {
     background-color: rgb(40, 39, 39);
 }
+.formPrimary-enter {
+    opacity: 0;
+}
+
+.formPrimary-enter-active {
+    opacity: 1;
+    transition: all 400ms
+}
+
+.formPrimary-exit {
+    opacity: 1;
+}
+
+.formPrimary-exit {
+    opacity: 0;
+    transition: all 400ms
+}
