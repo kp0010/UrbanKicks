@@ -5,6 +5,7 @@ const AuthContext = createContext({
   setAuth: () => { },
   user: null,
   setUser: () => { },
+  admin: false,
 });
 
 export const useAuth = () => useContext(AuthContext);
@@ -12,6 +13,7 @@ export const useAuth = () => useContext(AuthContext);
 const AuthProvider = ({ children }) => {
   const [auth, setAuth] = useState(false);
   const [user, setUser] = useState(null);
+  const [admin, setAdmin] = useState(false);
 
   useEffect(() => {
     const isAuth = () => {
@@ -23,6 +25,10 @@ const AuthProvider = ({ children }) => {
           .then(resp => resp.json())
           .then(data => {
             if (data.authenticated) {
+              console.log("ISADMIN: ", data.admin)
+              if (data.admin) {
+                setAdmin(true)
+              }
               setAuth(true)
               setUser(data.user)
             } else {
@@ -30,6 +36,7 @@ const AuthProvider = ({ children }) => {
               setUser(null)
             }
           })
+
       } catch (error) {
         console.log("ERROR")
         setAuth(false)
@@ -40,7 +47,7 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ auth, setAuth, user, setUser }}>
+    <AuthContext.Provider value={{ auth, setAuth, user, setUser, admin, setAdmin }}>
       {children}
     </AuthContext.Provider>
   );

@@ -93,7 +93,7 @@ app.post("/login", (req, res, next) => {
 
         req.logIn(user, (err) => {
             if (err) return next(err);
-            return res.status(200).json({ login: true, userExists: true, message: "Login Successful", user })
+            return res.status(200).json({ login: true, userExists: true, message: "Login Successful", user, admin: user.isadmin })
         });
     })(req, res, next)
 })
@@ -117,7 +117,7 @@ app.post("/signup", (req, res) => {
 
 app.get("/user", (req, res) => {
     if (req.isAuthenticated()) {
-        return res.json({ authenticated: true, user: req.user });
+        return res.json({ authenticated: true, user: req.user, admin: req.user.isadmin });
     } else {
         return res.json({ authenticated: false })
     }

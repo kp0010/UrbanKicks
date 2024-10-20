@@ -15,13 +15,9 @@ export const Item = (props) => {
   }, [wishlistData])
 
   const toggleLike = (id) => {
-    console.log(id)
-
     if (liked === " bi-heart ") {
-      // console.log("true", liked)
       addToWishlist(id)
     } else {
-      console.log("false", liked)
       deleteWishlist(id)
     }
     refreshWishlist()

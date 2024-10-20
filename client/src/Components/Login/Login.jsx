@@ -11,7 +11,7 @@ const serverPort = 8080
 
 
 export const Login = () => {
-  const { setAuth, } = useAuth()
+  const { setAuth } = useAuth()
 
   const [id, setId] = useState('')
   const [password, setPassword] = useState('')
@@ -31,8 +31,14 @@ export const Login = () => {
       .then(data => {
         // data = {status: str, login: bool, userExists: bool}
         if (data.login) {
+          console.log("DATA:", data)
           setAuth(true)
           setResp(0)
+          console.log("ADMIN : ", data.admin)
+          if (data.admin) {
+            window.location.replace("/men")
+            return
+          }
           window.location.replace("/")
         } else if (!data.userExists) {
           setResp(1)
