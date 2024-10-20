@@ -1,19 +1,26 @@
 import React, { useState } from 'react'
 import "./Item.css"
+import { useShop } from '../../Context/ShopContext';
 
 export const Item = (props) => {
 
   const [liked, setLiked] = useState(false);
 
-  const toggleLike = () => {
+  const { addToWishlist, deleteWishlist } = useShop();
+
+  const toggleLike = (id) => {
     setLiked((prevLiked) => {
+      if (!prevLiked) {
+        addToWishlist(id)
+      }
+      else { deleteWishlist(id) }
       return !prevLiked;
     })
   };
 
   return (
     <div className='item'>
-      <span><i className={`bi ${liked ? 'bi-heart-fill' : 'bi-heart'} heart-icon ${liked ? 'liked' : ''}`} onClick={toggleLike} /></span>
+      <span><i className={`bi ${liked ? 'bi-heart-fill' : 'bi-heart'} heart-icon ${liked ? 'liked' : ''}`} onClick={() => toggleLike(props.id)} /></span>
       <button className="item-addtocart">ADD TO CART</button>
       <a href={`/product/${props.id}`}>
         

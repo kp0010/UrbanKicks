@@ -1,7 +1,8 @@
 .wishlist {
     display: block;
-    background-color: antiquewhite;
+    background-color: #322d45;
     height: 100%;
+    opacity: 0.9;
 }
 .wishlist-head {
     font-size: 40px;
@@ -10,4 +11,18 @@
     padding-top: 100px;
     margin-bottom: 20px;
     letter-spacing: 1px;
+    color: white;
+}
+.wishlist-products-main {
+    margin: 0px 60px;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 20vh;
+    gap: 40px;
+    padding-bottom: 40px;
+}
+.wishlist-product-item img {
+    width: 300px;
+    height: 300px;
 }
