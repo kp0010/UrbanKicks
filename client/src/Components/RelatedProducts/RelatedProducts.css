@@ -15,3 +15,6 @@
     row-gap: 20vh;
     gap: 40px;
 }
+.relatedProducts hr {
+    border: 1px solid black;
+}
