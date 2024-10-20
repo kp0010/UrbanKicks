@@ -433,9 +433,20 @@ app.post("/getOrder", async (req, res) => {
 })
 
 app.post("/getOrders", async (req, res) => {
-    const { mail } = req.body
+    const { mail, admin } = req.body
 
-    var orderInfoRes = await db.query("SELECT * FROM orders WHERE mail=$1", [mail])
+    const queryCondition = !admin ? " WHERE mail = $1;" : ";"
+    const query = "SELECT * FROM orders " + queryCondition
+    const queryExt = admin ? [] : [mail]
+
+    console.log(query, queryExt, admin)
+
+    if (admin) {
+        var orderInfoRes = await db.query(query)
+    } else {
+        var orderInfoRes = await db.query(query, queryExt)
+    }
+
     var orderInfo = orderInfoRes.rows
 
     var allOrderInfo = await Promise.all(
