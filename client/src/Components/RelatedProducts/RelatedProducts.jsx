@@ -27,6 +27,7 @@ export const RelatedProducts = ({ category, subCategory }) => {
                     return <Item key={index} id={item.productid} name={item.title} subtitle={item.subtitle} image={item.image} new_price={item.price} />
                 })}
             </div>
+            <hr />
         </div>
     )
 }
