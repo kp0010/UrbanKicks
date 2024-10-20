@@ -14,7 +14,7 @@ const ShopContext = createContext({
     cartData: [],
     cartCount: 0,
 
-    wistlistData: [],
+    wishlistData: [],
     wishlistCount: 0,
 
     updateCart: () => { },

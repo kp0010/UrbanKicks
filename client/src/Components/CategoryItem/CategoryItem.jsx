@@ -1,11 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import "./CategoryItem.css"
 import { Link } from 'react-router-dom'
 import { useShop } from '../../Context/ShopContext'
 
 export const CategoryItem = (props) => {
 
+  const { addToWishlist, deleteWishlist, wishlistData } = useShop()
+
   const [liked, setLiked] = useState(false);
+
+  useEffect(() => {
+    const initLike = wishlistData.some(item => item.productid === props.id)
+    setLiked(initLike)
+  }, [wishlistData])
 
   const toggleLike = (id) => {
     setLiked((prevLiked) => {

@@ -1,15 +1,18 @@
 import React, { useState } from 'react'
+
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom'
+
 import "./ProductDisplay.css"
+
 import men_size_chart from "../Assets/HomeAssets/MenSizeChart.png"
 import women_size_chart from "../Assets/HomeAssets/WomensSizeChart.png"
 import kids_size_chart from "../Assets/HomeAssets/KidSizeChart.png"
+
 import { useAuth } from '../../Context/AuthContext'
 import { useShop } from '../../Context/ShopContext'
+
 import { Modal } from '../Modal/Modal';
-
-
 
 export const ProductDisplay = (props) => {
     const navigate = useNavigate()
@@ -21,7 +24,7 @@ export const ProductDisplay = (props) => {
 
     const { auth } = useAuth()
 
-    const { addToCart } = useShop()
+    const { addToCart, wishlistData } = useShop()
 
     const checkAddToCart = (productid, size, quantity) => {
         if (!auth) { toast.error("Please Login First"); navigate('/login'); return }
@@ -36,13 +39,13 @@ export const ProductDisplay = (props) => {
     const openModal = () => {
         setIsModalOpen(true);
     };
-    
+
     const closeModal = () => {
         setIsModalOpen(false);
     };
 
     const Chart = () => {
-        
+
         let chartImage;
         if (product.gender === "men") {
             chartImage = <img src={men_size_chart} alt="men.." />
