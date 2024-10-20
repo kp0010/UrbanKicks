@@ -23,7 +23,7 @@ export const Delivery = () => {
     useEffect(() => {
         console.log(orderId)
 
-        fetch("http://localhost:8080/getOrders", {
+        fetch("http://localhost:8080/getOrder", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -60,6 +60,8 @@ export const Delivery = () => {
     }
 
     const convSplitandTitle = (text) => {
+        if (text === undefined) { return "" }
+        if (text === "upi") { return "UPI" }
         return text
             .split('_')
             .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
