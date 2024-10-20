@@ -1,12 +1,17 @@
 import React, { useState } from 'react'
 import "./CategoryItem.css"
 import { Link } from 'react-router-dom'
+import { useShop } from '../../Context/ShopContext'
 
 export const CategoryItem = (props) => {
 
   const [liked, setLiked] = useState(false);
+  const { addToWishlist } = useShop()
 
-  const toggleLike = () => {
+  const toggleLike = (id) => {
+    if (!liked) {
+      addToWishlist(id)
+    }
     setLiked((prevLiked) => {
       return !prevLiked;
     })
@@ -14,7 +19,7 @@ export const CategoryItem = (props) => {
 
   return (
     <div className='category-item'>
-      <span><i className={`bi ${liked ? 'bi-heart-fill' : 'bi-heart'} category-heart-icon ${liked ? 'liked' : ''}`} onClick={toggleLike} /></span>
+      <span><i className={`bi ${liked ? 'bi-heart-fill' : 'bi-heart'} category-heart-icon ${liked ? 'liked' : ''}`} onClick={() => { toggleLike(props.id) }} /></span>
       <button className="category-item-addtocart">
         ADD TO CART
       </button>
