@@ -23,7 +23,7 @@ export const PreviousOrders = () => {
       .then((resp) => resp.json())
       .then((data) => {
         setOrderInfo(data.allOrderInfo)
-        console.log(data.allOrderInfo[0])
+        console.log("Data:",data.allOrderInfo)
       })
   }
 
@@ -33,12 +33,28 @@ export const PreviousOrders = () => {
 
   return (
     <>
-      <h2>Previous Order</h2>
-      <h1>{orderInfo[0].orderid} {orderInfo.length}</h1>
+    <hr />
+      {/* <h1>{orderInfo[0].orderid} {orderInfo.length}</h1> */}
       {orderInfo.length > 1 &&
         orderInfo.map((order) => {
+          const product = all_products.find((p) => p.productid === order.orderItems[0].productid)
           return <>
-            <h1>{order.addressInfo.addressline1}</h1>
+            {/* <h1>{order.addressInfo.addressline1}</h1>
+            <p>{console.log("Order:",order)}</p>
+            <p>{order.totalamount}</p>
+            <p>{order.orderItems[0].productid}</p>
+            <p>{product.title}</p> */}
+            <div className="previousOrders">
+              <div className="previousOrders-orderData">
+                <div className="previousOrders-orderId">
+                  <p>OrderId : {order.orderid}</p>
+                </div>
+                <div className="previousOrders-orderDate">
+                  <p>ordered on {order.orderdate}</p>
+                </div>
+              </div>
+            </div>
+
           </>
         })
       }

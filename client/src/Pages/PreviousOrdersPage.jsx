@@ -4,8 +4,8 @@ import { PreviousOrders } from '../Components/PreviousOrders/PreviousOrders'
 
 export const PreviousOrdersPage = () => {
   return (
-    <div>
-      <h1>Previous Orders Page</h1>
+    <div className="PreviousOrdersPage">
+      <div className="PreviousOrdersPage-head">Previous Orders Information</div>
       <PreviousOrders />
     </div>
   )

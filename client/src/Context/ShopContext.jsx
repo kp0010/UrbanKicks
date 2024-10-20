@@ -177,6 +177,7 @@ const ShopContextProvider = ({ children }) => {
                 if (data.success) {
                     setWishlistData(data.result)
                     setWishlistCount(data.length)
+                    console.log("Count1:",wishlistCount);
                     setWishlistChanged(false)
                 }
             })

@@ -13,7 +13,7 @@ export const Navbar = () => {
 
   const [dropdown, setDropdown] = useState("")
 
-  const { cartCount, wishlistCount } = useShop()
+  const { cartCount, wishlistData } = useShop()
 
   const handleLogout = () => {
     fetch("http://localhost:8080/logout", {
@@ -108,6 +108,10 @@ export const Navbar = () => {
                   <i className={menu.icon} />
                   {(menu.icon === 'bi bi-bag' && cartCount > 0) && (
                     <span className="cart-count nav-indicator">{cartCount}</span>
+                  )}
+                  {(menu.icon === 'bi bi-heart' && wishlistData.length > 0) && (
+                    console.log("Count:",wishlistData.length),
+                    <span className="wishlist-count nav-indicator">{wishlistData.length}</span>
                   )}
                 </NavLink>
               </li>

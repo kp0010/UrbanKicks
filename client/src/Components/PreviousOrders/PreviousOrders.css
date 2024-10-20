@@ -1,0 +1,16 @@
+.previousOrders {
+    margin: 0 15vw;
+}
+.previousOrders-orderData {
+    display: flex;
+    align-items: baseline;
+}
+.previousOrders-orderId p {
+    font-size: 24px;
+    font-weight: 500;
+    padding-right: 20px;
+}
+.previousOrders-orderDate {
+    font-size: 16px;
+    
+}
