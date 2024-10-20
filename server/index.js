@@ -496,7 +496,7 @@ app.post("/wishlist", (req, res) => {
 app.delete("/wishlist", (req, res) => {
     const { productId, mail } = req.body
 
-    db.query("DELETE FROM wishlist ",
+    db.query("DELETE FROM wishlist WHERE productId = $2 AND mail = $1",
         [mail, productId], (error, result) => {
             return res.status(200).json({
                 success: !Boolean(error),

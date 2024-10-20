@@ -21,8 +21,6 @@ export const Delivery = () => {
     const [dateString, setDateString] = useState("")
 
     useEffect(() => {
-        console.log(orderId)
-
         fetch("http://localhost:8080/getOrder", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -37,7 +35,6 @@ export const Delivery = () => {
                 setOrderItemsInfo(data.orderItemsInfo)
                 setAddressInfo(data.addressInfo)
                 setPaymentInfo(data.paymentInfo)
-                console.log(data.paymentInfo)
                 orderDate = new Date(data.orderInfo.orderdate)
             })
 

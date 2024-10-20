@@ -110,7 +110,6 @@ export const Navbar = () => {
                     <span className="cart-count nav-indicator">{cartCount}</span>
                   )}
                   {(menu.icon === 'bi bi-heart' && wishlistData.length > 0) && (
-                    console.log("Count:",wishlistData.length),
                     <span className="wishlist-count nav-indicator">{wishlistData.length}</span>
                   )}
                 </NavLink>
