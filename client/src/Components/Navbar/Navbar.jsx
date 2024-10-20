@@ -13,7 +13,7 @@ export const Navbar = () => {
 
   const [dropdown, setDropdown] = useState("")
 
-  const { cartCount } = useShop()
+  const { cartCount, wishlistCount } = useShop()
 
   const handleLogout = () => {
     fetch("http://localhost:8080/logout", {
@@ -104,10 +104,10 @@ export const Navbar = () => {
           {menuItemsData.map((menu, index) => {
             return (
               <li key={index} className="menu-items">
-                <NavLink to={menu.url } onClick={handleClick}>
+                <NavLink to={menu.url} onClick={handleClick}>
                   <i className={menu.icon} />
                   {(menu.icon === 'bi bi-bag' && cartCount > 0) && (
-                    <span className="cart-count">{cartCount}</span>
+                    <span className="cart-count nav-indicator">{cartCount}</span>
                   )}
                 </NavLink>
               </li>

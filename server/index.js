@@ -162,7 +162,6 @@ app.post("/getCart", (req, res) => {
                 }
             )
         })
-
 })
 
 app.put("/cart/", (req, res) => {
@@ -418,8 +417,6 @@ app.post("/getOrder", async (req, res) => {
     var paymentInfoRes = await db.query("SELECT * FROM payments WHERE paymentid=$1", [orderInfo.paymentid])
     var paymentInfo = paymentInfoRes.rows[0]
 
-    console.log(orderItemsInfo)
-
     if (orderInfo !== undefined && orderItemsInfo !== undefined) {
         res.status(200).json({
             success: true,
@@ -438,14 +435,11 @@ app.post("/getOrder", async (req, res) => {
 app.post("/getOrders", async (req, res) => {
     const { mail } = req.body
 
-    console.log(mail)
-
     var orderInfoRes = await db.query("SELECT * FROM orders WHERE mail=$1", [mail])
     var orderInfo = orderInfoRes.rows
 
     var allOrderInfo = await Promise.all(
         orderInfo.map(async (order) => {
-            console.log(order.orderid, order.shippingaddressid, order.paymentid)
             var orderItemsInfoRes = await db.query("SELECT * FROM orderitems WHERE orderid=$1", [order.orderid])
 
             var addressInfoRes = await db.query("SELECT * FROM addresses WHERE addressid=$1", [order.shippingaddressid])
@@ -461,9 +455,7 @@ app.post("/getOrders", async (req, res) => {
         })
     )
 
-    console.log(orderInfo.length, allOrderInfo.length, orderInfo.length === allOrderInfo.length)
     if (orderInfo.length === allOrderInfo.length) {
-        console.log("TRUE")
         res.status(200).json({
             success: true,
             allOrderInfo: allOrderInfo,
@@ -473,6 +465,43 @@ app.post("/getOrders", async (req, res) => {
             success: false
         })
     }
+})
+
+app.post("/getWishlist", (req, res) => {
+    const mail = req.body.mail
+
+    db.query("SELECT * FROM wishlist WHERE mail=$1 ORDER BY productId",
+        [mail], (error, result) => {
+            return res.status(200).json(
+                {
+                    success: !Boolean(error),
+                    result: result.rows,
+                }
+            )
+        })
+})
+
+app.post("/wishlist", (req, res) => {
+    const { productId, mail } = req.body
+
+    db.query("INSERT INTO wishlist (mail, productId) VALUES ($1, $2)",
+        [mail, productId], (error, result) => {
+            return res.status(200).json({
+                success: !Boolean(error),
+            })
+        })
+})
+
+
+app.delete("/wishlist", (req, res) => {
+    const { productId, mail } = req.body
+
+    db.query("DELETE FROM wishlist ",
+        [mail, productId], (error, result) => {
+            return res.status(200).json({
+                success: !Boolean(error),
+            })
+        })
 })
 
 app.post("/logout", (req, res) => {

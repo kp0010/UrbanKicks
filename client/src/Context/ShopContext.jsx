@@ -10,12 +10,22 @@ const ShopContext = createContext({
     all_products: [],
     new_arrivals: [],
     best_sellers: [],
+
     cartData: [],
     cartCount: 0,
+
+    wistlistData: [],
+    wishlistCount: 0,
+
     updateCart: () => { },
     deleteCart: () => { },
     addToCart: () => { },
     refreshCart: () => { },
+
+    deleteWishlist: () => { },
+    addToWishlist: () => { },
+    refreshWishlist: () => { },
+
     price: 0,
     loading: true
 });
@@ -27,8 +37,14 @@ const ShopContextProvider = ({ children }) => {
     const [cartData, setCartData] = useState([])
     const [cartCount, setCartCount] = useState(0);
     const [cartChanged, setCartChanged] = useState(false)
+
+    const [wishlistData, setWishlistData] = useState([])
+    const [wishlistCount, setWishlistCount] = useState(0);
+    const [wishlistChanged, setWishlistChanged] = useState(false)
+
     const [price, setPrice] = useState(0)
     const [all_products, setAllProducts] = useState([])
+
     const [loading, setLoading] = useState(true)
 
     const { auth, user } = useAuth()
@@ -43,7 +59,6 @@ const ShopContextProvider = ({ children }) => {
             .then(data => {
                 const sizes = data.sizes
                 const products = data.products
-                // console.log(sizes[0], products[0])
 
                 if (sizes !== undefined) {
                     const combinedData = products.map((product) => {
@@ -55,7 +70,6 @@ const ShopContextProvider = ({ children }) => {
                     setAllProducts(combinedData)
                     setLoading(false)
                 }
-                // console.log(combinedData[0].productid, combinedData[0].sizes)
             })
     }
 
@@ -143,6 +157,67 @@ const ShopContextProvider = ({ children }) => {
         setCartChanged(true)
     }
 
+    const getWishlist = () => {
+        if (!auth) {
+            setWishlistData([])
+            setWishlistCount(0)
+            return
+        }
+
+        fetch("http://localhost:8080/getWishlist", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                mail: user.mail,
+            }),
+            credentials: "include"
+        })
+            .then(resp => resp.json())
+            .then(data => {
+                if (data.success) {
+                    setWishlistData(data.result)
+                    setWishlistCount(data.length)
+                    setWishlistChanged(false)
+                }
+            })
+    }
+
+    const addToWishlist = (productid) => {
+        if (!auth) { return }
+
+        fetch("http://localhost:8080/wishlist", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                productId: productid,
+                mail: user.mail,
+            }),
+            credentials: "include"
+        })
+            .then(resp => resp.json())
+            .then(data => {
+                if (data.success) {
+                    setWishlistChanged(true)
+                }
+            })
+    }
+
+    const deleteWishlist = (productid) => {
+        if (!auth) { return }
+
+        fetch("http://localhost:8080/wishlist", {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                productId: productid,
+                mail: user.mail,
+            }),
+            credentials: "include"
+        })
+        setWishlistChanged(true)
+    }
+
+
     const getPrice = () => {
         let cartItem = null;
         let acc = 0
@@ -178,7 +253,12 @@ const ShopContextProvider = ({ children }) => {
         setCartChanged(true)
     }
 
+    const refreshWishlist = () => {
+        setWishlistChanged(true)
+    }
+
     useEffect(() => { getCart() }, [cartChanged, auth, user])
+    useEffect(() => { getWishlist() }, [wishlistChanged, auth, user])
     useEffect(() => { getPrice() }, [cartData, all_products, loading])
     useEffect(() => { getAllProducts() }, [])
 
@@ -186,12 +266,22 @@ const ShopContextProvider = ({ children }) => {
         all_products,
         new_arrivals,
         best_sellers,
+
         cartData,
         cartCount,
+
+        wishlistData,
+        wishlistCount,
+
         addToCart,
         updateCart,
         deleteCart,
         refreshCart,
+
+        addToWishlist,
+        deleteWishlist,
+        refreshWishlist,
+
         price,
         loading
     };
