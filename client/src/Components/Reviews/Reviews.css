@@ -1,0 +1,97 @@
+.review {
+    display: block;
+}
+.reviews-customerReviews {
+    display: block;
+}
+.reviews-customerReviews-head h2 {
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+}
+.reviews-customerReviews-content {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 30vw;
+    margin-left: 30vw;
+}
+.reviews-customerReviews-writeReview-button {
+    /*padding-left: 250px;*/
+    border-left: 1px solid black;
+}
+.reviews-customerReviews-writeReview-button button {
+    width: 200px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    outline: none;
+    border: none;
+}
+.reviews-customerReviews-writeReview-button button:hover {
+    background-color: rgb(40, 39, 39);
+}
+.reviews hr {
+    border: 1px solid black;
+}
+.reviews-writeReview form {
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+.reviews-writeReview-fieldset {
+    margin-bottom: 20px;
+    
+}
+.write-review {
+    font-size: 30px;
+    font-weight: 500;
+}
+.reviews-writeReview-fieldset label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.star-rating i {
+    cursor: pointer;
+    font-size: 24px;
+}
+.reviews-writeReview-fieldset input,textarea {
+    width: 100%;
+    padding: 8px;
+    outline: none;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.reviews-writeReview-fieldset textarea {
+    height: 100px;
+    resize: vertical;
+}
+.random-data {
+    text-wrap:wrap;
+}
+.reviews-writeReview-fieldset-submit {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.reviews-writeReview-fieldset-submit a {
+    margin-right: 20px;
+    border: 2px solid black;
+    padding: 8px;
+    background-color: white;
+    color: black;
+}
+.reviews-writeReview-fieldset-submit a:hover {
+    background-color: #ccc;
+}
+.reviews-writeReview-fieldset-submit input {
+    background-color: black;
+    color: white;
+    padding: 8px;
+    outline: none;
+    border: none;
+}
+.reviews-writeReview-fieldset-submit input:hover {
+    background-color: rgb(40, 39, 39);
+}
