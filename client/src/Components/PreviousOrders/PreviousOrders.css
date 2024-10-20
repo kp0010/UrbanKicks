@@ -1,9 +1,16 @@
 .previousOrders {
     margin: 0 15vw;
+    margin-top: 16px;
+}
+.previousOrders hr {
+    margin-bottom: 0;
 }
 .previousOrders-orderData {
     display: flex;
     align-items: baseline;
+}
+.previousOrders-orderData p {
+    margin-bottom: 8px;
 }
 .previousOrders-orderId p {
     font-size: 24px;
@@ -12,5 +19,31 @@
 }
 .previousOrders-orderDate {
     font-size: 16px;
-    
+    padding-right: 80px;
+}
+.previousOrders-main {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 0;
+}
+.previousOrders-products {
+    display: flex;
+}
+.previousOrders-products-image {
+    margin-right: 80px;
+}
+.previousOrders-products-image img {
+    width: 200px;
+    height: 200px;
+}
+.previousOrders-products-data {
+    display: block;
+    flex-direction: column;
+}
+.previousOrders-products-data-head {
+    margin-bottom: 50px;
+}
+.previousOrders-payment {
+    border: 1px solid black;
+    padding: 16px; 
 }
