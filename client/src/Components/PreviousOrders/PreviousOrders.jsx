@@ -7,7 +7,7 @@ export const PreviousOrders = () => {
   const { auth, user, admin } = useAuth()
   const { all_products } = useShop()
 
-  const [orderInfo, setOrderInfo] = useState([{ orderid: "50" }])
+  const [orderInfo, setOrderInfo] = useState([]);
 
   const getPreviousOrders = () => {
     if (!auth) { return }
@@ -55,7 +55,7 @@ export const PreviousOrders = () => {
   return (
     <>
       <hr />
-      {orderInfo.length > 1 &&
+      {orderInfo.length > 0 &&
         orderInfo.map((order) => {
           return order.orderItems.map((orderItem) => {
             const product = all_products.find((p) => p.productid === orderItem.productid)
