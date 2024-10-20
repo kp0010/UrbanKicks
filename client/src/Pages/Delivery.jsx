@@ -13,6 +13,7 @@ export const Delivery = () => {
     const [orderInfo, setOrderInfo] = useState({})
     const [orderItemsInfo, setOrderItemsInfo] = useState([])
     const [addressInfo, setAddressInfo] = useState({})
+    const [paymentInfo, setPaymentInfo] = useState({})
 
     var orderDate = new Date()
     var deliveryDate = new Date()
@@ -35,20 +36,20 @@ export const Delivery = () => {
                 setOrderInfo(data.orderInfo)
                 setOrderItemsInfo(data.orderItemsInfo)
                 setAddressInfo(data.addressInfo)
+                setPaymentInfo(data.paymentInfo)
+                console.log(data.paymentInfo)
                 orderDate = new Date(data.orderInfo.orderdate)
             })
 
     }, [orderId])
 
     useEffect(() => {
-        console.log(orderDate.toString());
         const tempDate = new Date(orderDate)
         deliveryDate = tempDate.setDate(tempDate.getDate() + 3)
     }, [orderDate])
 
 
     const convDate = (delDate) => {
-        console.log("DATE", delDate)
         const delDateConv = new Date(delDate)
         // return delDate.toString()
 
@@ -58,7 +59,14 @@ export const Delivery = () => {
         return formattedDate
     }
 
-    useEffect(() => { console.log("CONV: ", deliveryDate); setDateString(convDate(deliveryDate)) }, [deliveryDate])
+    const convSplitandTitle = (text) => {
+        return text
+            .split('_')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+            .join(' ');
+    }
+
+    useEffect(() => { setDateString(convDate(deliveryDate)) }, [deliveryDate])
 
     return (
         <div className="delivery">
@@ -111,19 +119,25 @@ export const Delivery = () => {
                                 <p><span>Total</span></p>
                             </div>
                             <div className="delivery-right-subtotal-right">
-                                <p>₹{parseFloat(orderInfo.totalamount)}</p>
+                                <p>₹{parseFloat(orderInfo.totalamount) - 300}</p>
                                 <p>₹{orderInfo.totalamount !== 0 ? "300" : "0"}</p>
-                                <p><span>₹{orderInfo.totalamount !== 0 ? parseFloat(orderInfo.totalamount) + 300 : "0"}</span></p>
+                                <p><span>₹{orderInfo.totalamount !== 0 ? parseFloat(orderInfo.totalamount) : "0"}</span></p>
                             </div>
                         </div>
                         <hr />
-                        <h5 className="payment-method">Payment Method: Cash On Delivery</h5>
+                        {paymentInfo !== undefined &&
+                            <>
+                                <h5 className="payment-method">Payment Method: {convSplitandTitle(paymentInfo.paymenttype)}</h5>
+                                <h6 className="payment-method">Payment Status: {convSplitandTitle(paymentInfo.status)}</h6>
+                            </>
+                        }
                         <hr />
                         {addressInfo.addressline1 !== undefined &&
                             <>
                                 <h5>Respondant Name: {addressInfo.firstname + " " + addressInfo.lastname},</h5>
                                 <h6>Contact No: XXXXXX{addressInfo.phoneno.slice(-4)}</h6>
                                 <h6>Address: {addressInfo.addressline1}</h6>
+                                <h6>{addressInfo.addressline2}</h6>
                             </>
                         }
                     </div>

@@ -312,17 +312,8 @@ app.get("/products", (req, res) => {
     })
 })
 
-app.post("/payment/", (req, res) => {
-    const { paymentType, orderId, amount } = req.body
-
-    db.query("INSERT INTO payment(paymentType, orderId, amount, status) VALUES " +
-        `(${paymentType}, ${orderId}, ${amount}})`, (error, result) => {
-            result.rows
-        })
-})
-
 app.post("/order/", (req, res) => {
-    const { mail, shippingAddressId } = req.body
+    const { mail, shippingAddressId, paymentType } = req.body
 
     const hardAddressDeleter = () => {
         db.query("DELETE FROM addresses WHERE isDeleted = TRUE " +
@@ -330,7 +321,7 @@ app.post("/order/", (req, res) => {
         )
     }
 
-    const insertCartItems = async (cartData, orderid) => {
+    const insertCartItems = async (cartData, orderid, paymentInfo) => {
         var orderItems = []
 
         const promises = cartData.map(async (item) => {
@@ -347,21 +338,45 @@ app.post("/order/", (req, res) => {
         await Promise.all(promises)
 
         db.query("DELETE FROM cart WHERE mail=$1", [mail])
+
         hardAddressDeleter()
 
         res.status(200).json({
             success: true,
             orderItems: orderItems,
-            orderId: orderid
+            orderId: orderid,
+            paymentId: paymentInfo.paymentid
         })
     }
 
-    const insertOrder = (cartData, totalAmount) => {
-        db.query("INSERT INTO orders (mail, totalamount, shippingAddressId) VALUES ($1, $2, $3) RETURNING orderid",
-            [mail, totalAmount, shippingAddressId], (error, result) => {
-                insertCartItems(cartData, result.rows[0].orderid)
+    const insertOrder = async (cartData, totalAmount) => {
+        const paymentInfo = await insertPayment(paymentType, totalAmount)
+
+        db.query("INSERT INTO orders (mail, totalamount, shippingAddressId, paymentId) VALUES ($1, $2, $3, $4) RETURNING orderid",
+            [mail, totalAmount, shippingAddressId, paymentInfo.paymentid], (error, result) => {
+                insertCartItems(cartData, result.rows[0].orderid, paymentInfo)
             })
     }
+
+    const insertPayment = async (paymentType, amount) => {
+        var status
+
+        if (paymentType === "cash_on_delivery") {
+            status = "pending"
+        } else {
+            status = "successfull"
+        }
+
+        return new Promise(async (resolve, reject) => {
+            console.log(paymentType, amount, status)
+
+            const query = `INSERT INTO payments (paymentType, amount, status) VALUES ('${paymentType}', ${amount}, '${status}') RETURNING *;`
+            const paymentRes = await db.query(query)
+
+            resolve(paymentRes.rows[0])
+        })
+    }
+
 
     const getProductPrice = async (productid) => {
         return new Promise((resolve, reject) => {
@@ -403,12 +418,16 @@ app.post("/getOrders", async (req, res) => {
     var addressInfoRes = await db.query("SELECT * FROM addresses WHERE addressid=$1", [orderInfo.shippingaddressid])
     var addressInfo = addressInfoRes.rows[0]
 
+    var paymentInfoRes = await db.query("SELECT * FROM payments WHERE paymentid=$1", [orderInfo.paymentid])
+    var paymentInfo = paymentInfoRes.rows[0]
+
     if (orderInfo !== undefined && orderItemsInfo !== undefined) {
         res.status(200).json({
             success: true,
             orderInfo: orderInfo,
             orderItemsInfo: orderItemsInfo,
-            addressInfo: addressInfo
+            addressInfo: addressInfo,
+            paymentInfo: paymentInfo
         })
     } else {
         res.status(400).json({

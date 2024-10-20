@@ -31,7 +31,9 @@ export const Checkout = () => {
   const [newAddress, setNewAddress] = useState(emptyAddr)
   const [addresses, setAddresses] = useState([])
   const [addChanged, setAddChanged] = useState([])
+
   const [currShippingId, setCurrShippingId] = useState(0)
+  const [currPaymentType, setPaymentType] = useState(0)
 
   const [isFormVisible, setIsFormVisible] = useState(false);
 
@@ -115,7 +117,8 @@ export const Checkout = () => {
       credentials: "include",
       body: JSON.stringify({
         mail: user.mail,
-        shippingAddressId: currShippingId
+        shippingAddressId: currShippingId,
+        paymentType: currPaymentType
       }),
     })
       .then((resp) => resp.json())
@@ -134,8 +137,12 @@ export const Checkout = () => {
   }
 
   const handleAddress = (event) => {
-    console.log(event.target.value)
     setCurrShippingId(event.target.value)
+  }
+
+  const handlePayment = (event) => {
+    console.log(event.target.value)
+    setPaymentType(event.target.value)
   }
 
   const toggleFormVisibility = () => {
@@ -173,7 +180,7 @@ export const Checkout = () => {
                         <br />
                         {add.addressline1}, {add.city}, {add.state}, {add.zipcode}, {add.country} </label>
                     </div>
-                    
+
                     <img onClick={() => handleAddressDelete(add.addressid)} src={bin_icon} alt="..." />
                   </div>
                 ))
@@ -245,10 +252,10 @@ export const Checkout = () => {
           <div className="checkout-left-payment-content">
             <p className="checkout-payment">2.PAYMENT</p>
             <div className="checkout-payment-option">
-              <label ><input type="radio" name="paymentoption" value="CashOnDelivery" /> Cash On Delivery</label>
-              <label ><input type="radio" name="paymentoption" value="viaUPI" /> via UPI</label>
-              <label ><input type="radio" name="paymentoption" value="viaCreditCard" /> via Credit Card</label>
-              <label ><input type="radio" name="paymentoption" value="viaDebitCard" /> via Debit Card</label>
+              <label ><input type="radio" name="paymentoption" value="cash_on_delivery" onChange={handlePayment} /> Cash On Delivery</label>
+              <label ><input type="radio" name="paymentoption" value="upi" onChange={handlePayment} /> via UPI</label>
+              <label ><input type="radio" name="paymentoption" value="credit_cart" onChange={handlePayment} /> via Credit Card</label>
+              <label ><input type="radio" name="paymentoption" value="debit_cart" onChange={handlePayment} /> via Debit Card</label>
             </div>
             <button onClick={() => processOrderCheckout()}>Place an Order</button>
           </div>
