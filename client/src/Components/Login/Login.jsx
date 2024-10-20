@@ -31,12 +31,10 @@ export const Login = () => {
       .then(data => {
         // data = {status: str, login: bool, userExists: bool}
         if (data.login) {
-          console.log("DATA:", data)
           setAuth(true)
           setResp(0)
-          console.log("ADMIN : ", data.admin)
           if (data.admin) {
-            window.location.replace("/men")
+            window.location.replace("/adminDash")
             return
           }
           window.location.replace("/")

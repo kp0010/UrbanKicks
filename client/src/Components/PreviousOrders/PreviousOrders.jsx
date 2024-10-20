@@ -23,6 +23,7 @@ export const PreviousOrders = () => {
       .then((resp) => resp.json())
       .then((data) => {
         setOrderInfo(data.allOrderInfo)
+        console.log(data.allOrderInfo[0])
       })
   }
 
@@ -36,20 +37,23 @@ export const PreviousOrders = () => {
       {/* <h1>{orderInfo[0].orderid} {orderInfo.length}</h1> */}
       {orderInfo.length > 1 &&
         orderInfo.map((order) => {
-          const product = all_products.find((p) => p.productid === order.orderItems[0].productid)
-          return <>
-            <div className="previousOrders">
-              <div className="previousOrders-orderData">
-                <div className="previousOrders-orderId">
-                  <p>OrderId : {order.orderid}</p>
-                </div>
-                <div className="previousOrders-orderDate">
-                  <p>ordered on {order.orderdate}</p>
+          return order.orderItems.map((orderItem) => {
+            const product = all_products.find((p) => p.productid === orderItem.productid)
+            console.log(product.title, " ID")
+            return <>
+              <div className="previousOrders">
+                <div className="previousOrders-orderData">
+                  <div className="previousOrders-orderId">
+                    <p>OrderId : {order.orderid}</p>
+                    <p>ProudctId : {product.title}</p>
+                  </div>
+                  <div className="previousOrders-orderDate">
+                    <p>ordered on {order.orderdate}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-
-          </>
+            </>
+          })
         })
       }
     </>

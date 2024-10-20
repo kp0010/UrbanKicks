@@ -22,6 +22,7 @@ import { Wishlist } from './Pages/Wishlist';
 import { Footer } from './Components/Footer/Footer';
 import { Delivery } from './Pages/Delivery';
 import { PreviousOrdersPage } from './Pages/PreviousOrdersPage';
+import { AdminDash } from './Pages/AdminDash';
 
 function App() {
   return (
@@ -55,6 +56,7 @@ const RoutesList = () => {
       <Route path="/wishlist" element={<Wishlist />} />
       <Route path="/delivery" element={<Delivery />} />
       <Route path="/previousOrders" element={<PreviousOrdersPage />} />
+      <Route path="/adminDash" element={<AdminDash />} />
     </Routes>
   )
 }
