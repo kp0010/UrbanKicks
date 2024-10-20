@@ -7,6 +7,8 @@ export const CategoryItem = (props) => {
 
   const [liked, setLiked] = useState(false);
 
+  const { addToWishlist, deleteWishlist } = useShop();
+
   const toggleLike = (id) => {
     setLiked((prevLiked) => {
       if (!prevLiked) {
