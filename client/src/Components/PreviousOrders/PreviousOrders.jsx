@@ -7,7 +7,7 @@ export const PreviousOrders = () => {
   const { auth, user, admin } = useAuth()
   const { all_products } = useShop()
 
-  const [orderInfo, setOrderInfo] = useState([{ orderid: "50" }])
+  const [orderInfo, setOrderInfo] = useState([])
 
   const getPreviousOrders = () => {
     if (!auth) { return }
@@ -29,6 +29,8 @@ export const PreviousOrders = () => {
         console.log(data.allOrderInfo[0])
       })
   }
+
+  const [title, setTitle] = useState(admin ? "User Orders" : "Previous Orders")
 
   const convDate = (delDate) => {
     const delDateConv = new Date(delDate)
@@ -55,61 +57,64 @@ export const PreviousOrders = () => {
   return (
     <>
       <hr />
-      {orderInfo.length > 1 &&
-        orderInfo.map((order) => {
-          return order.orderItems.map((orderItem) => {
-            const product = all_products.find((p) => p.productid === orderItem.productid)
-            return (<>
-              <div className="previousOrders">
-                <div className="previousOrders-orderData">
-                  <div className="previousOrders-orderId">
-                    <p>OrderId : {order.orderid}</p>
-                  </div>
-                  <div className="previousOrders-orderDate">
-                    <p>ordered on {convDate(order.orderdate)}</p>
-                  </div>
-                  <div className="previousOrders-phoneno">
-                    <p><strong>Phone Number :</strong> XXXXXX{order.addressInfo.phoneno.slice(-4)}</p>
-                  </div>
+      {orderInfo.length > 0 &&
+        orderInfo.map((order) => {          // return order.orderItems.map((orderItem) => {
+          //   const product = all_products.find((p) => p.productid === orderItem.productid)
+          console.log(order)
+          return (<>
+            <div className="previousOrders">
+              <div className="previousOrders-orderData">
+                <div className="previousOrders-orderId">
+                  <p>OrderId : {order.orderid}</p>
                 </div>
-                <div className="previousOrders-address">
-                  <p><strong>Address :</strong> {order.addressInfo.addressline1}, {order.addressInfo.city}, {order.addressInfo.state}, {order.addressInfo.country} </p>
+                <div className="previousOrders-orderDate">
+                  <p>ordered on {convDate(order.orderdate)}</p>
                 </div>
-                {order.orderItems.map((orderItem) => {
-                  const product = all_products.find((p) => p.productid === orderItem.productid)
-                  return < div className="previousOrders-main" >
-                    <div className="previousOrders-products">
-                      <div className="previousOrders-products-image">
-                        <img src={product.image} alt="..." />
+                <div className="previousOrders-phoneno">
+                  <p><strong>Phone Number :</strong> XXXXXX{order.addressInfo.phoneno.slice(-4)}</p>
+                </div>
+                <div className="previousOrders-phoneno">
+                  <p><strong>|   Email :</strong> {order.mail}</p>
+                </div>
+              </div>
+              <div className="previousOrders-address">
+                <p><strong>Address :</strong> {order.addressInfo.addressline1}, {order.addressInfo.city}, {order.addressInfo.state}, {order.addressInfo.country} </p>
+              </div>
+              {order.orderItems.map((orderItem) => {
+                const product = all_products.find((p) => p.productid === orderItem.productid)
+                return < div className="previousOrders-main" >
+                  <div className="previousOrders-products">
+                    <div className="previousOrders-products-image">
+                      <img src={product.image} alt="..." />
+                    </div>
+                    <div className="previousOrders-products-data">
+                      <div className="previousOrders-products-data-head">
+                        <h4>{product.title}</h4>
+                        <h5>{product.subtitle}</h5>
                       </div>
-                      <div className="previousOrders-products-data">
-                        <div className="previousOrders-products-data-head">
-                          <h4>{product.title}</h4>
-                          <h5>{product.subtitle}</h5>
-                        </div>
-                        <div className="previousOrders-products-size">
-                          <p><strong>Size : </strong>{product.size}  |  <strong>Quantity : </strong>{product.quantity}</p>
-                          <p><strong>Price : </strong>{product.price}</p>
-                        </div>
+                      <div className="previousOrders-products-size">
+                        <p><strong>Size : </strong>{orderItem.size}  |  <strong>Quantity : </strong>{orderItem.quantity}</p>
+                        <p><strong>Price : </strong>₹{orderItem.price}</p>
                       </div>
                     </div>
                   </div>
-                })}
-                <div className="previousOrders-payment">
-                  <div className="previousOrders-payment-info">
-                    <div className="previousOrders-payment-method">
-                      <p><strong>Payment Method : </strong>{convSplitandTitle(order.paymentInfo.paymenttype)}</p>
-                      <p><strong>Total Amount : </strong>{order.totalamount}</p>
-                      <p><strong>Status : </strong>{convSplitandTitle(order.paymentInfo.status)}</p>
-                    </div>
+                </div>
+              })}
+              <div className="previousOrders-payment">
+                <div className="previousOrders-payment-info">
+                  <div className="previousOrders-payment-method">
+                    <p><strong>Payment Method : </strong>{convSplitandTitle(order.paymentInfo.paymenttype)}</p>
+                    <p><strong>Total Amount : </strong>₹{order.totalamount}</p>
+                    <p><strong>Status : </strong>{convSplitandTitle(order.paymentInfo.status)}</p>
                   </div>
                 </div>
               </div>
-              <hr />
-            </>
-            )
-          })
-        })}
+            </div>
+            <hr />
+          </>
+          )
+        })
+      })}
     </>
   )
 }

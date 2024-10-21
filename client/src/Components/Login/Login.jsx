@@ -34,7 +34,7 @@ export const Login = () => {
           setAuth(true)
           setResp(0)
           if (data.admin) {
-            window.location.replace("/adminDash")
+            window.location.replace("/previousOrders")
             return
           }
           window.location.replace("/")
