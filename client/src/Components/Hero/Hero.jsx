@@ -2,8 +2,8 @@ import React from 'react'
 import "./Hero.css"
 
 import hero1 from "../Assets/HomeAssets/hero_main.png"
-import hero2 from "../Assets/HomeAssets/hero2.png"
-import hero3 from "../Assets/HomeAssets/hero3.png"
+import hero2 from "../Assets/HomeAssets/Hero_2.png"
+import hero3 from "../Assets/HomeAssets/Hero_3.png"
 
 export const Hero = () => {
   return (

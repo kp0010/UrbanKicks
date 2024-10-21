@@ -30,8 +30,6 @@ export const PreviousOrders = () => {
       })
   }
 
-  const [title, setTitle] = useState(admin ? "User Orders" : "Previous Orders")
-
   const convDate = (delDate) => {
     const delDateConv = new Date(delDate)
 
@@ -59,8 +57,6 @@ export const PreviousOrders = () => {
       <hr />
       {orderInfo.length > 0 &&
         orderInfo.map((order) => {          // return order.orderItems.map((orderItem) => {
-          //   const product = all_products.find((p) => p.productid === orderItem.productid)
-          console.log(order)
           return (<>
             <div className="previousOrders">
               <div className="previousOrders-orderData">
@@ -82,29 +78,32 @@ export const PreviousOrders = () => {
               </div>
               {order.orderItems.map((orderItem) => {
                 const product = all_products.find((p) => p.productid === orderItem.productid)
-                return < div className="previousOrders-main" >
-                  <div className="previousOrders-products">
-                    <div className="previousOrders-products-image">
-                      <img src={product.image} alt="..." />
-                    </div>
-                    <div className="previousOrders-products-data">
-                      <div className="previousOrders-products-data-head">
-                        <h4>{product.title}</h4>
-                        <h5>{product.subtitle}</h5>
-                      </div>
-                      <div className="previousOrders-products-size">
-                        <p><strong>Size : </strong>{orderItem.size}  |  <strong>Quantity : </strong>{orderItem.quantity}</p>
-                        <p><strong>Price : </strong>₹{orderItem.price}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                return (
+                  <>
+                    < div className="previousOrders-main" >
+                      <div className="previousOrders-products">
+                        <div className="previousOrders-products-image">
+                          <img src={product.image} alt="..." />
+                        </div>
+                        <div className="previousOrders-products-data">
+                          <div className="previousOrders-products-data-head">
+                            <h4>{product.title}</h4>
+                            <h5>{product.subtitle}</h5>
+                          </div>
+                          <div className="previousOrders-products-size">
+                            <p><strong>Size : </strong>{orderItem.size}  |  <strong>Quantity : </strong>{orderItem.quantity}</p>
+                            <p><strong>Price : </strong>₹{orderItem.price}</p>
+                          </div>
+                        </div>
+                      </div>)
+                    </div>)
+                  </>)
               })}
               <div className="previousOrders-payment">
                 <div className="previousOrders-payment-info">
                   <div className="previousOrders-payment-method">
                     <p><strong>Payment Method : </strong>{convSplitandTitle(order.paymentInfo.paymenttype)}</p>
-                    <p><strong>Total Amount : </strong>₹{order.totalamount}</p>
+                    <p><strong>Total Amount : </strong>{order.totalamount}</p>
                     <p><strong>Status : </strong>{convSplitandTitle(order.paymentInfo.status)}</p>
                   </div>
                 </div>
