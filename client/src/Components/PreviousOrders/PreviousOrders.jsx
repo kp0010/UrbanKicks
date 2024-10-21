@@ -70,7 +70,7 @@ export const PreviousOrders = () => {
                   <p><strong>Phone Number :</strong> XXXXXX{order.addressInfo.phoneno.slice(-4)}</p>
                 </div>
                 <div className="previousOrders-phoneno">
-                  <p><strong>|   Email :</strong> {order.mail}</p>
+                  <p><strong>Email :</strong> {order.mail}</p>
                 </div>
               </div>
               <div className="previousOrders-address">

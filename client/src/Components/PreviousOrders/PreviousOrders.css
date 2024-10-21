@@ -21,6 +21,9 @@
     font-size: 16px;
     padding-right: 80px;
 }
+.previousOrders-phoneno {
+    padding-right: 80px;
+}
 .previousOrders-main {
     display: flex;
     justify-content: space-between;
