@@ -95,8 +95,8 @@ export const PreviousOrders = () => {
                             <p><strong>Price : </strong>₹{orderItem.price}</p>
                           </div>
                         </div>
-                      </div>)
-                    </div>)
+                      </div>
+                    </div>
                   </>)
               })}
               <div className="previousOrders-payment">

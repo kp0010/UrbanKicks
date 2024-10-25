@@ -253,7 +253,6 @@ export const Checkout = () => {
             <div className="checkout-payment-option">
               <label ><input type="radio" name="paymentoption" value="cash_on_delivery" onChange={handlePayment} /> Cash On Delivery</label>
               <label ><input type="radio" name="paymentoption" value="upi" onChange={handlePayment} /> via UPI</label>
-              <label ><input type="radio" name="paymentoption" value="vyoma_bank" onChange={handlePayment} /> via Vyoma Bank</label>
               <label ><input type="radio" name="paymentoption" value="credit_cart" onChange={handlePayment} /> via Credit Card</label>
               <label ><input type="radio" name="paymentoption" value="debit_cart" onChange={handlePayment} /> via Debit Card</label>
             </div>
