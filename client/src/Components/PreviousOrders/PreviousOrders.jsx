@@ -109,11 +109,11 @@ export const PreviousOrders = () => {
                 </div>
               </div>
             </div>
-            <hr />
+            <hr className="horiz-line"/>
           </>
           )
         })
-      })}
+      }
     </>
   )
 }
