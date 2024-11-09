@@ -6,7 +6,7 @@ import LocalStratergy from "passport-local"
 import session from "express-session"
 import bcrypt from "bcrypt"
 
-const saltRounds = 10;
+const SALT_ROUNDS = 10;
 
 import SQLiteStoreFactory from "connect-sqlite3"
 const SQLiteStore = SQLiteStoreFactory(session)
@@ -101,7 +101,7 @@ app.post("/login", (req, res, next) => {
 app.post("/signup", (req, res) => {
     const { mail, number, password, fullname } = req.body
 
-    bcrypt.hash(password, saltRounds)
+    bcrypt.hash(password, SALT_ROUNDS)
         .then((hashedPassword) => {
             db.query("INSERT INTO users (mail, phoneNo, password, fullname) VALUES ($1, $2, $3, $4) RETURNING mail",
                 [mail, number, hashedPassword, fullname], (error, result) => {
@@ -435,8 +435,8 @@ app.post("/getOrder", async (req, res) => {
 app.post("/getOrders", async (req, res) => {
     const { mail, admin } = req.body
 
-    const queryCondition = !admin ? " WHERE mail = $1;" : ";"
-    const query = "SELECT * FROM orders " + queryCondition
+    const queryCondition = !admin ? " WHERE mail = $1 " : " "
+    const query = "SELECT * FROM orders " + queryCondition + " ORDER BY orderdate DESC;"
     const queryExt = admin ? [] : [mail]
 
     console.log(query, queryExt, admin)
