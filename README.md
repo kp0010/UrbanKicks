@@ -4,13 +4,10 @@
 
 Table of Contents
 
-    Tech Stack
-    Features
-    Installation
-    Running the Application
-    Environment Variables
-    Contributing
-    License
+    [Tech Stack](#Tech Stack)
+    [Features](#Features)
+    [Installation](#Installation)
+    [Running the Application](#Running the Application)
 
 ## Tech Stack
 - Frontend
