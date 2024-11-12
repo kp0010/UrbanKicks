@@ -1,37 +1,5 @@
 # WonderWalks E-Commerce Website
 
-#### WonderWalks is a modern e-commerce web application for purchasing quality footwear. This project is built using React for the frontend, Express.js for the backend, and PostgreSQL as the database. It is designed to provide an intuitive and seamless shopping experience for users.
-
-Table of Contents
-
-[Tech Stack](#tech-stack)
-[Features](#Features)
-[Installation](#Installation)
-[Running the Application](#running-the-application)
-
-## Tech Stack
-- Frontend
-
-    - React.js: For building the user interface and handling client-side routing.
-    - CSS/SCSS: For styling the application to provide an elegant and user-friendly design.
-
-- Backend
-
-    - Express.js: For creating a RESTful API and handling server-side logic.
-    - Node.js: The runtime environment for executing JavaScript code on the server.
-
-- Database
-
-    - PostgreSQL: A powerful, open-source relational database for storing product, user, and transaction data.
-
-## Features
-
-    1. User Authentication: Secure login and registration system.
-    2. Product Listings: Display various categories of footwear with filtering and search capabilities.
-    3. Shopping Cart: Add, remove, and update quantities of items.
-    4. Order Management: Place orders and view order history.
-# WonderWalks E-Commerce Website
-
 **WonderWalks** is a modern e-commerce web application for purchasing quality footwear. This project is built using React for the frontend, Express.js for the backend, and PostgreSQL as the database. It is designed to provide an intuitive and seamless shopping experience for users.
 
 ## Table of Contents
@@ -71,10 +39,10 @@ Follow these steps to get the project running locally:
 2. **Install dependencies:**
 
    - For the backend:
-	```bash
-	cd backend
-	npm install
-	```
+     ```bash
+     cd backend
+     npm install
+     ```
 
    - For the frontend:
      ```bash
