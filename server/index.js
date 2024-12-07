@@ -44,7 +44,6 @@ const dbConfig = {
     user: 'postgres',
     host: 'localhost',
     database: 'wonderwalks',
-    //password: 'sahil@135',
     port: 5432,
 }
 
